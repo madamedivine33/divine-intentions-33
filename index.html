@@ -2818,9 +2818,12 @@
   }
 
  function submitPentacles(e) {
-  const subject = encodeURIComponent('Seven Pentacles of Wealth PDF Request');
-  const body = encodeURIComponent('Hi Madame Divine,\n\nI would like to request the Seven Pentacles of Wealth PDF ($11.11).\n\nMy name:\nMy email:\nMy phone:\nPayment method (CashApp/Venmo):\n');
-  window.location.href = 'mailto:Divinexintentions33@gmail.com?subject=' + subject + '&body=' + body;
+  const message = 'Hi Madame Divine, I would like to request the Seven Pentacles of Wealth PDF ($11.11). My name:, My email:, My phone:, Payment method (CashApp/Venmo):';
+  navigator.clipboard.writeText(message).then(() => {
+    alert('Request message copied! Please paste it into an email to Divinexintentions33@gmail.com or send it via Instagram/text.');
+  }).catch(() => {
+    alert('Please email Divinexintentions33@gmail.com to request the Seven Pentacles of Wealth PDF ($11.11).');
+  });
 }
     // ── SCROLL FADE-IN ──
   const observer = new IntersectionObserver((entries) => {
