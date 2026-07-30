@@ -2825,58 +2825,12 @@
     const email = document.getElementById('p_email').value;
     const phone = document.getElementById('p_phone').value || 'Not provided';
     const payment = document.getElementById('p_payment').value;
-    <div class="purchase-block">
-  <p class="product-note">
-    ✦ To receive your Seven Pentacles of Wealth, complete your payment below. 
-    Your file will be sent to you personally by Madame Divine within 24 hours.
-  </p>
-  <a href="https://cash.app/$YourCashAppHandle" target="_blank" class="purchase-btn">
-    Purchase Now — $[Your Price]
-  </a>
-  <p class="purchase-sub">Pay via CashApp · Zelle · Venmo · PayPal</p>
-</div>.purchase-block {
-  text-align: center;
-  margin: 20px auto;
-  max-width: 400px;
+   const subject = encodeURIComponent('Seven Pentacles of Wealth PDF Request from ' + name);
+  const body = encodeURIComponent('SEVEN PENTACLES PDF REQUEST\nName: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone + '\nPayment: ' + payment);
+  window.location.href = 'mailto:Divinexintentions33@gmail.com?subject=' + subject + '&body=' + body;
+  document.getElementById('pentaclesForm').style.display = 'none';
+  document.getElementById('pentaclesSuccess').style.display = 'block';
 }
-.purchase-btn {
-  display: inline-block;
-  background-color: #B8962E;
-  color: white;
-  padding: 14px 28px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 15px;
-  margin: 12px 0;
-}
-.purchase-btn:hover { background-color: #8B6914; }
-.product-note { font-size: 13px; color: #444; margin-bottom: 10px; }
-.purchase-sub { font-size: 11px; color: #888; margin-top: 6px; }
-  }
-
-  // ── REVIEWS ──
-  function setRating(val) {
-    document.getElementById('ratingValue').value = val;
-    document.querySelectorAll('.star').forEach(s => {
-      s.style.color = parseInt(s.dataset.val) <= val ? '#C9A84C' : 'rgba(201,168,76,0.3)';
-    });
-  }
-
-  function submitReview(e) {
-    e.preventDefault();
-    const name = document.getElementById('reviewName').value;
-    const service = document.getElementById('reviewService').value;
-    const rating = document.getElementById('ratingValue').value;
-    const text = document.getElementById('reviewText').value;
-    const stars = '★'.repeat(parseInt(rating)) + '☆'.repeat(5 - parseInt(rating));
-
-    if (rating === '0') { alert('Please select a star rating.'); return; }
-
-    const subject = encodeURIComponent(`New Review from ${name} — ${service}`);
-    const body = encodeURIComponent(`NEW REVIEW — DIVINE INTENTIONS 33\n\nName: ${name}\nService/Product: ${service}\nRating: ${stars}\n\nReview:\n${text}\n\nClient has given permission to share publicly.`);
-    window.location.href = `mailto:Divinexintentions33@gmail.com?subject=${subject}&body=${body}`;
-
     document.getElementById('reviewForm').style.display = 'none';
     document.getElementById('reviewSuccess').style.display = 'block';
   }
