@@ -2817,18 +2817,10 @@
     if (btn) btn.classList.add('active');
   }
 
-  // ── SEVEN PENTACLES FORM ──
-  function submitPentacles(e) {
-    e.preventDefault();
-    const name = document.getElementById('p_name').value;
-    const email = document.getElementById('p_email').value;
-    const phone = document.getElementById('p_phone').value || 'Not provided';
-    const payment = document.getElementById('p_payment').value;
-   const subject = encodeURIComponent('Seven Pentacles of Wealth PDF Request from ' + name);
-  const body = encodeURIComponent('SEVEN PENTACLES PDF REQUEST\nName: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone + '\nPayment: ' + payment);
+ function submitPentacles(e) {
+  const subject = encodeURIComponent('Seven Pentacles of Wealth PDF Request');
+  const body = encodeURIComponent('Hi Madame Divine,\n\nI would like to request the Seven Pentacles of Wealth PDF ($11.11).\n\nMy name:\nMy email:\nMy phone:\nPayment method (CashApp/Venmo):\n');
   window.location.href = 'mailto:Divinexintentions33@gmail.com?subject=' + subject + '&body=' + body;
-  document.getElementById('pentaclesForm').style.display = 'none';
-  document.getElementById('pentaclesSuccess').style.display = 'block';
 }
     // ── SCROLL FADE-IN ──
   const observer = new IntersectionObserver((entries) => {
