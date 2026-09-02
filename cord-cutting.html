@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cord Cutting Ritual — Divine Intentions 33</title>
+<style>
+  :root {
+    --ember-dark: #6b1f11;
+    --ember: #a9432f;
+    --ember-deep: #8a2e1a;
+    --rust: #c9673f;
+    --rust-light: #e8a98f;
+    --cream: #fbeee2;
+    --cream-deep: #f5d9cd;
+    --ink: #3b1e1a;
+    --ink-soft: #5c3830;
+    --ember-glow: rgba(201, 103, 63, 0.16);
+    --paper: #fffaf8;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    background:
+      radial-gradient(circle at 15% 10%, var(--ember-glow), transparent 45%),
+      radial-gradient(circle at 85% 90%, var(--ember-glow), transparent 45%),
+      var(--cream);
+    color: var(--ink);
+    line-height: 1.65;
+  }
+
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 1.5rem 5rem; }
+
+  /* ---- Hero ---- */
+  header {
+    text-align: center;
+    padding: 4rem 1.5rem 3rem;
+    border-bottom: 1px solid var(--rust);
+    background: linear-gradient(180deg, var(--cream-deep), transparent);
+  }
+  .glyph { font-size: 2.2rem; margin-bottom: 0.8rem; opacity: 0.9; }
+  h1 {
+    font-family: 'Palatino Linotype', Palatino, Georgia, serif;
+    font-size: 2.7rem;
+    color: var(--ember-deep);
+    margin: 0 0 0.5rem;
+    letter-spacing: 0.5px;
+  }
+  .subtitle {
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 1.1rem;
+    margin: 0 0 1rem;
+  }
+  .brandline {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: var(--ember);
+    text-transform: uppercase;
+  }
+
+  /* ---- Sections ---- */
+  section {
+    max-width: 700px;
+    margin: 2.8rem auto 0;
+    padding: 0 1.8rem;
+  }
+  .card {
+    padding: 1.9rem 2rem;
+    background: var(--paper);
+    border: 1px solid var(--rust-light);
+    border-radius: 10px;
+    box-shadow: 0 2px 16px rgba(107, 31, 17, 0.06);
+  }
+  h2 {
+    font-family: 'Palatino Linotype', Palatino, Georgia, serif;
+    color: var(--ember-deep);
+    font-size: 1.5rem;
+    margin: 0 0 0.9rem;
+    text-align: center;
+  }
+  p { font-size: 1rem; color: var(--ink); margin: 0 0 1rem; }
+  p:last-child { margin-bottom: 0; }
+  .lead {
+    font-style: italic;
+    color: var(--ink-soft);
+    text-align: center;
+    font-size: 1.08rem;
+    margin: 0 0 0;
+  }
+
+  /* ---- Divider ---- */
+  .divider {
+    text-align: center;
+    margin: 2.6rem 0;
+    color: var(--rust);
+    font-size: 1.1rem;
+    letter-spacing: 8px;
+  }
+
+  /* ---- What's included list ---- */
+  .includes {
+    list-style: none;
+    padding: 0;
+    margin: 1.2rem 0 0;
+  }
+  .includes li {
+    display: flex;
+    gap: 0.7rem;
+    align-items: flex-start;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--cream-deep);
+    font-size: 0.96rem;
+  }
+  .includes li:last-child { border-bottom: none; }
+  .includes .mark { color: var(--ember-deep); font-size: 1.1rem; line-height: 1.4; }
+
+  /* ---- Process steps ---- */
+  .steps {
+    counter-reset: step;
+    margin-top: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+  .step {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .step-num {
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--ember-deep);
+    color: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    font-weight: bold;
+  }
+  .step-text h3 {
+    margin: 0 0 0.2rem;
+    font-size: 1rem;
+    color: var(--ember-deep);
+  }
+  .step-text p { margin: 0; font-size: 0.92rem; color: var(--ink-soft); }
+
+  /* ---- Price note ---- */
+  .price-note {
+    text-align: center;
+    margin-top: 1.4rem;
+    padding: 1rem 1.2rem;
+    background: var(--cream-deep);
+    border: 1px dashed var(--ember);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+  }
+  .price-note strong { color: var(--ember-deep); font-size: 1.1rem; }
+
+  /* ---- CTA ---- */
+  .cta-wrap {
+    text-align: center;
+    margin: 3rem auto 0;
+  }
+  a.cta-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--ember-deep), var(--ember-dark));
+    color: var(--cream) !important;
+    text-decoration: none;
+    padding: 1.05rem 2.8rem;
+    font-family: 'Palatino Linotype', Palatino, Georgia, serif;
+    font-size: 1.15rem;
+    letter-spacing: 0.5px;
+    border-radius: 30px;
+    box-shadow: 0 4px 18px rgba(107, 31, 17, 0.25);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  a.cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 22px rgba(107, 31, 17, 0.32);
+  }
+  .cta-note {
+    max-width: 460px;
+    margin: 1rem auto 0;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 3.5rem;
+    font-size: 0.8rem;
+    color: var(--ember);
+    font-style: italic;
+  }
+
+  @media (max-width: 560px) {
+    h1 { font-size: 2.1rem; }
+    .card { padding: 1.5rem 1.3rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="glyph">✂️ 🔥 ✂️</div>
+  <h1>Cord Cutting Ritual</h1>
+  <p class="subtitle">Release &middot; Sever &middot; Reclaim</p>
+  <p class="brandline">Divine Intentions 33</p>
+</header>
+
+<section>
+  <div class="card">
+    <h2>What Is a Cord Cutting Ritual?</h2>
+    <p>
+      A cord cutting ritual is sacred, ceremonial work. I perform this ritual on your behalf to
+      sever toxic ties, karmic bonds, trauma connections, and energetic attachments that are no
+      longer serving your highest good. This work is performed with full prayer, intention, and
+      ancestral guidance.
+    </p>
+    <p>
+      This isn't just symbolic release &mdash; it's trauma-rooted cord work and energetic clearing,
+      designed to help you come to terms with what you are ready to sever, and to open space for
+      what comes after.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>What's Included</h2>
+    <ul class="includes">
+      <li><span class="mark">&#10022;</span><span>A guided intake to identify and name the cords you are ready to release</span></li>
+      <li><span class="mark">&#10022;</span><span>A 20 minute phone consultation to go over your intentions and what to expect</span></li>
+      <li><span class="mark">&#10022;</span><span>A full ceremonial cord cutting ritual performed with prayer and intention</span></li>
+      <li><span class="mark">&#10022;</span><span>Energetic clearing and space held for what comes after release</span></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <h3>Complete Your Intake</h3>
+          <p>Answer a set of guided questions to identify and name the cords you're ready to release. Your honesty here is what makes the ritual powerful.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <h3>Confirm Your Ritual</h3>
+          <p>Send your payment to confirm your session. Your ritual is confirmed once both payment and your intake form are received.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <h3>Consultation Call</h3>
+          <p>We'll schedule a 20 minute phone call to go over your intentions and what to expect during and after the ritual.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text">
+          <h3>The Ritual</h3>
+          <p>Your cord cutting is performed with full sacred ceremony, prayer, and intention. What you choose to release, you give permission to burn.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-note">
+      <strong>$188</strong> &middot; includes intake, consultation, and full ceremonial ritual
+    </div>
+  </div>
+</section>
+
+<div class="divider">✦ ✦ ✦</div>
+
+<div class="cta-wrap">
+  <a class="cta-btn" href="cord-cutting-intake.html">Begin Your Intake →</a>
+  <p class="cta-note">
+    Your intake is the first step before booking. Once I receive it, I'll follow up with next
+    steps to confirm your ritual.
+  </p>
+</div>
+
+<footer>
+  Divine Intentions 33 &middot; Made with reverence 🌻
+</footer>
+
+</body>
+</html>
