@@ -1328,6 +1328,7 @@
     <li><a href="#" onclick="showPage('home');return false;" class="nav-tab active" data-page="home">Home</a></li>
     <li><a href="#" onclick="showPage('about');return false;" class="nav-tab" data-page="about">About</a></li>
     <li><a href="#" onclick="showPage('services');return false;" class="nav-tab" data-page="services">Sessions</a></li>
+    <li><a href="./queen-city-spirit-market.html" class="nav-tab">Events</a></li>
     <li><a href="#" onclick="showPage('book');return false;" class="nav-tab" data-page="book">Order Book</a></li>
     <li><a href="#" onclick="showPage('shop');return false;" class="nav-tab" data-page="shop">Botánica</a></li>
     <li><a href="./crystals.html" class="nav-tab" data-page="crystals">Crystals</a></li>
@@ -1347,6 +1348,7 @@
   <a href="#" onclick="showPage('home');toggleMobileMenu();return false;">🏠 Home</a>
   <a href="#" onclick="showPage('about');toggleMobileMenu();return false;">✦ About</a>
   <a href="#" onclick="showPage('services');toggleMobileMenu();return false;">🔮 Sessions</a>
+  <a href="./queen-city-spirit-market.html">🔥 The Hoodoo Experience</a>
   <a href="https://shopdivineintentions33.myshopify.com" target="_blank" rel="noopener" onclick="toggleMobileMenu();">🛒 Book on Shopify</a>
   <a href="#" onclick="showPage('book');toggleMobileMenu();return false;">📖 Order Book</a>
   <a href="./crystals.html">💎 Crystals</a>
@@ -1422,6 +1424,30 @@
     </div>
 
 
+    <!-- HOODOO EXPERIENCE EVENT BANNER -->
+    <a id="hoodooBanner" href="./queen-city-spirit-market.html" style="display:block;margin:1.5rem auto 0;max-width:560px;text-decoration:none;">
+      <div style="border:2px solid rgba(201,168,76,0.6);background:linear-gradient(135deg,rgba(120,50,15,0.35) 0%,rgba(26,18,7,0.9) 100%);padding:1.2rem 1.5rem;text-align:center;position:relative;overflow:hidden;">
+        <p style="font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;">✦ Upcoming Event ✦</p>
+        <p style="font-family:'Cinzel',serif;font-size:1.35rem;color:#FAF3E0;font-weight:600;margin-bottom:0.2rem;">The Hoodoo Experience</p>
+        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:rgba(201,168,76,0.85);margin-bottom:0.7rem;">Madame Divine &amp; Ladydi · Where Tradition Meets Luxury</p>
+        <p style="font-size:0.78rem;letter-spacing:0.08em;color:rgba(250,243,224,0.75);margin-bottom:0.3rem;"><span class="hoodoo-date" data-date="2026-11-14">Sat Nov 14</span> <span class="hoodoo-date" data-date="2026-11-28">· Sat Nov 28</span> <span class="hoodoo-date" data-date="2026-12-12">· Sat Dec 12</span> · 11am–5pm</p>
+        <p style="font-size:0.72rem;color:rgba(250,243,224,0.5);margin-bottom:0.9rem;">Natural Vibez · 10110 Johnston Rd, Suite #10, Charlotte, NC</p>
+        <span style="display:inline-block;font-family:'Cinzel',serif;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:#1A1207;background:var(--gold);padding:0.5rem 1.1rem;">Details &amp; Register →</span>
+      </div>
+    </a>
+    <script>
+      (function () {
+        var today = new Date(); today.setHours(0, 0, 0, 0);
+        var left = 0;
+        document.querySelectorAll('.hoodoo-date').forEach(function (el) {
+          if (new Date(el.getAttribute('data-date') + 'T23:59:59') < today) el.style.display = 'none'; else left++;
+        });
+        var first = [].find.call(document.querySelectorAll('.hoodoo-date'), function (el) { return el.style.display !== 'none'; });
+        if (first) first.textContent = first.textContent.replace(/^· /, '');
+        if (!left) document.getElementById('hoodooBanner').style.display = 'none';
+      })();
+    </script>
+
     <!-- FEATURED PRODUCT BANNER -->
     <div style="margin:1.5rem auto 0;max-width:560px;cursor:pointer;" onclick="showPage('shop')">
       <div style="border:2px solid rgba(201,168,76,0.5);overflow:hidden;position:relative;box-shadow:0 8px 40px rgba(201,168,76,0.15);">
@@ -1451,6 +1477,52 @@
     </div>
   </div>
 </section>
+<!-- EMAIL LIST SIGN-UP (Klaviyo: Divine Intentions 33 | Sacred Community) -->
+<section id="email-signup" style="padding:4rem 1.5rem;border-top:1px solid rgba(201,168,76,0.15);">
+  <div class="section-inner" style="max-width:560px;margin:0 auto;text-align:center;">
+    <span class="section-label">✦ Stay Connected</span>
+    <h2 class="section-title">Join the Sacred Community</h2>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:rgba(250,243,224,0.6);line-height:1.8;margin-bottom:1.5rem;">New here? Be the first to hear about upcoming events, live readings, new rituals and products, and messages from Madame Divine.</p>
+    <form id="emailSignupForm" onsubmit="return submitEmailSignup(event)" style="display:flex;flex-direction:column;gap:0.8rem;">
+      <input type="text" id="signupName" placeholder="First name" autocomplete="given-name" style="width:100%;background:rgba(201,168,76,0.04);border:1px solid rgba(201,168,76,0.25);color:var(--cream);font-family:'Jost',sans-serif;font-size:0.95rem;padding:0.9rem 1rem;outline:none;">
+      <input type="email" id="signupEmail" required placeholder="Your email address" autocomplete="email" style="width:100%;background:rgba(201,168,76,0.04);border:1px solid rgba(201,168,76,0.25);color:var(--cream);font-family:'Jost',sans-serif;font-size:0.95rem;padding:0.9rem 1rem;outline:none;">
+      <button type="submit" id="signupBtn" class="btn-primary" style="width:100%;border:none;cursor:pointer;">Join the Community</button>
+    </form>
+    <p style="font-size:0.72rem;color:rgba(250,243,224,0.35);margin-top:0.9rem;">No spam. Only sacred transmissions. Unsubscribe anytime.</p>
+    <p id="signupMsg" role="status" style="display:none;margin-top:1rem;font-size:0.95rem;color:var(--gold);"></p>
+  </div>
+</section>
+<script>
+  function klaviyoSubscribe(email, firstName, source) {
+    var profile = { email: email, subscriptions: { email: { marketing: { consent: 'SUBSCRIBED' } } } };
+    if (firstName) profile.first_name = firstName;
+    return fetch('https://a.klaviyo.com/client/subscriptions?company_id=R2VnjM', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/vnd.api+json', 'revision': '2025-01-15' },
+      body: JSON.stringify({ data: { type: 'subscription',
+        attributes: { custom_source: source, profile: { data: { type: 'profile', attributes: profile } } },
+        relationships: { list: { data: { type: 'list', id: 'UKvpTp' } } } } })
+    }).then(function (r) { if (!r.ok) throw new Error('Klaviyo ' + r.status); });
+  }
+  function submitEmailSignup(e) {
+    e.preventDefault();
+    var email = document.getElementById('signupEmail').value.trim();
+    var name = document.getElementById('signupName').value.trim();
+    var btn = document.getElementById('signupBtn'), msg = document.getElementById('signupMsg');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { msg.textContent = 'Please enter a valid email address.'; msg.style.display = 'block'; return false; }
+    btn.disabled = true; btn.textContent = 'Joining…';
+    klaviyoSubscribe(email, name, 'Website homepage').then(function () {
+      document.getElementById('emailSignupForm').style.display = 'none';
+      msg.textContent = '🌟 Almost there! Check your inbox and tap the confirmation link to join the Sacred Community.';
+      msg.style.display = 'block';
+    }).catch(function () {
+      btn.disabled = false; btn.textContent = 'Join the Community';
+      msg.textContent = 'Something went wrong. Please try again, or email Divinexintentions33@gmail.com.';
+      msg.style.display = 'block';
+    });
+    return false;
+  }
+</script>
 </div><!-- end page-home -->
 
 <!-- PAGE: ABOUT -->
