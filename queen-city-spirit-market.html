@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Madame Divine | Queen City Spirit Market</title>
+  <title>The Hoodoo Experience | Madame Divine &amp; Lady Di</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -447,7 +447,7 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="event-badge">Queen City Spirit Market</div>
+  <div class="event-badge">The Hoodoo Experience</div>
 
   <div class="sigil">
     <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -463,7 +463,7 @@
   </div>
 
   <h1>Madame Divine</h1>
-  <p class="subtitle">Psychic Medium &middot; Energy Healer &middot; Spiritual Guide</p>
+  <p class="subtitle">Featuring Madame Divine &amp; Lady Di</p>
   <div class="divider"></div>
   <p class="hero-copy">
     You were guided here for a reason. Whether you seek clarity, healing, or a deeper connection to your path — this is your invitation.
@@ -471,17 +471,29 @@
   <div class="event-details">
     <div class="event-detail-item">
       <span class="event-detail-icon">📅</span>
-      <span>June 20, 2026 &nbsp;·&nbsp; 12pm – 6pm EST</span>
+      <span>Upcoming dates &nbsp;·&nbsp; 11am – 5pm</span>
+    </div>
+    <div class="event-detail-item event-date" data-date="2026-11-14">
+      <span class="event-detail-icon">✦</span>
+      <span>Saturday, November 14, 2026</span>
+    </div>
+    <div class="event-detail-item event-date" data-date="2026-11-28">
+      <span class="event-detail-icon">✦</span>
+      <span>Saturday, November 28, 2026</span>
+    </div>
+    <div class="event-detail-item event-date" data-date="2026-12-12">
+      <span class="event-detail-icon">✦</span>
+      <span>Saturday, December 12, 2026</span>
     </div>
     <div class="event-detail-item">
       <span class="event-detail-icon">📍</span>
-      <span>The Bag Lady &nbsp;·&nbsp; 1516 E 4th St, Charlotte, NC 28204</span>
+      <span>Natural Vibez &nbsp;·&nbsp; 10110 Johnston Rd, Suite #10, Charlotte, NC 28210</span>
     </div>
   </div>
 
   <div class="cta-group">
-    <a href="https://shopdivineintentions33.myshopify.com" class="btn-primary" target="_blank" rel="noopener">Book a Reading</a>
-    <a href="#sacred-circle" class="btn-secondary">Join the Sacred Circle</a>
+    <a href="https://www.eventbrite.com/e/the-hoodoo-experience-where-tradition-meets-luxury-tickets-1997169927014" class="btn-primary" target="_blank" rel="noopener">Register on Eventbrite</a>
+    <a href="https://shopdivineintentions33.myshopify.com" class="btn-secondary" target="_blank" rel="noopener">Book a Reading</a>
   </div>
 </section>
 
@@ -591,7 +603,7 @@
 
     // Send to your email via mailto fallback (replace with Mailchimp/ConvertKit later)
     const subject = encodeURIComponent('New Sacred Circle Sign-Up: ' + name);
-    const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nSource: Queen City Spirit Market Landing Page');
+    const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nSource: The Hoodoo Experience Landing Page');
     window.open('mailto:divinexintentions33@gmail.com?subject=' + subject + '&body=' + body);
 
     document.getElementById('success-msg').style.display = 'block';
@@ -599,11 +611,14 @@
     document.getElementById('email-input').value = '';
   }
 
-  // Smooth scroll for anchor link
-  document.querySelector('a[href="#sacred-circle"]').addEventListener('click', function(e) {
-    e.preventDefault();
-    document.getElementById('sacred-circle').scrollIntoView({ behavior: 'smooth' });
-  });
+  // Hide event dates once they have passed
+  (function () {
+    var today = new Date(); today.setHours(0, 0, 0, 0);
+    document.querySelectorAll('.event-date').forEach(function (el) {
+      var d = new Date(el.getAttribute('data-date') + 'T23:59:59');
+      if (d < today) el.style.display = 'none';
+    });
+  })();
 </script>
 
 </body>
