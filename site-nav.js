@@ -31,7 +31,7 @@
   }
 
   /* ── Desktop dropdowns (disclosure pattern) ── */
-  var triggers = Array.prototype.slice.call(header.querySelectorAll('.di-tab[aria-controls]'));
+  var triggers = Array.prototype.slice.call(header.querySelectorAll('.di-tab-toggle[aria-controls]'));
   var closeTimer = null;
 
   function panelOf(btn) { return document.getElementById(btn.getAttribute('aria-controls')); }
@@ -49,7 +49,8 @@
   function closeAllPanels() { triggers.forEach(closePanel); }
 
   triggers.forEach(function (btn) {
-    var li = btn.parentElement;
+    var li = btn.closest('li');
+    var tabLink = li.querySelector('a.di-tab');
     var panel = panelOf(btn);
 
     btn.addEventListener('click', function () {
@@ -65,6 +66,11 @@
       } else if (e.key === 'ArrowUp') {
         e.preventDefault(); openPanel(btn); var l = linksOf(btn); l[l.length - 1].focus();
       }
+    });
+
+    // ArrowDown on the page link also opens its menu
+    if (tabLink) tabLink.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowDown') { e.preventDefault(); openPanel(btn); linksOf(btn)[0].focus(); }
     });
 
     panel.addEventListener('keydown', function (e) {
