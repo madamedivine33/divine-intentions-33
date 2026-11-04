@@ -186,6 +186,7 @@
       }
     });
     window.addEventListener('popstate', function () { route(location.hash, false) || window.showPage('home'); });
+    window.addEventListener('hashchange', function () { route(location.hash, true); });
     if (location.hash && location.hash.length > 1) route(location.hash, false);
     else setCurrent('home');
   } else {

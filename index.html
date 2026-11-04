@@ -1220,6 +1220,85 @@
 </style>
 
 <link rel="stylesheet" href="site-nav.css">
+<style id="phase1-sections">
+  /* ── Parchment sections: Books & Sacred Resources, One-on-One Guidance ── */
+  .pc {
+    --pc-bg: #FBF5E6; --pc-bg2: #F5EBD3; --pc-ink: #3B2812; --pc-soft: #6E5332;
+    --pc-gold: #B08A3E; --pc-rule: rgba(176,138,62,0.28); --pc-honey: #D99A3C; --pc-blush: #EBC9C0;
+    background: linear-gradient(180deg, var(--pc-bg) 0%, #FDF9EF 50%, var(--pc-bg2) 100%);
+    color: var(--pc-ink);
+    padding: 5.5rem 2rem 5rem;
+    position: relative;
+  }
+  .pc-inner { max-width: 1080px; margin: 0 auto; }
+  #services.pc { background: linear-gradient(180deg, #FBF5E6 0%, #FDF9EF 50%, #F5EBD3 100%); border-top: 0; }
+  .pc-eyebrow { display:block; text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; color:var(--pc-soft); margin-bottom:0.4rem; }
+  .pc-title { text-align:center; font-family:'Cinzel',serif; font-weight:600; font-size:clamp(1.6rem,3.4vw,2.5rem); letter-spacing:0.06em; color:var(--pc-ink); line-height:1.2; }
+  .pc-crown { display:block; width:34px; height:22px; margin:0 auto 0.9rem; }
+  .pc-lede { max-width:640px; margin:1rem auto 0; text-align:center; font-family:'Cormorant Garamond',serif; font-size:1.2rem; line-height:1.75; color:var(--pc-soft); }
+  .pc-ornament { display:flex; align-items:center; justify-content:center; gap:14px; margin:2.2rem auto 2.6rem; color:var(--pc-gold); }
+  .pc-ornament::before, .pc-ornament::after { content:''; height:1px; width:min(140px,22vw); background:linear-gradient(90deg,transparent,var(--pc-gold)); }
+  .pc-ornament::after { transform:scaleX(-1); }
+  .pc-ornament svg { width:14px; height:14px; }
+
+  .pc-btn { display:inline-flex; align-items:center; justify-content:center; padding:0.8rem 1.3rem; min-height:44px;
+    font-family:'Cinzel',serif; font-weight:600; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; white-space:nowrap;
+    color:#2E1F0B; background:linear-gradient(135deg,#F2C24F 0%,var(--pc-honey) 60%,#C4862E 100%); border:1px solid #A8742A;
+    box-shadow: inset 0 0 0 2px rgba(255,248,228,0.55); border-radius:2px; transition:filter .2s, box-shadow .2s; }
+  .pc-btn:hover { filter:brightness(1.05); box-shadow: inset 0 0 0 2px rgba(255,248,228,0.75), 0 6px 16px rgba(217,154,60,0.35); }
+  .pc-link { font-family:'Cormorant Garamond',serif; font-size:1.05rem; font-style:italic; color:#7A5520; text-decoration:underline; text-decoration-color:var(--pc-rule); text-underline-offset:4px; }
+  .pc-link:hover { text-decoration-color:var(--pc-gold); }
+  .pc a:focus-visible { outline:2px solid var(--pc-honey); outline-offset:3px; }
+
+  /* Books, Workbooks & Sacred Resources */
+  .pc-books { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:3.2rem 3.5rem; }
+  .pc-book { display:grid; grid-template-columns:150px minmax(0,1fr); gap:1.6rem; align-items:start; }
+  .pc-book figure { margin:0; aspect-ratio:3/4; background:#EFE2C4; box-shadow:0 14px 30px rgba(59,40,18,0.18); overflow:hidden; }
+  .pc-book img { width:100%; height:100%; object-fit:cover; display:block; }
+  .pc-book h3 { font-family:'Cinzel',serif; font-weight:600; font-size:1.05rem; letter-spacing:0.03em; line-height:1.35; color:var(--pc-ink); }
+  .pc-format { margin:0.35rem 0 0.7rem; font-family:'Jost',sans-serif; font-size:0.78rem; letter-spacing:0.04em; color:var(--pc-soft); }
+  .pc-book p.pc-desc { font-family:'Cormorant Garamond',serif; font-size:1.08rem; line-height:1.65; color:#4A3420; margin-bottom:1rem; }
+  .pc-buy { display:flex; align-items:center; flex-wrap:wrap; gap:0.9rem 1.2rem; }
+  .pc-price { font-family:'Cinzel',serif; font-weight:600; font-size:1.15rem; color:var(--pc-ink); }
+
+  /* One-on-One Guidance */
+  .pc-index { display:flex; flex-wrap:wrap; justify-content:center; gap:0.4rem 1.6rem; margin-top:1.6rem; }
+  .pc-index a { font-family:'Cormorant Garamond',serif; font-size:1.12rem; color:#7A5520; text-decoration:none; border-bottom:1px solid transparent; padding:0.3rem 0; }
+  .pc-index a:hover { border-bottom-color:var(--pc-gold); }
+  .pc-note { max-width:720px; margin:1.6rem auto 0; text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.02rem; color:var(--pc-soft); line-height:1.7; }
+
+  .pc-chapter { margin-top:4.2rem; padding:0; }
+  .pc-chapter-head { display:flex; align-items:baseline; justify-content:space-between; gap:1.5rem; flex-wrap:wrap; padding-bottom:0.9rem; border-bottom:1px solid var(--pc-gold); }
+  .pc-chapter-head h3 { font-family:'Cinzel',serif; font-weight:600; font-size:1.35rem; letter-spacing:0.08em; color:var(--pc-ink); }
+  .pc-chapter-head p { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.05rem; color:var(--pc-soft); max-width:520px; }
+
+  .pc-row { display:grid; grid-template-columns:minmax(0,1fr) 150px 108px auto; align-items:center; gap:1rem 1.8rem; padding:1.6rem 0; border-bottom:1px solid var(--pc-rule); }
+  .pc-row h4 { font-family:'Cormorant Garamond',serif; font-weight:600; font-size:1.42rem; line-height:1.25; color:var(--pc-ink); }
+  .pc-row .pc-desc { margin-top:0.35rem; font-family:'Cormorant Garamond',serif; font-size:1.08rem; line-height:1.6; color:#4A3420; max-width:560px; }
+  .pc-row .pc-req { margin-top:0.6rem; padding-left:0.8rem; border-left:2px solid var(--pc-blush); font-family:'Jost',sans-serif; font-size:0.82rem; line-height:1.6; color:var(--pc-soft); max-width:560px; }
+  .pc-row .pc-req a { color:#7A5520; }
+  .pc-meta { font-family:'Jost',sans-serif; font-size:0.8rem; letter-spacing:0.03em; line-height:1.5; color:var(--pc-soft); }
+  .pc-row .pc-price { text-align:right; }
+  .pc-row .pc-price small { display:block; font-family:'Jost',sans-serif; font-weight:400; font-size:0.68rem; letter-spacing:0.03em; color:var(--pc-soft); }
+  .pc-actions { display:flex; flex-direction:column; align-items:flex-end; gap:0.45rem; }
+
+  .pc-closing { margin-top:4rem; text-align:center; }
+  .pc-closing p { font-family:'Cormorant Garamond',serif; font-size:1.15rem; color:var(--pc-soft); margin-bottom:1.2rem; }
+
+  @media (max-width: 860px) {
+    .pc { padding: 4rem 1.25rem 3.5rem; }
+    .pc-books { grid-template-columns: 1fr; gap: 2.6rem; }
+    .pc-row { grid-template-columns: minmax(0,1fr) auto; grid-template-areas: "main main" "meta meta" "price act"; gap: 0.7rem 1rem; }
+    .pc-row > .pc-main { grid-area: main; }
+    .pc-row > .pc-meta { grid-area: meta; }
+    .pc-row > .pc-price { grid-area: price; text-align: left; }
+    .pc-row > .pc-actions { grid-area: act; }
+  }
+  @media (max-width: 480px) {
+    .pc-book { grid-template-columns: 104px minmax(0,1fr); gap: 1.1rem; }
+    .pc-row h4 { font-size: 1.28rem; }
+  }
+</style>
 </head>
 <body>
 
@@ -1444,7 +1523,7 @@
     </p>
 
     <!-- LIVE READING FLASH BANNER -->
-    <div style="margin:1.5rem auto 0;max-width:560px;cursor:pointer;" onclick="showPage('services');showTab('live-general');highlightTab('live-general')">
+    <div style="margin:1.5rem auto 0;max-width:560px;cursor:pointer;" onclick="location.hash='services/live-general'">
       <div style="border:2px solid #FFD700;background:linear-gradient(135deg,rgba(255,50,50,0.15) 0%,rgba(255,215,0,0.12) 100%);padding:1rem 1.5rem;position:relative;overflow:hidden;animation:livePulse 1.8s ease-in-out infinite;">
         <div style="position:absolute;inset:0;background:linear-gradient(90deg,transparent 0%,rgba(255,215,0,0.08) 50%,transparent 100%);animation:liveShimmer 2s linear infinite;"></div>
         <div style="display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;position:relative;">
@@ -1546,6 +1625,10 @@
         </p>
 
         <p>
+          My spiritual practice is aligned with <strong>Santería</strong> and <strong>Espiritismo</strong>. These traditions are part of my spiritual foundation, and I carry them with deep respect — they shape the prayer, reverence, and care I bring to every reading and every ritual. I serve as a <strong>psychic medium, intuitive reader, curandera, and Reiki practitioner</strong>, meeting each person where they are with honesty and compassion.
+        </p>
+
+        <p>
           I am a <strong>Published Author & Poet</strong> — Emile Maria Rivera. My book <em>Called by Fire, Crowned by Spirit</em> carries the healing that my work in all forms was built to deliver. I am also an <strong>intentional handcrafted beader</strong>, an herbalist, a Curandera, and a Reiki practitioner.
         </p>
 
@@ -1570,7 +1653,7 @@
       <div class="about-pillars">
         <div class="pillar">
           <span class="pillar-icon">🔮</span>
-          <h3>Psychic Medium</h3>
+          <h3>Psychic Medium &amp; Intuitive Reader</h3>
           <p>Connected to God/Source with divine connections to angels and guides. Bringing clarity and closure from loved ones who have passed.</p>
         </div>
         <div class="pillar">
@@ -1599,6 +1682,67 @@
           <p>Emile Maria Rivera — author of <em>Called by Fire, Crowned by Spirit</em>. Bringing healing to all who indulge through the written word.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKS, WORKBOOKS & SACRED RESOURCES (titles, prices, covers and links from Shopify) -->
+<section class="pc" id="sacred-resources" aria-labelledby="sacredResourcesTitle">
+  <div class="pc-inner">
+    <svg class="pc-crown" viewBox="0 0 44 28" aria-hidden="true" focusable="false"><path fill="#B08A3E" d="M3 24 L1 6 L12 15 L22 1 L32 15 L43 6 L41 24 Z"/><rect x="3" y="25" width="38" height="3" fill="#D99A3C"/><circle cx="1.5" cy="5" r="1.6" fill="#F2C24F"/><circle cx="22" cy="1.6" r="1.8" fill="#F2C24F"/><circle cx="42.5" cy="5" r="1.6" fill="#F2C24F"/></svg>
+    <h2 class="pc-title" id="sacredResourcesTitle">Books, Workbooks &amp; Sacred Resources</h2>
+    <p class="pc-lede">My work extends beyond private readings and spiritual products. I also create books, workbooks, and guided resources for personal development, self-reflection, spiritual growth, healing, and boundaries — companions you can return to between our sessions.</p>
+    <div class="pc-ornament" aria-hidden="true"><svg viewBox="0 0 12 12"><path fill="currentColor" d="M6 0l1.4 4.6L12 6l-4.6 1.4L6 12 4.6 7.4 0 6l4.6-1.4z"/></svg></div>
+    <div class="pc-books">
+      <article class="pc-book">
+        <figure><img src="https://cdn.shopify.com/s/files/1/0773/1648/9306/files/called-by-fire-crowned-by-spirit-cover.webp?v=1792842786&amp;width=420" alt="Cover of Called by Fire, Crowned by Spirit" loading="lazy"></figure>
+        <div>
+          <h3>Called by Fire, Crowned by Spirit — Signed Author Edition</h3>
+          <p class="pc-format">Signed paperback · Poetry</p>
+          <p class="pc-desc">An intimate collection of original poetry by Emile Maria Rivera, known as Madame Divine — journeying through The Ache, Dark Mirror, Rebirth, and Sacred. Each paperback copy is personally signed by the author.</p>
+          <div class="pc-buy">
+            <span class="pc-price">$34.88</span>
+            <a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/called-by-fire-crowned-by-spirit" target="_blank" rel="noopener">Buy on Shopify<span class="di-sr"> (opens the Shopify store)</span></a>
+            <a class="pc-link" href="https://amazon.com/dp/B0GRL26RSV" target="_blank" rel="noopener">Also on Amazon</a>
+          </div>
+        </div>
+      </article>
+      <article class="pc-book">
+        <figure><img src="https://cdn.shopify.com/s/files/1/0773/1648/9306/files/30DaysofReturningtoYourselfBook_ece49d8e-1f26-4028-91d9-5bf7e781e41b.png?v=1793687278&amp;width=420" alt="Cover of My Sacred Boundaries" loading="lazy"></figure>
+        <div>
+          <h3>My Sacred Boundaries | Digital Guided Workbook</h3>
+          <p class="pc-format">26-page digital PDF workbook</p>
+          <p class="pc-desc">A beautifully illustrated reflection workbook to help you recognize your needs, speak your truth, and stand firmly in your personal boundaries — because you can love others deeply without abandoning yourself.</p>
+          <div class="pc-buy">
+            <span class="pc-price">$16.00</span>
+            <a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/my-sacred-boundaries-digital-guided-workbook" target="_blank" rel="noopener">Buy on Shopify<span class="di-sr"> (opens the Shopify store)</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="pc-book">
+        <figure><img src="https://cdn.shopify.com/s/files/1/0773/1648/9306/files/DivineIntentions_ReturningtoYourself_1.png?v=1793686323&amp;width=420" alt="Cover of 30 Days of Returning to Yourself" loading="lazy"></figure>
+        <div>
+          <h3>30 Days of Returning to Yourself | Digital Guided Journal</h3>
+          <p class="pc-format">Digital PDF guided journal</p>
+          <p class="pc-desc">A 30-day self-love, healing, and sacred boundaries journey. Morning practices, prayer, breathwork, and daily reflection invite you to reconnect with yourself, honor your worth, and rebuild self-trust.</p>
+          <div class="pc-buy">
+            <span class="pc-price">$19.00</span>
+            <a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/30-days-of-returning-to-yourself-digital-guided-journal" target="_blank" rel="noopener">Buy on Shopify<span class="di-sr"> (opens the Shopify store)</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="pc-book">
+        <figure><img src="https://cdn.shopify.com/s/files/1/0773/1648/9306/files/SevenPentaclesWealthActivationKit_f074b85c-0096-408d-8ae9-4b812c4e2c21.png?v=1793006348&amp;width=420" alt="Cover of Seven Pentacles of Wealth" loading="lazy"></figure>
+        <div>
+          <h3>Seven Pentacles of Wealth — Digital Activation Kit</h3>
+          <p class="pc-format">Digital ritual guide</p>
+          <p class="pc-desc">A digital ritual guide for prosperity-focused prayer, reflection, and intentional practice with the Seven Pentacles of Wealth.</p>
+          <div class="pc-buy">
+            <span class="pc-price">$11.11</span>
+            <a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/seven-pentacles-of-wealth-digital-activation-kit" target="_blank" rel="noopener">Buy on Shopify<span class="di-sr"> (opens the Shopify store)</span></a>
+          </div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -2239,231 +2383,213 @@
 <!-- PAGE: SERVICES -->
 <div class="page" id="page-services">
 <!-- SERVICES -->
-<section id="services">
+<section id="services" class="pc">
   <div class="section-inner">
-    <span class="section-label">✦ Sessions with Madame Divine</span>
-    <h2 class="section-title">Book a Reading</h2>
-    <p class="section-sub">One-on-one guidance with Madame Divine</p>
+    <svg class="pc-crown" viewBox="0 0 44 28" aria-hidden="true" focusable="false"><path fill="#B08A3E" d="M3 24 L1 6 L12 15 L22 1 L32 15 L43 6 L41 24 Z"/><rect x="3" y="25" width="38" height="3" fill="#D99A3C"/><circle cx="1.5" cy="5" r="1.6" fill="#F2C24F"/><circle cx="22" cy="1.6" r="1.8" fill="#F2C24F"/><circle cx="42.5" cy="5" r="1.6" fill="#F2C24F"/></svg>
+    <span class="pc-eyebrow">One-on-one guidance with Madame Divine</span>
+    <h2 class="pc-title">Book a Reading</h2>
 
-    <!-- QUICK SELECT BUTTONS -->
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:0.8rem;margin-bottom:2rem;">
-      <button onclick="showTab('live-general');highlightTab('live-general')" style="background:rgba(255,200,0,0.12);border:2px solid rgba(255,200,0,0.5);color:var(--gold-pale);padding:1rem;font-family:'Jost',sans-serif;font-size:0.78rem;letter-spacing:0.1em;cursor:pointer;transition:all 0.3s;text-align:center;line-height:1.5;" onmouseover="this.style.background='rgba(255,200,0,0.22)'" onmouseout="this.style.background='rgba(255,200,0,0.12)'">
-        ⚡<br><strong style="color:#FFD700;">Quick Reads</strong><br><span style="font-size:0.7rem;opacity:0.6;">3 Card · Timeline · Dice</span>
-      </button>
-      <button onclick="showTab('live-general');highlightTab('live-general')" style="background:rgba(255,50,50,0.12);border:2px solid rgba(255,80,80,0.5);color:var(--gold-pale);padding:1rem;font-family:'Jost',sans-serif;font-size:0.78rem;letter-spacing:0.1em;cursor:pointer;transition:all 0.3s;text-align:center;line-height:1.5;" onmouseover="this.style.background='rgba(255,50,50,0.22)'" onmouseout="this.style.background='rgba(255,50,50,0.12)'">
-        🔴<br><strong style="color:#FF8888;">Live — General</strong><br><span style="font-size:0.7rem;opacity:0.6;">Full · Big Juicy · 1 Topic</span>
-      </button>
-      <button onclick="showTab('live-premium');highlightTab('live-premium')" style="background:rgba(255,50,50,0.08);border:1px solid rgba(255,80,80,0.35);color:var(--gold-pale);padding:1rem;font-family:'Jost',sans-serif;font-size:0.78rem;letter-spacing:0.1em;cursor:pointer;transition:all 0.3s;text-align:center;line-height:1.5;" onmouseover="this.style.background='rgba(255,50,50,0.16)'" onmouseout="this.style.background='rgba(255,50,50,0.08)'">
-        🎥<br><strong style="color:#FFAAAA;">Live — Premium</strong><br><span style="font-size:0.7rem;opacity:0.6;">Mediumship · Blueprint · Twin</span>
-      </button>
-      <button onclick="showTab('private');highlightTab('private')" style="background:rgba(40,120,60,0.12);border:1px solid rgba(60,180,80,0.35);color:var(--gold-pale);padding:1rem;font-family:'Jost',sans-serif;font-size:0.78rem;letter-spacing:0.1em;cursor:pointer;transition:all 0.3s;text-align:center;line-height:1.5;" onmouseover="this.style.background='rgba(40,120,60,0.22)'" onmouseout="this.style.background='rgba(40,120,60,0.12)'">
-        🔮<br><strong style="color:#88DD99;">Private Reading</strong><br><span style="font-size:0.7rem;opacity:0.6;">1hr · 30min · Mediumship</span>
-      </button>
-      <button onclick="showTab('reiki');highlightTab('reiki')" style="background:rgba(40,120,60,0.08);border:1px solid rgba(60,180,80,0.25);color:var(--gold-pale);padding:1rem;font-family:'Jost',sans-serif;font-size:0.78rem;letter-spacing:0.1em;cursor:pointer;transition:all 0.3s;text-align:center;line-height:1.5;" onmouseover="this.style.background='rgba(40,120,60,0.18)'" onmouseout="this.style.background='rgba(40,120,60,0.08)'">
-        ✨<br><strong style="color:#AAEEBB;">Reiki & Energy</strong><br><span style="font-size:0.7rem;opacity:0.6;">Attunement · Trauma · Cord</span>
-      </button>
-    </div>
+    <!-- ONE-ON-ONE GUIDANCE — editorial service list (prices = current Shopify prices) -->
+    <div class="pc-inner">
+      <nav class="pc-index" aria-label="Reading categories">
+        <a href="#services/private" data-route>Private Readings</a>
+        <a href="#services/mediumship" data-route>Mediumship</a>
+        <a href="#services/live-general" data-route>Live Readings</a>
+        <a href="#services/digital" data-route>Digital Readings &amp; Reports</a>
+        <a href="#services/reiki" data-route>Rituals &amp; Energy Work</a>
+      </nav>
+      <p class="pc-note">Choose your reading, book and pay securely on Shopify, and you’ll receive your confirmation and next steps by email. No pregnancy, health, or death readings.</p>
 
-    <!-- GOING LIVE CALLOUT -->
-    <div style="border:1px solid rgba(255,80,80,0.25);background:linear-gradient(135deg,rgba(255,50,50,0.07) 0%,transparent 100%);padding:1.2rem 1.5rem;margin-bottom:2rem;display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;">
-      <span style="font-size:1.5rem;">🎥</span>
-      <div>
-        <p style="font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.15em;color:#FF8888;margin-bottom:0.3rem;">WATCHING MADAME DIVINE LIVE?</p>
-        <p style="font-size:0.82rem;color:rgba(250,243,224,0.6);line-height:1.6;">Choose and pay for your live reading through Shopify, then follow the instructions provided with your purchase to get in the queue. Live on TikTok · Instagram · YouTube.</p>
-      </div>
-      <a href="https://shopdivineintentions33.myshopify.com" target="_blank" rel="noopener" class="btn-primary" style="white-space:nowrap;margin-left:auto;background:#FF5555;border:none;">Book Your Reading on Shopify →</a>
-    </div>
-
-    <div class="notice-box">
-      <strong>Please note:</strong> No pregnancy, health, or death readings. · Select and pay for your reading through Shopify, then follow the scheduling instructions provided with your purchase. · For live readings, include your platform + username as instructed.
-    </div>
-
-    <!-- TABS — hidden visually but still functional for JS -->
-    <div class="services-tabs" style="display:none;">
-      <button class="tab-btn active" id="tabBtn-quick" onclick="showTab('quick');highlightTab('quick')">Quick Reads</button>
-      <button class="tab-btn" id="tabBtn-live-general" onclick="showTab('live-general');highlightTab('live-general')">Live — General</button>
-      <button class="tab-btn" id="tabBtn-live-premium" onclick="showTab('live-premium');highlightTab('live-premium')">Live — Premium</button>
-      <button class="tab-btn" id="tabBtn-private" onclick="showTab('private');highlightTab('private')">Private Sessions</button>
-      <button class="tab-btn" id="tabBtn-reiki" onclick="showTab('reiki');highlightTab('reiki')">Reiki & Energy</button>
-    </div>
-
-    <!-- Private -->
-    <div class="tab-content" id="tab-private">
-      <div class="services-grid">
-        <div class="service-card">
-          <h3 class="service-name">✨ Private Reading Session — 1 Hour</h3>
-          <p class="service-desc">A full, in-depth one-on-one reading session with Madame Divine. Psychic, tarot, and intuitive guidance delivered privately.</p>
-          <div class="service-price">$114.63</div>
-          <a href="https://shopdivineintentions33.myshopify.com/products/private-reading-session-1-hour" target="_blank" rel="noopener" class="btn-buy" style="margin-top:1rem;display:inline-block">Book on Shopify</a>
-        </div>
-        <div class="service-card">
-          <h3 class="service-name">✨ Private Reading Session — 30 Min</h3>
-          <p class="service-desc">A focused 30-minute private reading for targeted guidance on a specific area of your life.</p>
-          <div class="service-price">$73.43</div>
-          <a href="https://shopdivineintentions33.myshopify.com/products/private-reading-session-30-minutes" target="_blank" rel="noopener" class="btn-buy" style="margin-top:1rem;display:inline-block">Book on Shopify</a>
-        </div>
-        <div class="service-card" id="svc-mediumship">
-          <h3 class="service-name">🔮 Private Mediumship Session — 45 Min</h3>
-          <p class="service-desc">Connect with loved ones who have crossed over. Madame Divine channels messages from spirit with love and clarity.</p>
-          <div class="service-price">$228.94</div>
-          <a href="https://shopdivineintentions33.myshopify.com/products/mediumship-reading-45-minutes" target="_blank" rel="noopener" class="btn-buy" style="margin-top:1rem;display:inline-block">Book on Shopify</a>
-        </div>
-        <div class="service-card">
-          <h3 class="service-name">🍯 Honey Jar Ritual Consultation — 20 Min</h3>
-          <p class="service-desc">A sacred 20 minute FaceTime/WhatsApp consultation to discuss your intentions and build your honey jar around your specific situation. Every jar is unique — no two are ever the same.</p>
-          <div class="service-price">$50 <span style="font-size:0.75rem;font-style:italic;color:rgba(201,168,76,0.6);">deposit · goes toward balance</span></div>
-          <div class="service-note">⚠️ No refunds on deposits · The intake form is not a payment or confirmed booking</div>
-          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:1rem;">
-            <a href="honey-jar.html" class="btn-buy">Begin Intake →</a>
-            <a href="https://shopdivineintentions33.myshopify.com" target="_blank" rel="noopener" class="btn-buy" style="background:rgba(201,168,76,0.12);">Book on Shopify →</a>
+      <section class="pc-chapter" id="private" aria-labelledby="private-h">
+        <div class="pc-chapter-head"><h3 id="private-h">Private Readings</h3><p>Private virtual appointments on WhatsApp, FaceTime, or Zoom. Choose your date and time on the booking calendar at checkout.</p></div>
+        <div class="pc-row">
+          <div class="pc-main">
+            <h4>Private Reading Session — 15 Minutes</h4>
+            <p class="pc-desc">A focused private session for a concise question or area of your life.</p>
           </div>
+          <div class="pc-meta">15 minutes<br>Private · virtual</div>
+          <div class="pc-price">$36.36</div>
+          <div class="pc-actions"><a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/private-reading-session-15-minutes" target="_blank" rel="noopener">Book on Shopify<span class="di-sr"> — Private Reading Session — 15 Minutes (opens the Shopify store)</span></a></div>
         </div>
-      </div>
-    </div>
-
-    <!-- Reiki & Energy -->
-    <div class="tab-content" id="tab-reiki">
-      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:rgba(250,243,224,0.6);line-height:1.9;margin-bottom:2rem;max-width:640px;border-left:2px solid rgba(201,168,76,0.25);padding-left:1.2rem;">
-        Reiki is pure energy — it needs no physical presence to work. Distant Reiki and attunements are just as powerful as in-person. Madame Divine channels universal life force energy directly to you, wherever you are. Sessions are held in sacred space with your name, photo, and intention held throughout.
-      </p>
-      <div class="services-grid">
-        <div class="service-card">
-          <h3 class="service-name">✨ Distant Reiki Attunement — 30 Min</h3>
-          <p class="service-desc">Pure energy work delivered distantly — no travel, no barriers. Madame Divine channels universal life force energy to clear, align, and restore your energetic body. Held in sacred space with full intention set for you.</p>
-          <div class="service-price">$88</div>
-          <div class="service-note">Energy of abundance · pure Reiki · no physical presence needed</div>
-          <a href="https://shopdivineintentions33.myshopify.com" target="_blank" rel="noopener" class="btn-buy" style="margin-top:1rem;display:inline-block">Book on Shopify</a>
-        </div>
-        <div class="service-card">
-          <h3 class="service-name">🌿 Reiki Session — Trauma Release</h3>
-          <p class="service-desc">Targeted Reiki work focused on clearing energetic trauma stored in the body. Pent-up grief, ancestral wounds, and emotional blockages are gently moved and released through channeled energy.</p>
-          <div class="service-price">$188</div>
-          <a href="https://shopdivineintentions33.myshopify.com" target="_blank" rel="noopener" class="btn-buy" style="margin-top:1rem;display:inline-block">Book on Shopify</a>
-        </div>
-        <div class="service-card" id="svc-cord-cutting">
-          <h3 class="service-name">🔥 Full Cord Cutting Ritual</h3>
-          <p class="service-desc">Complete energetic severance of toxic ties, karmic bonds, and attachments no longer serving your highest good. Ritual performed by Madame Divine with full sacred ceremony and intention. Includes a 20 minute phone consultation.</p>
-          <div class="service-price">$193.93</div>
-          <div class="service-note" style="color:rgba(255,150,100,0.7);">✦ The intake form is not a payment or confirmed booking · Reserve your ritual through Shopify</div>
-          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:1rem;">
-            <a href="cord-cutting.html" class="btn-buy" style="flex:1;text-align:center;">Begin Intake →</a>
-            <a href="https://shopdivineintentions33.myshopify.com/products/cord-cutting-ritual-with-madame-divine" target="_blank" rel="noopener" class="btn-buy" style="flex:1;text-align:center;background:rgba(201,168,76,0.12);">Book on Shopify</a>
+        <div class="pc-row">
+          <div class="pc-main">
+            <h4>Private Reading Session — 30 Minutes</h4>
+            <p class="pc-desc">A private session with time to explore your questions through psychic, tarot, and intuitive guidance.</p>
           </div>
+          <div class="pc-meta">30 minutes<br>Private · virtual</div>
+          <div class="pc-price">$73.43</div>
+          <div class="pc-actions"><a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/private-reading-session-30-minutes" target="_blank" rel="noopener">Book on Shopify<span class="di-sr"> — Private Reading Session — 30 Minutes (opens the Shopify store)</span></a></div>
         </div>
-        <div class="service-card">
-          <h3 class="service-name">🍯 Honey Jar Ritual Consultation — 20 Min</h3>
-          <p class="service-desc">A sacred 20 minute FaceTime/WhatsApp consultation to discuss your intentions and build your honey jar around your specific situation. Every jar is unique — no two are ever the same.</p>
-          <div class="service-price">$50 <span style="font-size:0.75rem;font-style:italic;color:rgba(201,168,76,0.6);">deposit · goes toward balance</span></div>
-          <div class="service-note">⚠️ No refunds on deposits · The intake form is not a payment or confirmed booking</div>
-          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:1rem;">
-            <a href="honey-jar.html" class="btn-buy">Begin Intake →</a>
-            <a href="https://shopdivineintentions33.myshopify.com" target="_blank" rel="noopener" class="btn-buy" style="background:rgba(201,168,76,0.12);">Book on Shopify →</a>
+        <div class="pc-row">
+          <div class="pc-main">
+            <h4>Private Reading Session — 1 Hour</h4>
+            <p class="pc-desc">A full, in-depth one-on-one reading with Madame Divine, offering psychic, tarot, and intuitive guidance delivered privately.</p>
           </div>
+          <div class="pc-meta">60 minutes<br>Private · virtual</div>
+          <div class="pc-price">$114.63</div>
+          <div class="pc-actions"><a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/private-reading-session-1-hour" target="_blank" rel="noopener">Book on Shopify<span class="di-sr"> — Private Reading Session — 1 Hour (opens the Shopify store)</span></a></div>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <!-- Live Premium -->
-    <div class="tab-content" id="tab-live-premium">
-      <div class="services-grid">
-        <div class="service-card">
-          <h3 class="service-name">🔮 Mediumship Channeling (LIVE)</h3>
-          <p class="service-desc">Live mediumship connection during a broadcast session. Madame Divine connects with your loved ones who have crossed over and channels messages live — 20 minutes of focused spirit communication.</p>
-          <div class="service-price">$111</div>
-          <div class="service-note">20 min · Live session · TikTok · Instagram · YouTube</div>
-          <a href="https://shopdivineintentions33.myshopify.com" target="_blank" rel="noopener" class="btn-buy" style="margin-top:1rem;display:inline-block">Book on Shopify</a>
+      <section class="pc-chapter" id="mediumship" aria-labelledby="mediumship-h">
+        <div class="pc-chapter-head"><h3 id="mediumship-h">Mediumship</h3><p>Meaningful reflection and connection with loved ones who have crossed over. Specific messages or contact cannot be guaranteed.</p></div>
+        <div class="pc-row" id="svc-mediumship">
+          <div class="pc-main">
+            <h4>Mediumship Reading — 45 Minutes</h4>
+            <p class="pc-desc">A private mediumship session with Madame Divine, centered on meaningful reflection and connection.</p>
+            <p class="pc-req">Before your appointment, email a clear photo of the loved one you would like to connect with, along with their name and date of birth, to <a href="mailto:divinexintentions33@gmail.com">divinexintentions33@gmail.com</a>. Include your booking name and appointment date.</p>
+          </div>
+          <div class="pc-meta">45 minutes<br>Private · virtual</div>
+          <div class="pc-price">$228.94</div>
+          <div class="pc-actions"><a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/mediumship-reading-45-minutes" target="_blank" rel="noopener">Book on Shopify<span class="di-sr"> — Mediumship Reading — 45 Minutes (opens the Shopify store)</span></a></div>
         </div>
-        <div class="service-card">
-          <h3 class="service-name">🧬 Soul Blueprint Reading</h3>
-          <p class="service-desc">A deep dive into your soul's blueprint, purpose, and energetic design. Your full reading is channeled by Madame Divine and delivered as a digital document straight to your inbox.</p>
-          <div class="service-price">$80</div>
-          <div class="service-note">✦ Digital copy delivered via email · After payment email Divinexintentions33@gmail.com with your full name, date of birth & photo</div>
-          <a href="https://shopdivineintentions33.myshopify.com/products/soul-blueprint-reading" target="_blank" rel="noopener" class="btn-buy" style="margin-top:1rem;display:inline-block">Book on Shopify</a>
+        <div class="pc-row">
+          <div class="pc-main">
+            <h4>Mediumship Channeling (LIVE)</h4>
+            <p class="pc-desc">Live mediumship connection during a broadcast session. Madame Divine connects with your loved ones who have crossed over and channels messages live.</p>
+          </div>
+          <div class="pc-meta">20 minutes<br>Live session</div>
+          <div class="pc-price"><small>Price to be confirmed on Shopify</small></div>
+          <div class="pc-actions"><a class="pc-btn" href="https://shopdivineintentions33.myshopify.com" target="_blank" rel="noopener">Book on Shopify<span class="di-sr"> — Mediumship Channeling (LIVE) (opens the Shopify store)</span></a></div>
         </div>
-        <div class="service-card">
-          <h3 class="service-name">✨ Twin Flame In-Depth Reading</h3>
-          <p class="service-desc">Detailed insight into your twin flame connection, stages, and path forward. Channeled guidance on where you and your twin are energetically and what comes next.</p>
-          <div class="service-price">$56.96</div>
-          <a href="https://shopdivineintentions33.myshopify.com/products/twin-flame-reading" target="_blank" rel="noopener" class="btn-buy" style="margin-top:1rem;display:inline-block">Book on Shopify</a>
-        </div>
-        <div class="service-card">
-          <h3 class="service-name">🌑 Shadow Work In-Depth Reading</h3>
-          <p class="service-desc">Illuminate what's hidden in your shadow for healing and integration. A deep channeled reading into what your shadow is holding and what it needs to be released.</p>
-          <div class="service-price">$56.96</div>
-          <a href="https://shopdivineintentions33.myshopify.com/products/shadow-work-reading" target="_blank" rel="noopener" class="btn-buy" style="margin-top:1rem;display:inline-block">Book on Shopify</a>
-        </div>
-      </div>
-    </div>
+      </section>
 
-    <!-- Live General + Quick Reads — combined on one page -->
-    <div class="tab-content" id="tab-live-general">
+      <section class="pc-chapter" id="live-general" aria-labelledby="live-general-h">
+        <div class="pc-chapter-head"><h3 id="live-general-h">Live Readings</h3><p>Public livestream readings — not private appointments. Purchase during a current Madame Divine livestream and follow the instructions announced live. Please include your platform and username.</p></div>
+        <div class="pc-row">
+          <div class="pc-main">
+            <h4>LIVE General Intuitive Reading — Madame Divine</h4>
+            <p class="pc-desc">An open, comprehensive intuitive reading. Rather than one question, the reading unfolds across the areas of your life that call for attention.</p>
+          </div>
+          <div class="pc-meta">Livestream</div>
+          <div class="pc-price">$62.11</div>
+          <div class="pc-actions"><a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/full-general-reading" target="_blank" rel="noopener">Book on Shopify<span class="di-sr"> — LIVE General Intuitive Reading — Madame Divine (opens the Shopify store)</span></a></div>
+        </div>
+        <div class="pc-row">
+          <div class="pc-main">
+            <h4>LIVE One Topic Full Reading — Madame Divine</h4>
+            <p class="pc-desc">A full, focused exploration of one area of your life you choose — love, career, finances, family, or a decision needing clarity.</p>
+          </div>
+          <div class="pc-meta">Livestream</div>
+          <div class="pc-price">$51.81</div>
+          <div class="pc-actions"><a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/one-topic-full-reading" target="_blank" rel="noopener">Book on Shopify<span class="di-sr"> — LIVE One Topic Full Reading — Madame Divine (opens the Shopify store)</span></a></div>
+        </div>
+        <div class="pc-row">
+          <div class="pc-main">
+            <h4>LIVE Big Juicy Reading — She Spills All the Tea!</h4>
+            <p class="pc-desc">Madame Divine’s original fan-favorite reading, created in 2023 — known for specific messages, vivid descriptions, and layered insights.</p>
+          </div>
+          <div class="pc-meta">Livestream</div>
+          <div class="pc-price">$46.08</div>
+          <div class="pc-actions"><a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/big-juicy-reading" target="_blank" rel="noopener">Book on Shopify<span class="di-sr"> — LIVE Big Juicy Reading — She Spills All the Tea! (opens the Shopify store)</span></a></div>
+        </div>
+        <div class="pc-row">
+          <div class="pc-main">
+            <h4>LIVE Twin Flame Reading — Madame Divine</h4>
+            <p class="pc-desc">Intuitive insight into the spiritual and emotional dynamics between two souls, the challenges, and where the connection may be heading.</p>
+          </div>
+          <div class="pc-meta">Livestream</div>
+          <div class="pc-price">$56.96</div>
+          <div class="pc-actions"><a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/twin-flame-reading" target="_blank" rel="noopener">Book on Shopify<span class="di-sr"> — LIVE Twin Flame Reading — Madame Divine (opens the Shopify store)</span></a></div>
+        </div>
+        <div class="pc-row">
+          <div class="pc-main">
+            <h4>LIVE Reading — Shadow Work</h4>
+            <p class="pc-desc">A reflective spiritual reading exploring patterns and opportunities for growth; not therapy.</p>
+          </div>
+          <div class="pc-meta">Livestream</div>
+          <div class="pc-price">$56.96</div>
+          <div class="pc-actions"><a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/shadow-work-reading" target="_blank" rel="noopener">Book on Shopify<span class="di-sr"> — LIVE Reading — Shadow Work (opens the Shopify store)</span></a></div>
+        </div>
+        <div class="pc-row">
+          <div class="pc-main">
+            <h4>LIVE Reading — Spirit-Led 3-Card</h4>
+            <p class="pc-desc">A concise spirit-led three-card reading for guidance and reflection.</p>
+          </div>
+          <div class="pc-meta">Livestream</div>
+          <div class="pc-price">$15.76</div>
+          <div class="pc-actions"><a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/spirit-led-3-card-reading" target="_blank" rel="noopener">Book on Shopify<span class="di-sr"> — LIVE Reading — Spirit-Led 3-Card (opens the Shopify store)</span></a></div>
+        </div>
+        <div class="pc-row">
+          <div class="pc-main">
+            <h4>LIVE Timeline Reading — When Will It Happen?</h4>
+            <p class="pc-desc">One specific question about the timing of an event or situation, with intuitive possibilities and approximate windows.</p>
+          </div>
+          <div class="pc-meta">Livestream</div>
+          <div class="pc-price">$12.67</div>
+          <div class="pc-actions"><a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/timeline-reading" target="_blank" rel="noopener">Book on Shopify<span class="di-sr"> — LIVE Timeline Reading — When Will It Happen? (opens the Shopify store)</span></a></div>
+        </div>
+      </section>
 
-      <!-- GENERAL READINGS -->
-      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;padding-bottom:0.8rem;border-bottom:1px solid rgba(255,80,80,0.15);">
-        <span style="width:8px;height:8px;background:#FF5555;border-radius:50%;display:inline-block;animation:liveDot 1s ease-in-out infinite;box-shadow:0 0 6px #FF5555;flex-shrink:0;"></span>
-        <p style="font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.2em;color:#FF8888;text-transform:uppercase;">General Live Readings</p>
-      </div>
-      <div class="services-grid" style="margin-bottom:3rem;">
-        <div class="service-card" style="border-color:rgba(255,80,80,0.3);background:linear-gradient(135deg,rgba(255,50,50,0.07) 0%,rgba(26,18,7,0.8) 100%);">
-          <h3 class="service-name">✨ Full General Reading (LIVE)</h3>
-          <p class="service-desc">Comprehensive live reading covering multiple life areas.</p>
-          <div class="service-price">$62.11</div>
-          <a href="https://shopdivineintentions33.myshopify.com/products/full-general-reading" target="_blank" rel="noopener" class="btn-buy" style="margin-top:1rem;display:inline-block;border-color:rgba(255,80,80,0.4);">Book on Shopify</a>
+      <section class="pc-chapter" id="digital" aria-labelledby="digital-h">
+        <div class="pc-chapter-head"><h3 id="digital-h">Digital Readings &amp; Reports</h3><p>Prepared personally by Madame Divine and delivered to the email on your order.</p></div>
+        <div class="pc-row">
+          <div class="pc-main">
+            <h4>Soul Blueprint Report — Personalized by Madame Divine</h4>
+            <p class="pc-desc">A personalized report combining astrological, numerological, spiritual, and energetic interpretations — your gifts, recurring patterns, and the themes shaping your journey.</p>
+            <p class="pc-req">After purchase, email <a href="mailto:divinexintentions33@gmail.com">divinexintentions33@gmail.com</a> your full name at birth (and current name if different), date of birth, exact time of birth if known, place of birth, and a photo.</p>
+          </div>
+          <div class="pc-meta">Written report<br>Sent by email</div>
+          <div class="pc-price">$80.00</div>
+          <div class="pc-actions"><a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/soul-blueprint-reading" target="_blank" rel="noopener">Book on Shopify<span class="di-sr"> — Soul Blueprint Report — Personalized by Madame Divine (opens the Shopify store)</span></a></div>
         </div>
-        <div class="service-card">
-          <h3 class="service-name">💫 Big Juicy Reading (LIVE)</h3>
-          <p class="service-desc">A lush, detailed reading with spirit-led insights.</p>
-          <div class="service-price">$46.08</div>
-          <a href="https://shopdivineintentions33.myshopify.com/products/big-juicy-reading" target="_blank" rel="noopener" class="btn-buy" style="margin-top:1rem;display:inline-block">Book on Shopify</a>
+        <div class="pc-row">
+          <div class="pc-main">
+            <h4>Astro Dice Reading — Personalized Digital Reading</h4>
+            <p class="pc-desc">Madame Divine uses astrological dice to explore your situation, the emotions around it, and the area of life it is affecting.</p>
+            <p class="pc-req">Provide your full name, date of birth, and email for delivery; include your livestream username if you are receiving it live.</p>
+          </div>
+          <div class="pc-meta">Live or pre-recorded<br>Private video link</div>
+          <div class="pc-price">$36.36</div>
+          <div class="pc-actions"><a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/astro-dice-reading" target="_blank" rel="noopener">Book on Shopify<span class="di-sr"> — Astro Dice Reading — Personalized Digital Reading (opens the Shopify store)</span></a></div>
         </div>
-        <div class="service-card">
-          <h3 class="service-name">🔎 1 Topic Full Reading (LIVE)</h3>
-          <p class="service-desc">Focused live reading on one specific topic or question.</p>
-          <div class="service-price">$51.81</div>
-          <a href="https://shopdivineintentions33.myshopify.com/products/one-topic-full-reading" target="_blank" rel="noopener" class="btn-buy" style="margin-top:1rem;display:inline-block">Book on Shopify</a>
-        </div>
-      </div>
+      </section>
 
-      <!-- QUICK READS DIVIDER -->
-      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;padding-bottom:0.8rem;border-bottom:1px solid rgba(255,200,0,0.15);">
-        <span style="font-size:1rem;">⚡</span>
-        <p style="font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.2em;color:#FFD700;text-transform:uppercase;">Quick Reads</p>
-        <span style="font-size:0.7rem;color:rgba(250,243,224,0.35);font-style:italic;">Fast · Focused · Spirit-led</span>
-      </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <h3 class="service-name">🎲 Astro Dice Reading (Live or Pre-Recorded)</h3>
-          <p class="service-desc">A spirit-led reading using astro dice to unlock cosmic messages. Available live during a session, or as a private pre-recorded video sent to your email.</p>
-          <div class="service-price">$36.36</div>
-          <div class="service-note">✦ Live or pre-recorded</div>
-          <a href="https://shopdivineintentions33.myshopify.com/products/astro-dice-reading" target="_blank" rel="noopener" class="btn-buy" style="margin-top:1rem;display:inline-block">Book on Shopify</a>
+      <section class="pc-chapter" id="reiki" aria-labelledby="reiki-h">
+        <div class="pc-chapter-head"><h3 id="reiki-h">Rituals &amp; Energy Work</h3><p>Ceremonial and energy work performed with prayer and intention. Outcomes cannot be guaranteed.</p></div>
+        <div class="pc-row" id="svc-cord-cutting">
+          <div class="pc-main">
+            <h4>Cord Cutting Ritual — Release, Sever &amp; Reclaim</h4>
+            <p class="pc-desc">Sacred ceremonial work for exploring the energetic roots of recurring patterns and attachments, with a guided intake, a separate 20-minute phone consultation, and an approximately one-hour ceremony.</p>
+            <p class="pc-req">After purchase, complete the confidential Cord Cutting intake. Payment and a completed intake are required before scheduling.</p>
+          </div>
+          <div class="pc-meta">Intake + 20-min consultation<br>~1-hour ceremony · Tuesdays</div>
+          <div class="pc-price">$193.93</div>
+          <div class="pc-actions"><a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/cord-cutting-ritual-with-madame-divine" target="_blank" rel="noopener">Book on Shopify<span class="di-sr"> — Cord Cutting Ritual — Release, Sever &amp; Reclaim (opens the Shopify store)</span></a><a class="pc-link" href="cord-cutting.html">About the ritual &amp; intake</a></div>
         </div>
-        <div class="service-card">
-          <h3 class="service-name">🃏 Spirit-Led 3 Card Read</h3>
-          <p class="service-desc">Three cards, one clear message channeled by spirit just for you.</p>
-          <div class="service-price">$15.76</div>
-          <a href="https://shopdivineintentions33.myshopify.com/products/spirit-led-3-card-reading" target="_blank" rel="noopener" class="btn-buy" style="margin-top:1rem;display:inline-block">Book on Shopify</a>
+        <div class="pc-row">
+          <div class="pc-main">
+            <h4>Honey Jar Ritual Consultation — 20 Min</h4>
+            <p class="pc-desc">A consultation to discuss your intentions and build your honey jar around your specific situation. Every jar is unique — no two are ever the same.</p>
+            <p class="pc-req">No refunds on deposits. The intake form is not a payment or confirmed booking.</p>
+          </div>
+          <div class="pc-meta">20-min consultation<br>FaceTime or WhatsApp</div>
+          <div class="pc-price">$50<small>deposit · goes toward balance</small></div>
+          <div class="pc-actions"><a class="pc-btn" href="https://shopdivineintentions33.myshopify.com" target="_blank" rel="noopener">Book on Shopify<span class="di-sr"> — Honey Jar Ritual Consultation — 20 Min (opens the Shopify store)</span></a><a class="pc-link" href="honey-jar.html">About the honey jar &amp; intake</a></div>
         </div>
-        <div class="service-card">
-          <h3 class="service-name">⏳ Timeline Question</h3>
-          <p class="service-desc">Get clarity on timing around a specific situation or outcome.</p>
-          <div class="service-price">$12.67</div>
-          <a href="https://shopdivineintentions33.myshopify.com/products/timeline-reading" target="_blank" rel="noopener" class="btn-buy" style="margin-top:1rem;display:inline-block">Book on Shopify</a>
+        <div class="pc-row">
+          <div class="pc-main">
+            <h4>Distant Reiki Attunement — 30 Min</h4>
+            <p class="pc-desc">Pure energy work delivered distantly. Madame Divine channels universal life force energy to clear, align, and restore your energetic body.</p>
+          </div>
+          <div class="pc-meta">30 minutes<br>Distant</div>
+          <div class="pc-price">$88</div>
+          <div class="pc-actions"><a class="pc-btn" href="https://shopdivineintentions33.myshopify.com" target="_blank" rel="noopener">Book on Shopify<span class="di-sr"> — Distant Reiki Attunement — 30 Min (opens the Shopify store)</span></a></div>
         </div>
-      </div>
-    </div>
+        <div class="pc-row">
+          <div class="pc-main">
+            <h4>Reiki Session — Trauma Release</h4>
+            <p class="pc-desc">Targeted Reiki work focused on clearing energetic trauma stored in the body — pent-up grief, ancestral wounds, and emotional blockages, gently moved and released.</p>
+          </div>
+          <div class="pc-meta">Reiki session</div>
+          <div class="pc-price">$188</div>
+          <div class="pc-actions"><a class="pc-btn" href="https://shopdivineintentions33.myshopify.com" target="_blank" rel="noopener">Book on Shopify<span class="di-sr"> — Reiki Session — Trauma Release (opens the Shopify store)</span></a></div>
+        </div>
+      </section>
 
-    <!-- Quick tab kept for JS compatibility but redirects to live-general -->
-    <div class="tab-content active" id="tab-quick" style="display:none;"></div>
-
-    <!-- SHOPIFY BOOKING -->
-    <div id="shopify-booking" style="margin-top:4rem;border-top:1px solid rgba(201,168,76,0.15);padding-top:3rem;">
-      <div style="text-align:center;margin-bottom:2rem;">
-        <span style="font-family:'Cinzel',serif;font-size:0.68rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:0.6rem;">✦ Ready to Begin?</span>
-        <h2 style="font-family:'Cinzel',serif;font-size:clamp(1.5rem,3vw,2.2rem);color:var(--cream);margin-bottom:0.5rem;">Book Your Reading</h2>
-        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:rgba(201,168,76,0.7);max-width:560px;margin:0 auto;line-height:1.8;">Ready to book your reading? Choose your session and complete payment through Shopify. Then follow the scheduling instructions provided with your purchase.</p>
-        <a href="https://shopdivineintentions33.myshopify.com" target="_blank" rel="noopener" class="btn-primary" style="display:inline-block;margin-top:1.5rem;">Book Your Reading on Shopify</a>
-        <p style="font-size:0.78rem;color:rgba(250,243,224,0.35);margin-top:1rem;font-style:italic;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.8;">Cord cutting and honey jar intake forms are not payment or a confirmed booking.</p>
+      <div class="pc-closing">
+        <p>Not sure which reading is right for you? Browse every offering in one place.</p>
+        <a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/collections/readings-services" target="_blank" rel="noopener">View all readings on Shopify</a>
       </div>
     </div>
 

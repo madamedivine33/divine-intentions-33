@@ -403,6 +403,9 @@
     <label>Instagram or Social Handle <span class="opt">(optional)</span></label>
     <input type="text" name="instagram">
 
+    <label for="order_number">Shopify Order Number <span class="opt">(if you have already purchased)</span></label>
+    <input type="text" id="order_number" name="order_number" placeholder="e.g. #1001 — from your order confirmation email" autocomplete="off">
+
     <label>Have you worked with me before? <span class="req">*</span></label>
     <div class="radio-row">
       <label class="radio-pill"><input type="radio" name="prior_client" value="Yes, I have" required><span>Yes, I have</span></label>
@@ -454,6 +457,20 @@
 
     <label>Have you tried other spiritual work, rituals, or approaches for this before?</label>
     <textarea name="prior_attempts" placeholder="What have you already tried, and how did it go?"></textarea>
+
+    <p class="section-intro" style="margin-top:1.6rem;">If your intention involves a relationship, share the context below. Your honey jar sweetens your own energy and path &mdash; it is never used to bind, control, or override anyone&rsquo;s will.</p>
+
+    <label>Who else is part of this situation, and what is your relationship to them? <span class="opt">(optional)</span></label>
+    <input type="text" name="people_involved" placeholder="First name or initials, and how you are connected (partner, parent, friend, colleague...)">
+
+    <label>What is the background or history of this relationship or situation? <span class="opt">(optional)</span></label>
+    <textarea name="relationship_history" placeholder="How it began, how it has changed, and what matters most to you."></textarea>
+
+    <label>Where do things stand now &mdash; current communication or circumstances? <span class="opt">(optional)</span></label>
+    <textarea name="current_communication" placeholder="Are you in contact? What does that look like today?"></textarea>
+
+    <label>Are there obstacles or concerns you want me to hold in mind? <span class="opt">(optional)</span></label>
+    <textarea name="obstacles" placeholder="Fears, blocks, or anything weighing on this intention."></textarea>
   </div>
 
   <!-- SECTION 4 -->
@@ -534,7 +551,8 @@
         will and highest good in mind. I understand it is not meant to control, bind, or override the
         will of anyone else, and that Madame Divine will not perform work intended to do so. I
         understand this jar is meant to sweeten my own energy, deepen my relationship with myself,
-        and open the path for what is aligned to find me.
+        and open the path for what is aligned to find me. I understand that spiritual work is
+        intention-based and that no specific outcome or timeline can be guaranteed.
       </p>
       <label class="consent-check">
         <input type="checkbox" name="consent" required>
@@ -545,10 +563,14 @@
 
   <div class="submit-wrap">
     <button type="submit" class="submit-btn">Submit to Divine 🍯</button>
-    <p class="submit-fallback">
-      When you submit, your email app will open with all of your answers filled in and addressed to
-      Divine. Simply hit send. If your email app doesn't open automatically, please copy your answers
-      and email them directly to <strong>divinexintentions33@gmail.com</strong>.
+    <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
+    <p class="submit-fallback" id="submitNote">
+      Your answers are sent privately to Madame Divine when you submit. If sending ever fails, your
+      email app will open with your answers filled in &mdash; just press send, or email them to
+      <strong>divinexintentions33@gmail.com</strong>.
+    </p>
+    <p class="submit-fallback" id="successMsg" role="status" style="display:none;font-size:1.05rem;">
+      🍯 Your intake has been received. Madame Divine will review it and reach out within 24&ndash;48 hours with next steps.
     </p>
     <p class="error-msg" id="errorMsg">Please fill in all required fields marked with *, including the sacred agreement checkbox.</p>
   </div>
@@ -626,6 +648,7 @@ Divine Intentions 33
 ============================
 
 SECTION ONE — ABOUT YOU
+Shopify Order Number: ${get('order_number')}
 Full Name: ${get('full_name')}
 Date of Birth: ${get('dob')}
 Pronouns: ${get('pronouns')}
@@ -643,6 +666,10 @@ SECTION THREE — YOUR STORY
 Current Situation: ${get('current_situation')}
 Ideal Outcome: ${get('ideal_outcome')}
 Prior Attempts: ${get('prior_attempts')}
+People Involved: ${get('people_involved')}
+Relationship History: ${get('relationship_history')}
+Current Communication / Circumstances: ${get('current_communication')}
+Obstacles / Concerns: ${get('obstacles')}
 
 SECTION FOUR — RELATIONSHIP WITH SELF
 Self-Love Now: ${get('q_self_love')}
@@ -669,12 +696,44 @@ SECTION SEVEN — AGREEMENT
 Consent Given: ${data.get('consent') ? 'Yes' : 'No'}
 `.trim();
 
-    const subject = encodeURIComponent(`Honey Jar Intake — ${get('full_name')}`);
-    const mailBody = encodeURIComponent(body);
-    const mailtoLink = `mailto:divinexintentions33@gmail.com?subject=${subject}&body=${mailBody}`;
+    if (form.querySelector('[name="_honey"]').value) return; // spam bot
+    const order = (data.get('order_number') || '').toString().trim();
+    const subjectText = `Honey Jar Intake — ${get('full_name')}` + (order ? ` · Order ${order}` : '');
+    const btn = form.querySelector('.submit-btn');
+    const mailFallback = () => {
+      const mailtoLink = `mailto:divinexintentions33@gmail.com?subject=${encodeURIComponent(subjectText)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailtoLink;
+    };
 
-    window.location.href = mailtoLink;
+    btn.disabled = true; btn.textContent = 'Sending…';
+    fetch('https://formsubmit.co/ajax/e885ca5147235fdddf11f1b24ca632e7', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ _subject: subjectText, _replyto: (data.get('email') || '').toString(), _template: 'box', _captcha: 'false', 'Order number': order || '—', message: body })
+    })
+      .then(r => r.json().catch(() => ({})).then(j => r.ok && String(j.success) === 'true'))
+      .then(sent => {
+        if (!sent) throw new Error('not sent');
+        btn.style.display = 'none';
+        document.getElementById('submitNote').style.display = 'none';
+        document.getElementById('successMsg').style.display = 'block';
+      })
+      .catch(() => {
+        btn.disabled = false; btn.textContent = 'Submit to Divine 🍯';
+        errorMsg.textContent = 'We couldn’t send your intake automatically. Your email app will open with your answers — please press send so Madame Divine receives it.';
+        errorMsg.style.display = 'block';
+        mailFallback();
+      });
   });
+
+  // Link this intake to its Shopify order: the order confirmation email opens this page with ?order=#1234
+  (function () {
+    try {
+      var o = new URLSearchParams(location.search).get('order');
+      var f = document.querySelector('[name="order_number"]');
+      if (o && f && /^#?[A-Za-z0-9-]{1,20}$/.test(o)) f.value = o;
+    } catch (e) {}
+  })();
 </script>
 
 </body>
