@@ -1,0 +1,324 @@
+/* Divine Intentions 33 — site header & navigation
+   Shared by index.html and crystals.html. "Where intention meets the sacred." */
+
+:root {
+  --di-parchment: #FBF5E6;
+  --di-parchment-deep: #F3E7CC;
+  --di-gold: #B08A3E;
+  --di-gold-soft: rgba(176, 138, 62, 0.35);
+  --di-honey: #D99A3C;
+  --di-blush: #EBC9C0;
+  --di-sunflower: #F2C24F;
+  --di-ink: #3B2812;
+  --di-ink-soft: #7A5A32;
+  --di-header-h: 76px;
+}
+
+.di-header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: linear-gradient(180deg, #FDF9EE 0%, var(--di-parchment) 55%, var(--di-parchment-deep) 100%);
+  border-bottom: 1px solid var(--di-gold-soft);
+  box-shadow: 0 6px 24px rgba(59, 40, 18, 0.10);
+  color: var(--di-ink);
+}
+/* hairline of blush, gold and sunflower across the top */
+.di-header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--di-blush), var(--di-gold) 35%, var(--di-sunflower) 65%, var(--di-blush));
+}
+
+.di-bar {
+  max-width: 1240px;
+  height: var(--di-header-h);
+  margin: 0 auto;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+/* ── Logo ── */
+.di-logo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--di-ink);
+  line-height: 1;
+  flex-shrink: 0;
+}
+.di-logo svg { width: 22px; height: 14px; margin-bottom: 3px; }
+.di-logo-name {
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-size: 1.02rem;
+  letter-spacing: 0.16em;
+  color: var(--di-ink);
+}
+.di-logo-by {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.86rem;
+  letter-spacing: 0.04em;
+  color: var(--di-ink-soft);
+  margin-top: 3px;
+}
+
+/* ── Desktop tabs ── */
+.di-nav { margin-left: auto; }
+.di-tabs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.di-tabs > li { position: relative; }
+
+.di-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: none;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--di-ink);
+  position: relative;
+  transition: color 0.2s;
+}
+.di-tab::after {
+  content: '';
+  position: absolute;
+  left: 14px; right: 14px; bottom: 4px;
+  height: 1px;
+  background: var(--di-gold);
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
+}
+.di-tab:hover, .di-tab[aria-expanded="true"] { color: #8A6420; }
+.di-tab:hover::after,
+.di-tab[aria-expanded="true"]::after,
+.di-tab[aria-current="page"]::after { transform: scaleX(1); }
+.di-tab[aria-current="page"] { color: #8A6420; }
+
+.di-caret {
+  width: 9px; height: 6px;
+  transition: transform 0.2s;
+}
+.di-tab[aria-expanded="true"] .di-caret { transform: rotate(180deg); }
+
+/* ── Dropdown panels ── */
+.di-panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 270px;
+  padding: 18px 8px 12px;
+  background: #FFFBF1;
+  border: 1px solid var(--di-gold-soft);
+  border-top: 2px solid var(--di-gold);
+  box-shadow: 0 18px 40px rgba(59, 40, 18, 0.18);
+  z-index: 210;
+}
+.di-panel[hidden] { display: none; }
+.di-panel::before { /* small gold diamond pointing to the tab */
+  content: '';
+  position: absolute;
+  top: -6px; left: 50%;
+  width: 9px; height: 9px;
+  background: var(--di-gold);
+  transform: translateX(-50%) rotate(45deg);
+}
+.di-panel { width: max-content; }
+.di-panel .di-links a { white-space: nowrap; }
+.di-panel-cols { display: grid; grid-template-columns: auto auto; gap: 4px 18px; }
+.di-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.di-group-title {
+  margin: 0 12px 6px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--di-ink-soft);
+}
+.di-group + .di-group { margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(176, 138, 62, 0.18); }
+.di-panel-cols .di-group + .di-group { margin-top: 0; padding-top: 0; border-top: 0; }
+
+.di-links { list-style: none; margin: 0; padding: 0; }
+.di-links a {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 12px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.12rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--di-ink);
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background 0.15s, color 0.15s;
+}
+.di-links a:hover, .di-links a:focus-visible {
+  background: rgba(235, 201, 192, 0.45); /* blush */
+  color: #6B4A18;
+}
+.di-ext {
+  flex-shrink: 0;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  color: var(--di-gold);
+  border: 1px solid var(--di-gold-soft);
+  padding: 1px 6px;
+  border-radius: 10px;
+}
+
+/* ── Book a Reading seal ── */
+.di-book {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding: 11px 20px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #2E1F0B;
+  background: linear-gradient(135deg, #F2C24F 0%, var(--di-honey) 55%, #C4862E 100%);
+  border: 1px solid #A8742A;
+  box-shadow: inset 0 0 0 2px rgba(255, 248, 228, 0.55), 0 4px 14px rgba(217, 154, 60, 0.35);
+  border-radius: 2px;
+  transition: box-shadow 0.2s, filter 0.2s;
+}
+.di-book:hover { filter: brightness(1.04); box-shadow: inset 0 0 0 2px rgba(255, 248, 228, 0.75), 0 6px 20px rgba(217, 154, 60, 0.5); }
+.di-book svg { width: 13px; height: 13px; }
+.di-divider { width: 1px; height: 30px; background: var(--di-gold-soft); flex-shrink: 0; }
+
+/* ── Mobile controls ── */
+.di-book-mobile, .di-menu-btn { display: none; }
+.di-menu-btn {
+  align-items: center;
+  justify-content: center;
+  width: 44px; height: 44px;
+  background: transparent;
+  border: 1px solid var(--di-gold-soft);
+  border-radius: 2px;
+  cursor: pointer;
+  color: var(--di-ink);
+}
+.di-menu-btn svg { width: 20px; height: 20px; }
+.di-menu-btn .di-icon-close { display: none; }
+.di-menu-btn[aria-expanded="true"] .di-icon-open { display: none; }
+.di-menu-btn[aria-expanded="true"] .di-icon-close { display: block; }
+
+.di-drawer {
+  position: absolute;
+  top: 100%; left: 0; right: 0;
+  max-height: calc(100vh - var(--di-header-h));
+  max-height: calc(100dvh - var(--di-header-h));
+  overflow-y: auto;
+  background: var(--di-parchment);
+  border-bottom: 2px solid var(--di-gold);
+  box-shadow: 0 18px 40px rgba(59, 40, 18, 0.22);
+  padding: 8px 0 22px;
+}
+.di-drawer[hidden] { display: none; }
+.di-drawer-item { border-bottom: 1px solid rgba(176, 138, 62, 0.18); }
+.di-drawer-link, .di-drawer-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 54px;
+  padding: 0 24px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: left;
+  color: var(--di-ink);
+}
+.di-drawer-toggle[aria-expanded="true"] .di-caret { transform: rotate(180deg); }
+.di-drawer-toggle .di-caret { width: 11px; height: 7px; }
+.di-drawer-sub { padding: 0 12px 12px 24px; }
+.di-drawer-sub[hidden] { display: none; }
+.di-drawer-sub .di-group-title { margin: 8px 12px 2px; }
+.di-drawer-sub .di-links a { min-height: 44px; align-items: center; font-size: 1.15rem; }
+.di-drawer-cta { padding: 20px 24px 6px; }
+.di-drawer-cta .di-book { width: 100%; justify-content: center; padding: 15px 20px; font-size: 0.85rem; }
+.di-drawer-tagline {
+  margin: 14px 24px 0;
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--di-ink-soft);
+}
+
+/* ── Focus ── */
+.di-header a:focus-visible, .di-header button:focus-visible {
+  outline: 2px solid var(--di-honey);
+  outline-offset: 2px;
+}
+
+/* anchors land below the sticky header */
+.page [id], section[id] { scroll-margin-top: calc(var(--di-header-h) + 16px); }
+
+/* ── Tablet & phone ── */
+@media (max-width: 1040px) {
+  .di-bar { gap: 20px; padding: 0 22px; }
+  .di-tab { padding: 10px 10px; letter-spacing: 0.12em; }
+  .di-tab::after { left: 10px; right: 10px; }
+}
+@media (max-width: 960px) {
+  :root { --di-header-h: 66px; }
+  .di-nav, .di-divider, .di-book-desktop { display: none; }
+  .di-bar { gap: 10px; padding: 0 16px; }
+  .di-logo { align-items: flex-start; margin-right: auto; }
+  .di-logo svg { margin-left: 2px; }
+  .di-logo-name { font-size: 0.92rem; letter-spacing: 0.12em; }
+  .di-logo-by { font-size: 0.8rem; }
+  .di-book-mobile { display: inline-flex; padding: 10px 14px; font-size: 0.72rem; letter-spacing: 0.1em; }
+  .di-menu-btn { display: inline-flex; }
+}
+@media (max-width: 560px) {
+  .di-bar { gap: 8px; padding: 0 12px; }
+  .di-logo { min-width: 0; flex-shrink: 1; }
+  .di-logo-name { font-size: 0.74rem; letter-spacing: 0.06em; white-space: nowrap; }
+  .di-logo-by { font-size: 0.74rem; }
+  .di-book-mobile { padding: 9px 10px; font-size: 0.64rem; letter-spacing: 0.06em; white-space: nowrap; }
+  .di-menu-btn { width: 40px; height: 40px; flex-shrink: 0; }
+}
+@media (max-width: 370px) {
+  .di-logo svg, .di-logo-by { display: none; }
+  .di-logo-name { font-size: 0.68rem; letter-spacing: 0.04em; }
+  .di-book-mobile { padding: 9px 8px; font-size: 0.6rem; letter-spacing: 0.04em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .di-tab::after, .di-caret, .di-book, .di-links a { transition: none; }
+}
