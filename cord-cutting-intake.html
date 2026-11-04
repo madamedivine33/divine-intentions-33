@@ -397,6 +397,11 @@
         <label>Instagram Handle <span class="optional">(optional)</span></label>
         <input type="text" name="instagram" placeholder="@yourhandle" />
       </div>
+
+      <div class="field-group">
+        <label for="order_number">Shopify Order Number <span class="optional">(if you have already purchased)</span></label>
+        <input type="text" id="order_number" name="order_number" placeholder="e.g. #1001 — from your order confirmation email" autocomplete="off" />
+      </div>
     </div>
 
     <!-- SECTION 2: THE CORDS -->
@@ -566,6 +571,16 @@
         <h2>Anything Else Madame Divine Should Know</h2>
       </div>
       <div class="field-group">
+        <label>What is happening in your life right now that is bringing you to this work? <span class="optional">(optional)</span></label>
+        <textarea name="current_circumstances" placeholder="The circumstances surrounding this release — where things stand today."></textarea>
+      </div>
+
+      <div class="field-group">
+        <label>Have you tried to release this before — spiritually or otherwise? What happened? <span class="optional">(optional)</span></label>
+        <textarea name="prior_attempts" placeholder="Rituals, readings, counseling, conversations, distance — anything you have already tried."></textarea>
+      </div>
+
+      <div class="field-group">
         <label>Additional context <span class="optional">(optional)</span></label>
         <textarea name="additional" placeholder="Any history, background, or spiritual context that would help Madame Divine serve you better. Nothing is too much." style="min-height:110px;"></textarea>
       </div>
@@ -606,6 +621,15 @@
 </footer>
 
 <script>
+  // Link this intake to its Shopify order: the order confirmation email opens this page with ?order=#1234
+  (function () {
+    try {
+      var o = new URLSearchParams(location.search).get('order');
+      var f = document.querySelector('[name="order_number"]');
+      if (o && f && /^#?[A-Za-z0-9-]{1,20}$/.test(o)) f.value = o;
+    } catch (e) {}
+  })();
+
   var INTAKE_EMAIL = 'divinexintentions33@gmail.com';
 
   function buildIntake(form) {
@@ -642,7 +666,7 @@
     var btn = form.querySelector('.btn-submit');
     var intake = buildIntake(form);
     var payload = Object.assign({
-      _subject: 'Cord Cutting Ritual Intake \u2014 ' + intake.name,
+      _subject: 'Cord Cutting Ritual Intake \u2014 ' + intake.name + (intake.fields['ORDER NUMBER'] ? ' \u00b7 Order ' + intake.fields['ORDER NUMBER'] : ''),
       _replyto: intake.email,
       _template: 'table',
       _captcha: 'false'
