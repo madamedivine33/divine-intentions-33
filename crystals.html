@@ -13,76 +13,76 @@
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  body { background: radial-gradient(ellipse at top, var(--dark3) 0%, var(--dark2) 40%, var(--dark) 100%); min-height: 100vh; font-family: 'Cormorant Garamond', serif; color: var(--cream); }
+  body { background: radial-gradient(ellipse at top, #FBF5E6 0%, #FBF5E6 40%, #FBF5E6 100%); min-height: 100vh; font-family: 'Cormorant Garamond', serif; color: rgba(59,40,18,0.95); }
 
 
-  .hero { text-align: center; padding: 60px 24px 40px; border-bottom: 1px solid #C9A84C1a; background: linear-gradient(180deg, #3D2B0F18 0%, transparent 100%); position: relative; overflow: hidden; }
+  .hero { text-align: center; padding: 60px 24px 40px; border-bottom: 1px solid rgba(176,138,62,0.18); background: linear-gradient(180deg, rgba(255,252,244,0.59) 0%, transparent 100%); position: relative; overflow: hidden; }
   .hero::before { content:''; position:absolute; inset:0; background: repeating-linear-gradient(45deg, transparent, transparent 40px, #C9A84C04 40px, #C9A84C04 41px); pointer-events:none; }
-  .hero-eyebrow { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 6px; color: var(--gold); text-transform: uppercase; opacity: 0.7; margin-bottom: 14px; }
-  h1 { font-family: 'Cinzel', serif; font-size: clamp(26px,5vw,52px); font-weight: 300; color: var(--sunflower); letter-spacing: 4px; text-shadow: 0 0 50px #C9A84C33; margin-bottom: 10px; }
-  .hero-sub { font-size: 16px; color: var(--accent); opacity: 0.85; font-style: italic; letter-spacing: 1px; }
+  .hero-eyebrow { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 6px; color: #6B4A16; text-transform: uppercase; opacity: 0.7; margin-bottom: 14px; }
+  h1 { font-family: 'Cinzel', serif; font-size: clamp(26px,5vw,52px); font-weight: 300; color: #7A5208; letter-spacing: 4px; text-shadow: 0 0 50px #C9A84C33; margin-bottom: 10px; }
+  .hero-sub { font-size: 16px; color: #6E4C1C; opacity: 0.85; font-style: italic; letter-spacing: 1px; }
   .stats { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
-  .stat { background: #C9A84C0d; border: 1px solid #C9A84C2a; border-radius: 10px; padding: 14px 22px; text-align: center; }
-  .stat-num { font-size: 26px; font-weight: 600; color: var(--sunflower); font-family: 'Cinzel', serif; }
-  .stat-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-top: 2px; }
-  .stat-price { font-size: 12px; color: var(--accent); margin-top: 3px; }
+  .stat { background: #C9A84C0d; border: 1px solid rgba(176,138,62,0.3); border-radius: 10px; padding: 14px 22px; text-align: center; }
+  .stat-num { font-size: 26px; font-weight: 600; color: #7A5208; font-family: 'Cinzel', serif; }
+  .stat-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #6B4A16; margin-top: 2px; }
+  .stat-price { font-size: 12px; color: #6E4C1C; margin-top: 3px; }
 
-  .filter-bar { display: flex; gap: 8px; padding: 18px 20px; flex-wrap: wrap; justify-content: center; position: sticky; top: var(--di-header-h, 57px); z-index: 40; background: #1A1208ee; backdrop-filter: blur(10px); border-bottom: 1px solid #C9A84C1a; }
-  .filter-btn { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 1.5px; padding: 7px 18px; border-radius: 20px; cursor: pointer; background: transparent; color: var(--gold); border: 1px solid #C9A84C44; text-transform: uppercase; transition: all 0.2s; }
+  .filter-bar { display: flex; gap: 8px; padding: 18px 20px; flex-wrap: wrap; justify-content: center; position: sticky; top: var(--di-header-h, 57px); z-index: 40; background: rgba(255,252,244,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(176,138,62,0.18); }
+  .filter-btn { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 1.5px; padding: 7px 18px; border-radius: 20px; cursor: pointer; background: transparent; color: #6B4A16; border: 1px solid rgba(176,138,62,0.48); text-transform: uppercase; transition: all 0.2s; }
   .filter-btn.active, .filter-btn:hover { background: var(--gold); color: var(--dark2); font-weight: 600; }
-  .filter-count { font-size: 10px; color: #C9A84C55; align-self: center; margin-left: 4px; font-family: 'Cinzel', serif; letter-spacing: 1px; }
+  .filter-count { font-size: 10px; color: rgba(107,74,22,0.92); align-self: center; margin-left: 4px; font-family: 'Cinzel', serif; letter-spacing: 1px; }
 
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; padding: 28px 20px 60px; max-width: 1200px; margin: 0 auto; }
 
-  .card { background: linear-gradient(145deg, #2C1F0A 0%, #1A1208 100%); border: 1px solid #C9A84C2a; border-radius: 14px; overflow: hidden; transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s; }
-  .card:hover { border-color: #C9A84C55; box-shadow: 0 6px 30px #C9A84C12; transform: translateY(-2px); }
+  .card { background: linear-gradient(145deg, #FBF5E6 0%, #FBF5E6 100%); border: 1px solid rgba(176,138,62,0.3); border-radius: 14px; overflow: hidden; transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s; }
+  .card:hover { border-color: rgba(176,138,62,0.6); box-shadow: 0 6px 30px #C9A84C12; transform: translateY(-2px); }
   .card.hidden { display: none; }
   .card-img { height: 210px; overflow: hidden; cursor: zoom-in; position: relative; }
   .card-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.4s ease; display: block; }
   .card-img:hover img { transform: scale(1.06); }
   .img-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 55%, #1A120877); pointer-events: none; }
-  .img-hint { position: absolute; bottom: 8px; right: 10px; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: #C9A84C66; pointer-events: none; font-family: 'Cinzel', serif; }
+  .img-hint { position: absolute; bottom: 8px; right: 10px; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: #F5E6B8; text-shadow: 0 1px 3px rgba(26,18,8,0.6); pointer-events: none; font-family: 'Cinzel', serif; }
   .card-body { padding: 16px; }
-  .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 6px; padding-bottom: 10px; border-bottom: 1px solid #C9A84C14; }
-  .cat-tag { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 2px; color: var(--gold-deep); background: #C9A84C14; padding: 2px 8px; border-radius: 3px; display: inline-block; margin-bottom: 5px; text-transform: uppercase; }
-  .card-name { font-family: 'Cinzel', serif; font-size: 14px; font-weight: 400; color: var(--sunflower); line-height: 1.35; }
+  .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 6px; padding-bottom: 10px; border-bottom: 1px solid rgba(176,138,62,0.14); }
+  .cat-tag { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 2px; color: #6E4C1C; background: #C9A84C14; padding: 2px 8px; border-radius: 3px; display: inline-block; margin-bottom: 5px; text-transform: uppercase; }
+  .card-name { font-family: 'Cinzel', serif; font-size: 14px; font-weight: 400; color: #7A5208; line-height: 1.35; }
   .card-price-block { text-align: right; flex-shrink: 0; }
-  .card-price { font-family: 'Cinzel', serif; font-size: 18px; font-weight: 600; color: var(--gold); }
-  .card-energy { font-size: 10px; color: var(--gold); opacity: 0.65; letter-spacing: 0.5px; margin: 8px 0; }
-  .card-desc { font-size: 13px; line-height: 1.75; color: #D0BA85; font-style: italic; margin-bottom: 14px; }
-  .order-btn { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; background: linear-gradient(135deg, #C9A84C22, #A0783018); border: 1px solid var(--gold); color: var(--sunflower); padding: 10px 20px; border-radius: 8px; cursor: pointer; width: 100%; transition: all 0.2s; }
+  .card-price { font-family: 'Cinzel', serif; font-size: 18px; font-weight: 600; color: #6B4A16; }
+  .card-energy { font-size: 10px; color: #6B4A16; opacity: 0.65; letter-spacing: 0.5px; margin: 8px 0; }
+  .card-desc { font-size: 13px; line-height: 1.75; color: #6E4C1C; font-style: italic; margin-bottom: 14px; }
+  .order-btn { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; background: linear-gradient(135deg, #C9A84C22, #A0783018); border: 1px solid var(--gold); color: #7A5208; padding: 10px 20px; border-radius: 8px; cursor: pointer; width: 100%; transition: all 0.2s; }
   .order-btn:hover { background: linear-gradient(135deg, #C9A84C44, #A0783033); box-shadow: 0 0 20px #C9A84C22; }
 
   /* LIGHTBOX */
-  #lightbox { display: none; position: fixed; inset: 0; background: #000000cc; z-index: 999; align-items: center; justify-content: center; cursor: zoom-out; }
+  #lightbox { display: none; position: fixed; inset: 0; background: rgba(28,19,8,0.88); z-index: 999; align-items: center; justify-content: center; cursor: zoom-out; }
   #lightbox.open { display: flex; }
-  #lightbox img { max-width: 92vw; max-height: 92vh; border-radius: 12px; border: 1px solid #C9A84C33; box-shadow: 0 0 60px #C9A84C22; }
+  #lightbox img { max-width: 92vw; max-height: 92vh; border-radius: 12px; border: 1px solid rgba(176,138,62,0.36); box-shadow: 0 0 60px #C9A84C22; }
 
   /* ORDER MODAL */
-  #order-modal { display: none; position: fixed; inset: 0; background: #000000cc; z-index: 998; align-items: center; justify-content: center; padding: 20px; }
+  #order-modal { display: none; position: fixed; inset: 0; background: rgba(59,40,18,0.3); z-index: 998; align-items: center; justify-content: center; padding: 20px; }
   #order-modal.open { display: flex; }
   .modal-box {
-    background: linear-gradient(145deg, #2C1F0A, #1A1208);
-    border: 1px solid #C9A84C44; border-radius: 16px;
+    background: linear-gradient(145deg, #FBF5E6, #FBF5E6);
+    border: 1px solid rgba(176,138,62,0.48); border-radius: 16px;
     padding: 36px 32px; max-width: 520px; width: 100%;
     max-height: 90vh; overflow-y: auto;
-    box-shadow: 0 20px 60px #00000088;
+    box-shadow: 0 20px 60px rgba(59,40,18,0.24);
   }
-  .modal-title { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; margin-bottom: 6px; opacity: 0.8; }
-  .modal-item { font-family: 'Cinzel', serif; font-size: 18px; color: var(--sunflower); margin-bottom: 4px; }
-  .modal-price { font-size: 14px; color: var(--accent); font-style: italic; margin-bottom: 24px; }
-  .modal-divider { border: none; border-top: 1px solid #C9A84C22; margin: 16px 0; }
+  .modal-title { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 4px; color: #6B4A16; text-transform: uppercase; margin-bottom: 6px; opacity: 0.8; }
+  .modal-item { font-family: 'Cinzel', serif; font-size: 18px; color: #7A5208; margin-bottom: 4px; }
+  .modal-price { font-size: 14px; color: #6E4C1C; font-style: italic; margin-bottom: 24px; }
+  .modal-divider { border: none; border-top: 1px solid rgba(176,138,62,0.24); margin: 16px 0; }
   .form-group { margin-bottom: 16px; }
-  .form-label { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); opacity: 0.8; display: block; margin-bottom: 6px; }
+  .form-label { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #6B4A16; opacity: 0.8; display: block; margin-bottom: 6px; }
   .form-input, .form-textarea {
-    width: 100%; background: #0F0B0488; border: 1px solid #C9A84C33;
-    border-radius: 8px; padding: 10px 14px; color: var(--cream);
+    width: 100%; background: rgba(255,252,244,0.76); border: 1px solid rgba(176,138,62,0.36);
+    border-radius: 8px; padding: 10px 14px; color: rgba(59,40,18,0.95);
     font-family: 'Cormorant Garamond', serif; font-size: 14px;
     transition: border-color 0.2s; outline: none;
   }
   .form-input:focus, .form-textarea:focus { border-color: var(--gold); }
   .form-textarea { resize: vertical; min-height: 80px; }
-  .modal-note { font-size: 12px; color: #C9A84C88; font-style: italic; margin-bottom: 20px; line-height: 1.6; }
+  .modal-note { font-size: 12px; color: rgba(107,74,22,0.94); font-style: italic; margin-bottom: 20px; line-height: 1.6; }
   .modal-buttons { display: flex; gap: 10px; }
   .btn-submit {
     flex: 1; font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 2px;
@@ -91,22 +91,22 @@
     cursor: pointer; font-weight: 600; transition: all 0.2s;
   }
   .btn-submit:hover { box-shadow: 0 4px 20px #C9A84C44; transform: translateY(-1px); }
-  .btn-cancel { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; background: transparent; border: 1px solid #C9A84C33; color: var(--gold); padding: 12px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; }
+  .btn-cancel { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; background: transparent; border: 1px solid rgba(176,138,62,0.36); color: #6B4A16; padding: 12px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; }
   .btn-cancel:hover { background: #C9A84C11; }
 
   /* SUCCESS */
-  #success-modal { display: none; position: fixed; inset: 0; background: #000000cc; z-index: 999; align-items: center; justify-content: center; padding: 20px; }
+  #success-modal { display: none; position: fixed; inset: 0; background: rgba(59,40,18,0.3); z-index: 999; align-items: center; justify-content: center; padding: 20px; }
   #success-modal.open { display: flex; }
-  .success-box { background: linear-gradient(145deg, #2C1F0A, #1A1208); border: 1px solid #C9A84C44; border-radius: 16px; padding: 48px 36px; max-width: 460px; width: 100%; text-align: center; }
+  .success-box { background: linear-gradient(145deg, #FBF5E6, #FBF5E6); border: 1px solid rgba(176,138,62,0.48); border-radius: 16px; padding: 48px 36px; max-width: 460px; width: 100%; text-align: center; }
   .success-icon { font-size: 48px; margin-bottom: 16px; }
-  .success-title { font-family: 'Cinzel', serif; font-size: 20px; color: var(--sunflower); letter-spacing: 3px; margin-bottom: 12px; }
-  .success-msg { font-size: 14px; color: #D0BA85; line-height: 1.7; font-style: italic; margin-bottom: 28px; }
+  .success-title { font-family: 'Cinzel', serif; font-size: 20px; color: #7A5208; letter-spacing: 3px; margin-bottom: 12px; }
+  .success-msg { font-size: 14px; color: #6E4C1C; line-height: 1.7; font-style: italic; margin-bottom: 28px; }
   .btn-portal { display: inline-block; font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; background: linear-gradient(135deg, #C9A84C, #A07830); color: var(--dark); text-decoration: none; padding: 14px 32px; border-radius: 8px; font-weight: 600; transition: all 0.2s; margin-bottom: 12px; width: 100%; }
   .btn-portal:hover { box-shadow: 0 4px 20px #C9A84C44; }
-  .btn-later { background: transparent; border: 1px solid #C9A84C33; color: var(--gold); font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 2px; padding: 10px 24px; border-radius: 8px; cursor: pointer; text-transform: uppercase; width: 100%; transition: all 0.2s; }
+  .btn-later { background: transparent; border: 1px solid rgba(176,138,62,0.36); color: #6B4A16; font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 2px; padding: 10px 24px; border-radius: 8px; cursor: pointer; text-transform: uppercase; width: 100%; transition: all 0.2s; }
   .btn-later:hover { background: #C9A84C11; }
 
-  footer { text-align: center; padding: 36px 24px; border-top: 1px solid #C9A84C1a; font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 3px; color: var(--gold); opacity: 0.55; }
+  footer { text-align: center; padding: 36px 24px; border-top: 1px solid rgba(176,138,62,0.18); font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 3px; color: #6B4A16; opacity: 0.55; }
 
   @media (max-width: 600px) {
     .grid { padding: 16px 12px 40px; gap: 14px; }
@@ -115,8 +115,9 @@
   }
 </style>
 <link rel="stylesheet" href="site-nav.css">
+<link rel="stylesheet" href="sanctuary.css">
 </head>
-<body>
+<body class="st-sanctuary">
 
 <!-- LIGHTBOX -->
 <div id="lightbox" onclick="closeLightbox()">
@@ -355,7 +356,7 @@
           </div>
           <div class="card-price-block">
             <div class="card-price">$18</div>
-            <span style="color:#c9a84c88;font-size:11px">7 in stock</span>
+            <span style="color:rgba(107,74,22,0.94);font-size:11px">7 in stock</span>
           </div>
         </div>
         <div class="card-energy">✦ Alignment · Balance · Spiritual Harmony</div>
@@ -377,7 +378,7 @@
           </div>
           <div class="card-price-block">
             <div class="card-price">$18</div>
-            <span style="color:#e8824b;font-size:11px">1 in stock</span>
+            <span style="color:#A3471A;font-size:11px">1 in stock</span>
           </div>
         </div>
         <div class="card-energy">✦ Protection · Confidence · Courage · Motivation</div>
@@ -399,7 +400,7 @@
           </div>
           <div class="card-price-block">
             <div class="card-price">$18</div>
-            <span style="color:#e8824b;font-size:11px">1 in stock</span>
+            <span style="color:#A3471A;font-size:11px">1 in stock</span>
           </div>
         </div>
         <div class="card-energy">✦ Clarity · Focus · Spiritual Protection · Intuition</div>
@@ -421,7 +422,7 @@
           </div>
           <div class="card-price-block">
             <div class="card-price">$18</div>
-            <span style="color:#e8824b;font-size:11px">1 in stock</span>
+            <span style="color:#A3471A;font-size:11px">1 in stock</span>
           </div>
         </div>
         <div class="card-energy">✦ Stability · Protection · Grounding · Endurance</div>
@@ -443,7 +444,7 @@
           </div>
           <div class="card-price-block">
             <div class="card-price">$18</div>
-            <span style="color:#e8824b;font-size:11px">1 in stock</span>
+            <span style="color:#A3471A;font-size:11px">1 in stock</span>
           </div>
         </div>
         <div class="card-energy">✦ Prosperity · Confidence · Abundance · Joy</div>
@@ -465,7 +466,7 @@
           </div>
           <div class="card-price-block">
             <div class="card-price">$18</div>
-            <span style="color:#e8824b;font-size:11px">1 in stock</span>
+            <span style="color:#A3471A;font-size:11px">1 in stock</span>
           </div>
         </div>
         <div class="card-energy">✦ Luck · Opportunity · Heart Healing · Prosperity</div>
@@ -487,7 +488,7 @@
           </div>
           <div class="card-price-block">
             <div class="card-price">$18</div>
-            <span style="color:#e8824b;font-size:11px">1 in stock</span>
+            <span style="color:#A3471A;font-size:11px">1 in stock</span>
           </div>
         </div>
         <div class="card-energy">✦ Communication · Intuition · Truth · Mental Calmness</div>
@@ -509,7 +510,7 @@
           </div>
           <div class="card-price-block">
             <div class="card-price">$15</div>
-            <span style="color:#c9a84c88;font-size:11px">5 in stock</span>
+            <span style="color:rgba(107,74,22,0.94);font-size:11px">5 in stock</span>
           </div>
         </div>
         <div class="card-energy">✦ Alignment · Balance · Spiritual Harmony</div>
@@ -531,7 +532,7 @@
           </div>
           <div class="card-price-block">
             <div class="card-price">$15</div>
-            <span style="color:#c9a84c88;font-size:11px">7 in stock</span>
+            <span style="color:rgba(107,74,22,0.94);font-size:11px">7 in stock</span>
           </div>
         </div>
         <div class="card-energy">✦ Alignment · Balance · Spiritual Harmony</div>
@@ -553,7 +554,7 @@
           </div>
           <div class="card-price-block">
             <div class="card-price">$15</div>
-            <span style="color:#e8824b;font-size:11px">2 in stock</span>
+            <span style="color:#A3471A;font-size:11px">2 in stock</span>
           </div>
         </div>
         <div class="card-energy">✦ Solar Plexus Healing · Joy · Confidence · Personal Strength</div>
@@ -575,7 +576,7 @@
           </div>
           <div class="card-price-block">
             <div class="card-price">$15</div>
-            <span style="color:#e8824b;font-size:11px">1 in stock</span>
+            <span style="color:#A3471A;font-size:11px">1 in stock</span>
           </div>
         </div>
         <div class="card-energy">✦ Protection · Confidence · Courage · Motivation</div>
@@ -597,7 +598,7 @@
           </div>
           <div class="card-price-block">
             <div class="card-price">$15</div>
-            <span style="color:#c9a84c88;font-size:11px">6 in stock</span>
+            <span style="color:rgba(107,74,22,0.94);font-size:11px">6 in stock</span>
           </div>
         </div>
         <div class="card-energy">✦ Stability · Protection · Grounding · Endurance</div>
@@ -619,7 +620,7 @@
           </div>
           <div class="card-price-block">
             <div class="card-price">$15</div>
-            <span style="color:#c9a84c88;font-size:11px">5 in stock</span>
+            <span style="color:rgba(107,74,22,0.94);font-size:11px">5 in stock</span>
           </div>
         </div>
         <div class="card-energy">✦ Connection to Earth · Creativity · Stability · Wisdom</div>
@@ -641,7 +642,7 @@
           </div>
           <div class="card-price-block">
             <div class="card-price">$15</div>
-            <span style="color:#c9a84c88;font-size:11px">6 in stock</span>
+            <span style="color:rgba(107,74,22,0.94);font-size:11px">6 in stock</span>
           </div>
         </div>
         <div class="card-energy">✦ Strength · Vitality · Protection · Courage</div>
@@ -663,7 +664,7 @@
           </div>
           <div class="card-price-block">
             <div class="card-price">$15</div>
-            <span style="color:#c9a84c88;font-size:11px">5 in stock</span>
+            <span style="color:rgba(107,74,22,0.94);font-size:11px">5 in stock</span>
           </div>
         </div>
         <div class="card-energy">✦ Protection · Strength · Grounding · Energy Clearing</div>
@@ -685,7 +686,7 @@
           </div>
           <div class="card-price-block">
             <div class="card-price">$15</div>
-            <span style="color:#c9a84c88;font-size:11px">5 in stock</span>
+            <span style="color:rgba(107,74,22,0.94);font-size:11px">5 in stock</span>
           </div>
         </div>
         <div class="card-energy">✦ Nurturing · Stress Relief · Emotional Balance</div>
@@ -707,7 +708,7 @@
           </div>
           <div class="card-price-block">
             <div class="card-price">$15</div>
-            <span style="color:#c9a84c88;font-size:11px">5 in stock</span>
+            <span style="color:rgba(107,74,22,0.94);font-size:11px">5 in stock</span>
           </div>
         </div>
         <div class="card-energy">✦ Communication · Intuition · Truth · Mental Calmness</div>
@@ -729,7 +730,7 @@
           </div>
           <div class="card-price-block">
             <div class="card-price">$15</div>
-            <span style="color:#e8824b;font-size:11px">1 in stock</span>
+            <span style="color:#A3471A;font-size:11px">1 in stock</span>
           </div>
         </div>
         <div class="card-energy">✦ Spiritual Protection · Peace · Intuition · Rest</div>
@@ -751,7 +752,7 @@
           </div>
           <div class="card-price-block">
             <div class="card-price">$15</div>
-            <span style="color:#e8824b;font-size:11px">2 in stock</span>
+            <span style="color:#A3471A;font-size:11px">2 in stock</span>
           </div>
         </div>
         <div class="card-energy">✦ Compassion · Heart Healing · Forgiveness · Emotional Balance</div>
@@ -773,7 +774,7 @@
           </div>
           <div class="card-price-block">
             <div class="card-price">$15</div>
-            <span style="color:#c9a84c88;font-size:11px">3 in stock</span>
+            <span style="color:rgba(107,74,22,0.94);font-size:11px">3 in stock</span>
           </div>
         </div>
         <div class="card-energy">✦ Emotional Healing · Heart Chakra · Balance · Growth</div>
@@ -795,7 +796,7 @@
           </div>
           <div class="card-price-block">
             <div class="card-price">$15</div>
-            <span style="color:#c9a84c88;font-size:11px">4 in stock</span>
+            <span style="color:rgba(107,74,22,0.94);font-size:11px">4 in stock</span>
           </div>
         </div>
         <div class="card-energy">✦ Motivation · Inspiration · Communication · Manifestation</div>
@@ -817,7 +818,7 @@
           </div>
           <div class="card-price-block">
             <div class="card-price">$15</div>
-            <span style="color:#c9a84c88;font-size:11px">3 in stock</span>
+            <span style="color:rgba(107,74,22,0.94);font-size:11px">3 in stock</span>
           </div>
         </div>
         <div class="card-energy">✦ Strength · Courage · Heart Activation · Vitality</div>
