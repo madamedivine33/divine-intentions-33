@@ -1279,6 +1279,7 @@
 
 <link rel="stylesheet" href="site-nav.css">
 <link rel="stylesheet" href="sanctuary.css">
+<link rel="stylesheet" href="reviews.css">
 <style id="phase1-sections">
   /* ── Parchment sections: Books & Sacred Resources, One-on-One Guidance ── */
   .pc {
@@ -1441,6 +1442,7 @@
             </div>
           </div>
         </li>
+        <li><a class="di-tab" href="#reviews" data-route data-group="reviews">Reviews</a></li>
         <li>
           <span class="di-split"><a class="di-tab" href="#connect" data-route data-group="connect">Connect</a><button class="di-tab-toggle" type="button" aria-expanded="false" aria-controls="diPanel-connect"><span class="di-sr">Connect menu</span><svg class="di-caret" viewBox="0 0 10 6" aria-hidden="true" focusable="false"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button></span>
           <div class="di-panel" id="diPanel-connect" hidden>
@@ -1450,7 +1452,7 @@
                 <li><a href="queen-city-spirit-market.html">Upcoming Events</a></li>
                 <li><a href="#connect/connect-social" data-route>Social Media</a></li>
                 <li><a href="#connect/email-signup" data-route>Join the Sacred Community</a></li>
-                <li><a href="#reviews" data-route>Reviews &amp; Testimonials</a></li>
+                <li><a href="#reviews" data-route>Soul Tribe Reviews</a></li>
                 <li><a href="#sisterhood" data-route>Sacred Circle Sisterhood</a></li>
               </ul>
             </div>
@@ -1518,6 +1520,9 @@
       </div>
     </div>
     <div class="di-drawer-item">
+      <a class="di-drawer-link" href="#reviews" data-route>Reviews</a>
+    </div>
+    <div class="di-drawer-item">
       <div class="di-drawer-split"><a class="di-drawer-link" href="#connect" data-route>Connect</a><button class="di-drawer-toggle" type="button" aria-expanded="false" aria-controls="diSub-connect"><span class="di-sr">Connect menu</span><svg class="di-caret" viewBox="0 0 10 6" aria-hidden="true" focusable="false"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button></div>
       <div class="di-drawer-sub" id="diSub-connect" hidden>
         <div class="di-group">
@@ -1526,7 +1531,7 @@
             <li><a href="queen-city-spirit-market.html">Upcoming Events</a></li>
             <li><a href="#connect/connect-social" data-route>Social Media</a></li>
             <li><a href="#connect/email-signup" data-route>Join the Sacred Community</a></li>
-            <li><a href="#reviews" data-route>Reviews &amp; Testimonials</a></li>
+            <li><a href="#reviews" data-route>Soul Tribe Reviews</a></li>
             <li><a href="#sisterhood" data-route>Sacred Circle Sisterhood</a></li>
           </ul>
         </div>
@@ -1659,6 +1664,15 @@
       <a href="#" onclick="showPage('shop');return false;" class="btn-outline">Visit the Botánica</a>
     </div>
   </div>
+</section>
+<!-- SOUL TRIBE REVIEWS — a few approved reviews; stays hidden until there are some -->
+<section class="st-home st-scope" data-st-featured-section hidden aria-labelledby="stHomeReviewsTitle">
+  <div class="st-section-head">
+    <p class="st-eyebrow">✦ Soul Tribe Reviews ✦</p>
+    <h2 class="st-section-title" id="stHomeReviewsTitle">In Their Own Words</h2>
+    <p class="st-section-sub">Every experience tells a story. Your voice is part of ours.</p>
+  </div>
+  <div data-st-review-featured data-st-more="#reviews"></div>
 </section>
 <!-- SACRED COMMUNITY INVITATION (sign-up form lives on the Connect page) -->
 <section style="padding:3.5rem 1.5rem;border-top:1px solid rgba(176,138,62,0.27);text-align:center;">
@@ -2985,122 +2999,32 @@
 
 </div><!-- end page-book -->
 
-<!-- PAGE: REVIEWS -->
+<!-- PAGE: REVIEWS — Soul Tribe Reviews (approved, genuine reviews only; see reviews.js) -->
 <div class="page" id="page-reviews">
-<section id="reviews" style="padding:5rem 2rem;">
-  <div class="section-inner">
-    <span class="section-label">⭐ Client Experiences</span>
-    <h2 class="section-title">Reviews & Testimonials</h2>
-    <p class="section-sub">Real words from real people who have sat with Madame Divine</p>
+<section id="reviews" class="st-scope" aria-labelledby="stReviewsTitle">
+  <div class="st-hero">
+    <span class="st-hero-sun"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="32" cy="32" r="11"/><path d="M32 27.5a4.5 4.5 0 1 1-4.5 4.5 2.3 2.3 0 0 1 2.3-2.3"/><path d="M32 6v8M32 50v8M6 32h8M50 32h8M13.6 13.6l5.6 5.6M44.8 44.8l5.6 5.6M50.4 13.6l-5.6 5.6M19.2 44.8l-5.6 5.6"/></g></svg></span>
+    <p class="st-eyebrow">Divine Intentions 33 · Client Experiences</p>
+    <h2 class="st-title" id="stReviewsTitle">Soul Tribe Reviews</h2>
+    <p class="st-subtitle">Every experience tells a story. Your voice is part of ours.</p>
+    <div class="st-rule"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="32" cy="32" r="11"/><path d="M32 27.5a4.5 4.5 0 1 1-4.5 4.5 2.3 2.3 0 0 1 2.3-2.3"/><path d="M32 6v8M32 50v8M6 32h8M50 32h8M13.6 13.6l5.6 5.6M44.8 44.8l5.6 5.6M50.4 13.6l-5.6 5.6M19.2 44.8l-5.6 5.6"/></g></svg></div>
+    <p class="st-welcome">Whether you’ve received spiritual guidance, experienced a sacred service, or welcomed one of our handcrafted creations into your space, your experience matters. Your words help our community grow and allow others to discover what resonates with them.</p>
+    <a class="st-btn st-btn-gold" href="#reviews/leave-review" data-route>✦ Leave a Review ✦</a>
+  </div>
 
-    <!-- FEATURED TESTIMONIALS -->
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;margin-bottom:4rem;">
+  <div class="st-section">
+    <div data-st-review-gallery></div>
+  </div>
 
-      <div style="border:1px solid rgba(176,138,62,0.36);background:rgba(255,252,244,0.82);padding:2rem;position:relative;">
-        <div style="position:absolute;top:1.2rem;right:1.5rem;font-size:0.8rem;color:#A0782A;">★★★★★</div>
-        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:rgba(59,40,18,0.93);line-height:1.9;margin-bottom:1.2rem;">"Madame Divine connected with my grandmother immediately. She knew things no one could have known. I left that session feeling lighter than I have in years. Truly a gift."</p>
-        <p style="font-size:0.75rem;color:#6B4A16;letter-spacing:0.1em;font-family:'Cinzel',serif;">— Private Mediumship Session</p>
+  <div class="st-section" id="leave-review">
+    <div class="st-form-card">
+      <div class="st-section-head">
+        <p class="st-eyebrow">✦ Share Your Experience ✦</p>
+        <h3 class="st-section-title">Leave a Review</h3>
+        <p class="st-section-sub">It takes about two minutes. No account needed.</p>
       </div>
-
-      <div style="border:1px solid rgba(176,138,62,0.36);background:rgba(255,252,244,0.82);padding:2rem;position:relative;">
-        <div style="position:absolute;top:1.2rem;right:1.5rem;font-size:0.8rem;color:#A0782A;">★★★★★</div>
-        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:rgba(59,40,18,0.93);line-height:1.9;margin-bottom:1.2rem;">"The cord cutting ritual changed everything for me. I had been holding on to something for 7 years and after the ritual I finally felt free. Divine is the real deal."</p>
-        <p style="font-size:0.75rem;color:#6B4A16;letter-spacing:0.1em;font-family:'Cinzel',serif;">— Cord Cutting Ritual</p>
-      </div>
-
-      <div style="border:1px solid rgba(176,138,62,0.36);background:rgba(255,252,244,0.82);padding:2rem;position:relative;">
-        <div style="position:absolute;top:1.2rem;right:1.5rem;font-size:0.8rem;color:#A0782A;">★★★★★</div>
-        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:rgba(59,40,18,0.93);line-height:1.9;margin-bottom:1.2rem;">"I ordered the honey jar and within 3 weeks things started shifting in my relationship. The process was so intentional and she kept me informed every step of the way."</p>
-        <p style="font-size:0.75rem;color:#6B4A16;letter-spacing:0.1em;font-family:'Cinzel',serif;">— Honey Jar Ritual</p>
-      </div>
-
-      <div style="border:1px solid rgba(176,138,62,0.36);background:rgba(255,252,244,0.82);padding:2rem;position:relative;">
-        <div style="position:absolute;top:1.2rem;right:1.5rem;font-size:0.8rem;color:#A0782A;">★★★★★</div>
-        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:rgba(59,40,18,0.93);line-height:1.9;margin-bottom:1.2rem;">"She read me on live and everything she said was accurate. She didn't miss a beat. I've had many readings but this was different — she actually feels the energy."</p>
-        <p style="font-size:0.75rem;color:#6B4A16;letter-spacing:0.1em;font-family:'Cinzel',serif;">— Live General Reading</p>
-      </div>
-
-      <div style="border:1px solid rgba(176,138,62,0.36);background:rgba(255,252,244,0.82);padding:2rem;position:relative;">
-        <div style="position:absolute;top:1.2rem;right:1.5rem;font-size:0.8rem;color:#A0782A;">★★★★★</div>
-        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:rgba(59,40,18,0.93);line-height:1.9;margin-bottom:1.2rem;">"My waistbeads are so beautiful and I can feel the energy in them. She put so much intention into every bead. I wear them every day and I feel protected."</p>
-        <p style="font-size:0.75rem;color:#6B4A16;letter-spacing:0.1em;font-family:'Cinzel',serif;">— Luxe Waistbead Strand</p>
-      </div>
-
-      <div style="border:1px solid rgba(176,138,62,0.36);background:rgba(255,252,244,0.82);padding:2rem;position:relative;">
-        <div style="position:absolute;top:1.2rem;right:1.5rem;font-size:0.8rem;color:#A0782A;">★★★★★</div>
-        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:rgba(59,40,18,0.93);line-height:1.9;margin-bottom:1.2rem;">"The Reiki session was powerful. I didn't expect to feel so much during a distant session but I felt warmth move through my body the entire time. Highly recommend."</p>
-        <p style="font-size:0.75rem;color:#6B4A16;letter-spacing:0.1em;font-family:'Cinzel',serif;">— Distant Reiki Attunement</p>
-      </div>
-
+      <div data-st-review-form></div>
     </div>
-
-    <!-- SUBMIT A REVIEW -->
-    <div style="border:1px solid rgba(176,138,62,0.36);background:linear-gradient(135deg,rgba(201,168,76,0.05) 0%,transparent 100%);padding:2.5rem;">
-      <p style="font-family:'Cinzel',serif;font-size:0.7rem;letter-spacing:0.3em;text-transform:uppercase;color:#6B4A16;margin-bottom:0.6rem;">✦ Share Your Experience</p>
-      <h3 style="font-family:'Cinzel',serif;font-size:1.3rem;color:rgba(59,40,18,0.95);margin-bottom:0.5rem;">Leave a Review</h3>
-      <p style="font-size:0.85rem;color:rgba(59,40,18,0.86);line-height:1.8;margin-bottom:2rem;">Your words matter. Whether it was a reading, a ritual, or a product — share your experience so others know what to expect when they step into this sacred space.</p>
-
-      <form id="reviewForm" onsubmit="submitReview(event)">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
-          <div>
-            <label style="display:block;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:#6B4A16;font-family:'Cinzel',serif;margin-bottom:0.4rem;">Your Name <span style="color:rgba(59,40,18,0.8);font-style:italic;text-transform:none;letter-spacing:0;">(or initials)</span></label>
-            <input type="text" id="reviewName" placeholder="How you'd like to be known" required style="width:100%;background:rgba(255,252,244,0.82);border:1px solid rgba(176,138,62,0.36);color:rgba(59,40,18,0.95);font-family:'Jost',sans-serif;font-size:0.88rem;padding:0.85rem 1rem;outline:none;border-radius:0;" />
-          </div>
-          <div>
-            <label style="display:block;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:#6B4A16;font-family:'Cinzel',serif;margin-bottom:0.4rem;">Service or Product</label>
-            <select id="reviewService" required style="width:100%;background:#FBF5E6;border:1px solid rgba(176,138,62,0.36);color:rgba(59,40,18,0.95);font-family:'Jost',sans-serif;font-size:0.88rem;padding:0.85rem 1rem;outline:none;border-radius:0;-webkit-appearance:none;">
-              <option value="">— Select one —</option>
-              <option>Private Reading</option>
-              <option>Mediumship Session</option>
-              <option>Trauma & Shadow Work</option>
-              <option>Reiki Session</option>
-              <option>Cord Cutting Ritual</option>
-              <option>Honey Jar Ritual</option>
-              <option>Live Reading</option>
-              <option>Waistbead Strand</option>
-              <option>Botánica Product</option>
-              <option>Candle</option>
-              <option>Money Bowl Kit</option>
-              <option>Divine Armor & Healing Duo</option>
-              <option>Other</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- Star Rating -->
-        <div style="margin-bottom:1rem;">
-          <label style="display:block;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:#6B4A16;font-family:'Cinzel',serif;margin-bottom:0.6rem;">Your Rating</label>
-          <div id="starRating" style="display:flex;gap:0.5rem;">
-            <span class="star" data-val="1" onclick="setRating(1)" style="font-size:1.8rem;cursor:pointer;color:rgba(107,74,22,0.92);transition:color 0.2s;">★</span>
-            <span class="star" data-val="2" onclick="setRating(2)" style="font-size:1.8rem;cursor:pointer;color:rgba(107,74,22,0.92);transition:color 0.2s;">★</span>
-            <span class="star" data-val="3" onclick="setRating(3)" style="font-size:1.8rem;cursor:pointer;color:rgba(107,74,22,0.92);transition:color 0.2s;">★</span>
-            <span class="star" data-val="4" onclick="setRating(4)" style="font-size:1.8rem;cursor:pointer;color:rgba(107,74,22,0.92);transition:color 0.2s;">★</span>
-            <span class="star" data-val="5" onclick="setRating(5)" style="font-size:1.8rem;cursor:pointer;color:rgba(107,74,22,0.92);transition:color 0.2s;">★</span>
-          </div>
-          <input type="hidden" id="ratingValue" value="0" />
-        </div>
-
-        <div style="margin-bottom:1.5rem;">
-          <label style="display:block;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:#6B4A16;font-family:'Cinzel',serif;margin-bottom:0.4rem;">Your Experience</label>
-          <textarea id="reviewText" placeholder="Share what your session or product meant to you. Be as detailed as you'd like — your words may help someone else take their first step." required style="width:100%;background:rgba(255,252,244,0.82);border:1px solid rgba(176,138,62,0.36);color:rgba(59,40,18,0.95);font-family:'Jost',sans-serif;font-size:0.88rem;padding:0.85rem 1rem;outline:none;border-radius:0;min-height:130px;resize:vertical;line-height:1.7;"></textarea>
-        </div>
-
-        <div style="margin-bottom:1.5rem;">
-          <label style="display:flex;align-items:flex-start;gap:0.8rem;cursor:pointer;font-size:0.8rem;color:rgba(59,40,18,0.87);line-height:1.6;">
-            <input type="checkbox" id="reviewConsent" required style="margin-top:3px;accent-color:var(--gold);" />
-            I give Madame Divine permission to share this review on her website and social media.
-          </label>
-        </div>
-
-        <button type="submit" style="background:var(--gold);color:var(--dark);border:none;padding:1rem 2.5rem;font-family:'Cinzel',serif;font-size:0.78rem;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;" onmouseover="this.style.background='#E8C97A'" onmouseout="this.style.background='var(--gold)'">✦ Submit My Review ✦</button>
-      </form>
-
-      <div id="reviewSuccess" style="display:none;background:rgba(201,168,76,0.08);border:1px solid rgba(176,138,62,0.54);padding:2rem;text-align:center;margin-top:1rem;">
-        <p style="font-family:'Cinzel',serif;font-size:1rem;color:#6B4A16;margin-bottom:0.5rem;">✦ Thank You ✦</p>
-        <p style="font-size:0.85rem;color:rgba(59,40,18,0.89);line-height:1.7;">Your review has been received. Madame Divine is grateful for your trust and your words. 🌻</p>
-      </div>
-    </div>
-
   </div>
 </section>
 </div><!-- end page-reviews -->
@@ -3305,4 +3229,6 @@
     observer.observe(el);
   });
 </script>
+<script src="reviews-config.js"></script>
+<script src="reviews.js"></script>
 <script src="site-nav.js"></script>

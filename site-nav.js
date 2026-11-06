@@ -19,7 +19,7 @@
     home: 'home', about: 'about',
     services: 'services',
     shop: 'shop', waistbeads: 'shop', herbals: 'shop', book: 'shop',
-    connect: 'connect', reviews: 'connect', sisterhood: 'connect'
+    connect: 'connect', reviews: 'reviews', sisterhood: 'connect'
   };
 
   function setCurrent(page) {
