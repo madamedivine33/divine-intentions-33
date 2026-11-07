@@ -11,15 +11,15 @@
   var header = document.getElementById('diHeader');
   if (!header) return;
 
-  var desktopMQ = window.matchMedia('(min-width: 961px)');
+  var desktopMQ = window.matchMedia('(min-width: 1121px)');
   var hoverMQ = window.matchMedia('(hover: hover) and (pointer: fine)');
 
   // Which top-level tab owns each index.html page
   var GROUP = {
     home: 'home', about: 'about',
     services: 'services',
-    shop: 'shop', waistbeads: 'shop', herbals: 'shop', book: 'shop',
-    connect: 'connect', reviews: 'reviews', sisterhood: 'connect'
+    shop: 'shop', waistbeads: 'shop', herbals: 'shop', book: 'books',
+    connect: 'connect', reviews: 'connect', sisterhood: 'connect'
   };
 
   function setCurrent(page) {
@@ -163,6 +163,13 @@
     var page = parts[0];
     if (!page || !document.getElementById('page-' + page)) return false;
     window.showPage(page);
+    // Let the shop (shop-collections.js) draw the right collection view
+    parts.user = !!smooth;
+    document.dispatchEvent(new CustomEvent('di:route', { detail: parts }));
+    if (page === 'shop') {
+      if (parts[1] === 'books') setCurrent('book');
+      return true;
+    }
     var targetId = null;
     if (parts[1] && !activateTab(parts[1])) targetId = parts[1];
     if (parts[2]) targetId = parts[2];

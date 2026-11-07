@@ -290,12 +290,12 @@
 .page [id], section[id] { scroll-margin-top: calc(var(--di-header-h) + 16px); }
 
 /* ── Tablet & phone ── */
-@media (max-width: 1040px) {
+@media (max-width: 1260px) {
   .di-bar { gap: 20px; padding: 0 22px; }
   .di-tab { padding: 10px 10px; letter-spacing: 0.12em; }
   .di-tab::after { left: 10px; right: 10px; }
 }
-@media (max-width: 960px) {
+@media (max-width: 1120px) {
   :root { --di-header-h: 66px; }
   .di-nav, .di-divider, .di-book-desktop { display: none; }
   .di-bar { gap: 10px; padding: 0 16px; }
@@ -354,7 +354,7 @@
   padding: 0;
   border-left: 1px solid rgba(176, 138, 62, 0.18);
 }
-@media (max-width: 1040px) {
+@media (max-width: 1260px) {
   .di-split .di-tab { padding-right: 2px; }
   .di-split .di-tab::after { right: 2px; }
   .di-tab-toggle { width: 22px; }
@@ -385,3 +385,15 @@
   .di-tab-toggle { width: 20px; }
   .di-book { padding: 10px 12px; font-size: 0.72rem; letter-spacing: 0.08em; gap: 6px; }
 }
+
+/* ── Seven-tab layout (Home · Shop · Book a Reading · Experiences · Books & Workbooks · About · Contact) ── */
+.di-tabs { gap: 2px; }
+.di-tab { padding: 10px 11px; letter-spacing: 0.12em; }
+.di-tab::after { left: 11px; right: 11px; }
+/* a tab that only opens a menu (Experiences) */
+.di-tab.di-tab-only { width: auto; height: auto; gap: 6px; }
+.di-tab.di-tab-only .di-caret { width: 9px; height: 6px; }
+.di-tab.di-tab-only[aria-expanded="true"] .di-caret { transform: rotate(180deg); }
+.di-tab.di-tab-only[aria-current="page"]::after { transform: scaleX(1); }
+.di-drawer-toggle.di-drawer-only { width: 100%; justify-content: space-between; text-align: left; }
+.di-drawer-toggle.di-drawer-only .di-caret { width: 11px; height: 7px; }
