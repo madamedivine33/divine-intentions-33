@@ -39,7 +39,7 @@ window.DI_SHOP = {
     {
       key: 'prosperity', title: 'Manifestation & Prosperity', short: 'Manifestation & Prosperity',
       desc: 'Money bowls, wealth oils, and abundance tools for opening the way to what is yours.',
-      img: 'https://cdn.shopify.com/s/files/1/0773/1648/9306/files/golden-harvest-money-bowl-ritual-kit.jpg?v=1793947671&width=600',
+      img: 'images/products/golden-harvest-styled-600.webp',
       shopifyCollection: 'prosperity-abundance'
     },
     {
@@ -126,7 +126,7 @@ window.DI_SHOP = {
     /* Manifestation & Prosperity */
     { handle: 'the-golden-harvest-prosperity-money-bowl-ritual-kit-1', title: 'The Golden Harvest — Prosperity Money Bowl Ritual Kit', in: ['prosperity'], type: 'Ritual Kit',
       price: 91.85, stock: 4, featured: true,
-      img: 'https://cdn.shopify.com/s/files/1/0773/1648/9306/files/golden-harvest-money-bowl-ritual-kit.jpg?v=1793947671&width=600',
+      img: 'images/products/golden-harvest-styled-600.webp',
       desc: 'Plant with intention, nurture with faith, harvest in abundance. A complete money bowl ritual set.' },
     { handle: 'prosperity-intention-candle', title: 'Prosperity Intention Candle', in: ['prosperity', 'candles'], type: 'Candle',
       price: 45.63, stock: 1, img: 'https://cdn.shopify.com/s/files/1/0773/1648/9306/files/prosperity-intention-candle.png?v=1792998889&width=600',
