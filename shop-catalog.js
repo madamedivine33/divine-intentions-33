@@ -5,7 +5,7 @@
    SOURCE OF TRUTH: the Shopify store (shopdivineintentions33.myshopify.com).
    Every "shopify" item below mirrors an ACTIVE Shopify product — same handle,
    same price, same product page. Checkout always happens on Shopify.
-   Synced from Shopify: 2026-11-06.
+   Synced from Shopify: 2026-11-06 (money bowl price updated same evening).
 
    Items marked  source: 'site'  are not purchasable on Shopify yet; they
    keep the order link they already had on the website.
@@ -125,12 +125,9 @@ window.DI_SHOP = {
 
     /* Manifestation & Prosperity */
     { handle: 'the-golden-harvest-prosperity-money-bowl-ritual-kit-1', title: 'The Golden Harvest — Prosperity Money Bowl Ritual Kit', in: ['prosperity'], type: 'Ritual Kit',
-      price: 92.99, stock: 4, featured: true,
+      price: 91.85, stock: 4, featured: true,
       img: 'https://cdn.shopify.com/s/files/1/0773/1648/9306/files/golden-harvest-money-bowl-ritual-kit.jpg?v=1793947671&width=600',
       desc: 'Plant with intention, nurture with faith, harvest in abundance. A complete money bowl ritual set.' },
-    { source: 'site', title: 'Custom Money Bowl Kit', in: ['prosperity'], type: 'Ritual Kit',
-      price: 87.85, priceNote: 'shipping included', img: 'images/products/money-bowl-kit.webp', url: 'https://tr.ee/01jNLXg6ZY',
-      desc: 'Built for you — assembled by Madame Divine around your specific intention. No two kits are the same.' },
     { handle: 'prosperity-intention-candle', title: 'Prosperity Intention Candle', in: ['prosperity', 'candles'], type: 'Candle',
       price: 45.63, stock: 1, img: 'https://cdn.shopify.com/s/files/1/0773/1648/9306/files/prosperity-intention-candle.png?v=1792998889&width=600',
       desc: 'A hand-dressed candle for intentions of abundance, gratitude, and opportunity.' },
