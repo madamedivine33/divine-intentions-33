@@ -206,6 +206,7 @@
     });
     window.addEventListener('popstate', function () { route(location.hash, false) || window.showPage('home'); });
     window.addEventListener('hashchange', function () { route(location.hash, true); });
+    window.__diNavReady = true; // tells the fallback router in index.html that this script loaded
     if (location.hash && location.hash.length > 1) route(location.hash, false);
     else setCurrent('home');
   } else {
