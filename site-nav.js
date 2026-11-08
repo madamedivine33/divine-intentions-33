@@ -215,7 +215,6 @@
     });
     setCurrent(null);
   }
-}
 
   /* Keep digital resources together in the existing books product grid. */
   function mountDigitalGuides() {
