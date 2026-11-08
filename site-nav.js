@@ -215,4 +215,33 @@
     });
     setCurrent(null);
   }
+}
+  /* Grabovoi digital guide belongs with Books & Digital Resources,
+     not in a separate website destination. Checkout remains on Shopify. */
+  function mountGrabovoiBook() {
+    document.querySelectorAll('a[href*="grabovoi-codes-digital.html"]').forEach(function (a) {
+      var card = a.closest('[data-grabovoi-standalone], .grabovoi-standalone');
+      if (card) card.remove();
+      else a.remove();
+    });
+    if (document.getElementById('di-grabovoi-digital-book')) return;
+    var books = document.getElementById('page-book');
+    if (!books) return;
+    var section = document.createElement('section');
+    section.id = 'di-grabovoi-digital-book';
+    section.setAttribute('aria-label', 'Grabovoi Codes digital guide');
+    section.style.cssText = 'max-width:1040px;margin:36px auto;padding:24px;border:1px solid #cfae68;border-radius:16px;background:#fffaf0;color:#3e3526;box-shadow:0 9px 24px rgba(69,45,17,.09)';
+    section.innerHTML = '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:28px;align-items:center">' +
+      '<img loading="lazy" style="width:100%;max-width:330px;margin:auto;display:block;object-fit:contain;border-radius:8px" src="https://cdn.shopify.com/s/files/1/0773/1648/9306/files/grabovoi-codes-digital-guide-cover.png?v=1794179727" alt="Grabovoi Codes digital guide cover illustrated with a curly-haired woman, sunflowers and gold details">' +
+      '<div><p style="text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;color:#806220">Digital resource · PDF · 24 pages</p>' +
+      '<h3 style="font-family:Georgia,serif;font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.2;color:#30553b;margin:10px 0">Grabovoi Codes: The Sacred Practice of Numbers &amp; Intention</h3>' +
+      '<p>An educational digital guide exploring symbolic number sequences, intention-setting and mindful reflection. Includes 15 categorized sequences, a seven-day practice, journaling worksheets and source notes.</p>' +
+      '<p style="font-weight:bold;font-size:1.6rem;color:#986d24;margin:12px 0">$19.88</p>' +
+      '<a style="display:inline-block;padding:13px 22px;background:#30553b;color:white;border-radius:5px;text-decoration:none" href="https://shopdivineintentions33.myshopify.com/products/grabovoi-codes-the-sacred-practice-of-numbers-intention-digital-guide" rel="noopener">Purchase Digital Guide</a>' +
+      '<p style="font-size:.86rem;margin-top:14px">Digital download only. The Golden Treasury and The Golden Harvest Prosperity Money Bowl Ritual Kit are sold separately; no physical items are included.</p>' +
+      '</div></div>';
+    books.appendChild(section);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mountGrabovoiBook);
+  else mountGrabovoiBook();
 })();
