@@ -13,7 +13,7 @@
     if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button === 1) return;
     var action = e.target.closest && e.target.closest('a, button');
     if (!action) return;
-    var label = (action.textContent || '').replace(/\\s+/g, ' ').trim().toLowerCase();
+    var label = (action.textContent || '').replace(/\s+/g, ' ').trim().toLowerCase();
     if (label !== 'book a reading' && label !== 'book reading') return;
     if (action.closest('[data-reading-choice-exempt]')) return;
     e.preventDefault();
