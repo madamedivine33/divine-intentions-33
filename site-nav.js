@@ -216,32 +216,96 @@
     setCurrent(null);
   }
 }
-  /* Grabovoi digital guide belongs with Books & Digital Resources,
-     not in a separate website destination. Checkout remains on Shopify. */
-  function mountGrabovoiBook() {
-    document.querySelectorAll('a[href*="grabovoi-codes-digital.html"]').forEach(function (a) {
-      var card = a.closest('[data-grabovoi-standalone], .grabovoi-standalone');
-      if (card) card.remove();
-      else a.remove();
+
+  /* Keep digital resources together in the existing books product grid. */
+  function mountDigitalGuides() {
+    var bookPage = document.getElementById('page-book') || document.body;
+    var sevenTitle = Array.prototype.find.call(
+      bookPage.querySelectorAll('h2,h3,h4,h5,.book-title'),
+      function (el) { return /seven pentacles of wealth/i.test(el.textContent || ''); }
+    );
+    if (!sevenTitle) return;
+
+    // Locate the actual third product card: its parent row also contains
+    // Returning to Yourself and Sacred Boundaries.
+    var card = sevenTitle;
+    while (card.parentElement && card !== bookPage) {
+      var siblings = Array.prototype.slice.call(card.parentElement.children);
+      if (siblings.length >= 3 &&
+          siblings.some(function (el) { return /returning to yourself/i.test(el.textContent || ''); }) &&
+          siblings.some(function (el) { return /sacred boundaries/i.test(el.textContent || ''); })) break;
+      card = card.parentElement;
+    }
+    if (!card.parentElement || card === bookPage) return;
+
+    var sevenImage = 'https://cdn.shopify.com/s/files/1/0773/1648/9306/files/SevenPentaclesWealthActivationKit_f074b85c-0096-408d-8ae9-4b812c4e2c21.png?v=1793006348';
+    var grabImage = 'https://cdn.shopify.com/s/files/1/0773/1648/9306/files/grabovoi-codes-digital-guide-cover.png?v=1794179727';
+    var grabShop = 'https://shopdivineintentions33.myshopify.com/products/grabovoi-codes-the-sacred-practice-of-numbers-intention-digital-guide';
+
+    function replaceCover(productCard, url, alt) {
+      // Previous design used a "Digital Product / PDF Emailed" placeholder.
+      var placeholder = Array.prototype.find.call(productCard.querySelectorAll('*'), function (el) {
+        return el.children.length === 0 && /digital product/i.test(el.textContent || '');
+      });
+      var image = productCard.querySelector('img');
+      if (image) {
+        image.src = url; image.alt = alt;
+        image.style.cssText = 'display:block;width:100%;height:475px;max-height:60vw;object-fit:contain;margin:auto';
+        return;
+      }
+      var wrapper = placeholder;
+      while (wrapper && wrapper.parentElement && wrapper.parentElement !== productCard &&
+             !/pdf.*email/i.test(wrapper.textContent || '')) wrapper = wrapper.parentElement;
+      if (!wrapper || wrapper === productCard) {
+        wrapper = productCard.firstElementChild;
+      }
+      if (!wrapper) return;
+      wrapper.innerHTML = '';
+      wrapper.style.cssText += ';display:flex;align-items:center;justify-content:center;min-height:475px;padding:20px;';
+      var img = document.createElement('img');
+      img.src = url; img.alt = alt; img.loading = 'lazy';
+      img.style.cssText = 'display:block;width:100%;height:475px;max-height:60vw;object-fit:contain;margin:auto';
+      wrapper.appendChild(img);
+    }
+
+    replaceCover(card, sevenImage, 'Seven Pentacles of Wealth Digital Activation Kit cover');
+
+    if (document.getElementById('di-grabovoi-digital-card')) return;
+    var clone = card.cloneNode(true);
+    clone.id = 'di-grabovoi-digital-card';
+    clone.querySelectorAll('[id]').forEach(function (el) { el.removeAttribute('id'); });
+    replaceCover(clone, grabImage, 'Grabovoi Codes: The Sacred Practice of Numbers and Intention digital guide cover');
+
+    // Preserve the original card styling while replacing its marketing copy.
+    var walker = document.createTreeWalker(clone, NodeFilter.SHOW_TEXT);
+    var node;
+    while ((node = walker.nextNode())) {
+      var t = node.nodeValue;
+      t = t.replace(/Seven Pentacles of Wealth/gi, 'Grabovoi Codes');
+      t = t.replace(/Digital Activation Kit/gi, 'The Sacred Practice of Numbers & Intention');
+      t = t.replace(/Sacred seals for financial power and prosperity[^.]*\./gi, 'A 24-page educational digital guide exploring symbolic number sequences, intention setting, mindful reflection and journal practices.');
+      t = t.replace(/All 7 Sacred Pentacle Seals[^\\n]*/gi, '15 Categorized Sequences · Seven-Day Practice · Reflection Worksheets · Educational Source Notes');
+      t = t.replace(/\$11[.]76/g, '$19.88');
+      t = t.replace(/12 pages/gi, '24 pages');
+      node.nodeValue = t;
+    }
+    clone.querySelectorAll('a').forEach(function (a) {
+      if (/shopify|pentacle/i.test(a.href || '') || /buy on shopify/i.test(a.textContent || '')) {
+        a.href = grabShop;
+        a.setAttribute('rel', 'noopener');
+      }
     });
-    if (document.getElementById('di-grabovoi-digital-book')) return;
-    var books = document.getElementById('page-book');
-    if (!books) return;
-    var section = document.createElement('section');
-    section.id = 'di-grabovoi-digital-book';
-    section.setAttribute('aria-label', 'Grabovoi Codes digital guide');
-    section.style.cssText = 'max-width:1040px;margin:36px auto;padding:24px;border:1px solid #cfae68;border-radius:16px;background:#fffaf0;color:#3e3526;box-shadow:0 9px 24px rgba(69,45,17,.09)';
-    section.innerHTML = '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:28px;align-items:center">' +
-      '<img loading="lazy" style="width:100%;max-width:330px;margin:auto;display:block;object-fit:contain;border-radius:8px" src="https://cdn.shopify.com/s/files/1/0773/1648/9306/files/grabovoi-codes-digital-guide-cover.png?v=1794179727" alt="Grabovoi Codes digital guide cover illustrated with a curly-haired woman, sunflowers and gold details">' +
-      '<div><p style="text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;color:#806220">Digital resource · PDF · 24 pages</p>' +
-      '<h3 style="font-family:Georgia,serif;font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.2;color:#30553b;margin:10px 0">Grabovoi Codes: The Sacred Practice of Numbers &amp; Intention</h3>' +
-      '<p>An educational digital guide exploring symbolic number sequences, intention-setting and mindful reflection. Includes 15 categorized sequences, a seven-day practice, journaling worksheets and source notes.</p>' +
-      '<p style="font-weight:bold;font-size:1.6rem;color:#986d24;margin:12px 0">$19.88</p>' +
-      '<a style="display:inline-block;padding:13px 22px;background:#30553b;color:white;border-radius:5px;text-decoration:none" href="https://shopdivineintentions33.myshopify.com/products/grabovoi-codes-the-sacred-practice-of-numbers-intention-digital-guide" rel="noopener">Purchase Digital Guide</a>' +
-      '<p style="font-size:.86rem;margin-top:14px">Digital download only. The Golden Treasury and The Golden Harvest Prosperity Money Bowl Ritual Kit are sold separately; no physical items are included.</p>' +
-      '</div></div>';
-    books.appendChild(section);
+    var smallPrint = document.createElement('p');
+    smallPrint.style.cssText = 'font-size:12px;line-height:1.5;margin:12px 20px;color:#806a4c';
+    smallPrint.textContent = 'Digital PDF only. The Golden Treasury and Golden Harvest Money Bowl Ritual Kit are sold separately; no physical kit is included.';
+    clone.appendChild(smallPrint);
+    card.insertAdjacentElement('afterend', clone);
+
+    // Remove the prior extra panel outside the product grid, if present.
+    var old = document.getElementById('di-grabovoi-digital-book');
+    if (old) old.remove();
+    document.querySelectorAll('a[href*="grabovoi-codes-digital.html"]').forEach(function (a) { a.remove(); });
   }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mountGrabovoiBook);
-  else mountGrabovoiBook();
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mountDigitalGuides);
+  else mountDigitalGuides();
 })();
