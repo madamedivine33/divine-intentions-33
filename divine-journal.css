@@ -1,0 +1,206 @@
+/* Divine Intentions 33 — The Divine Journal homepage feature.
+   The journal itself lives on Shopify; this section only introduces it and links out. */
+
+.dj {
+  --dj-ivory: #FFFBF0;
+  --dj-parchment: #F7EBCF;
+  --dj-ink: #3B2812;
+  --dj-ink-soft: #5A4220;
+  --dj-gold: #8A6420;        /* antique gold, readable on ivory (≈5:1) */
+  --dj-gold-line: rgba(176,138,62,0.45);
+  --dj-honey: #D99A3C;
+  --dj-honey-glow: rgba(217,154,60,0.16);
+
+  position: relative;
+  z-index: 1;
+  padding: 4.5rem 1.25rem 4.75rem;
+  border-top: 1px solid rgba(176,138,62,0.27);
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 0%, var(--dj-honey-glow), transparent 70%),
+    linear-gradient(180deg, var(--dj-ivory) 0%, #FBF3DF 100%);
+  color: var(--dj-ink);
+}
+
+.dj-inner { max-width: 1080px; margin: 0 auto; }
+
+/* Taíno-inspired band: stepped triangles like petroglyph borders */
+.dj-band {
+  height: 14px;
+  max-width: 340px;
+  margin: 0 auto 1.6rem;
+  background:
+    linear-gradient(135deg, transparent 50%, var(--dj-gold-line) 50%, var(--dj-gold-line) 58%, transparent 58%) 0 0 / 14px 14px repeat-x,
+    linear-gradient(225deg, transparent 50%, var(--dj-gold-line) 50%, var(--dj-gold-line) 58%, transparent 58%) 0 0 / 14px 14px repeat-x;
+  opacity: 0.9;
+}
+.dj-band-bottom { margin: 2.6rem auto 0; transform: scaleY(-1); }
+
+/* ── Heading ── */
+.dj-head { text-align: center; max-width: 680px; margin: 0 auto 2.6rem; }
+.dj-sun { width: 54px; height: 54px; display: block; margin: 0 auto 0.9rem; }
+.dj-eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--dj-gold);
+  margin-bottom: 0.7rem;
+}
+.dj-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-size: clamp(1.9rem, 4.6vw, 2.9rem);
+  line-height: 1.15;
+  color: var(--dj-ink);
+  letter-spacing: 0.04em;
+}
+.dj-rule {
+  width: 120px; height: 1px; margin: 1.1rem auto;
+  background: linear-gradient(to right, transparent, var(--dj-honey), transparent);
+}
+.dj-intro {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+  line-height: 1.55;
+  color: var(--dj-ink-soft);
+}
+
+/* ── Featured entry ── */
+.dj-feature {
+  max-width: 880px;
+  margin: 0 auto;
+  background: #FFFDF7;
+  border: 1px solid var(--dj-gold-line);
+  box-shadow: 0 18px 50px rgba(122,79,0,0.10), 0 2px 0 rgba(255,255,255,0.8) inset;
+  position: relative;
+}
+.dj-feature::before {
+  content: '';
+  position: absolute; left: 0; right: 0; top: 0; height: 2px;
+  background: linear-gradient(to right, transparent, var(--dj-honey), transparent);
+  z-index: 1;
+}
+.dj-media {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 16 / 9;   /* the image's own shape, so its title lettering is never cropped */
+  overflow: hidden;
+  background: var(--dj-parchment);
+}
+.dj-media img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.dj-media::after { /* thin gold inner frame */
+  content: '';
+  position: absolute; inset: 12px;
+  border: 1px solid rgba(255,236,190,0.7);
+  pointer-events: none;
+}
+.dj-body {
+  padding: clamp(1.6rem, 3.6vw, 2.8rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.dj-label {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--dj-gold);
+  border: 1px solid var(--dj-gold-line);
+  padding: 0.3rem 0.75rem;
+  margin-bottom: 1rem;
+}
+.dj-entry-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: clamp(1.45rem, 2.8vw, 1.95rem);
+  line-height: 1.22;
+  margin-bottom: 0.9rem;
+}
+.dj-entry-title a { display: block; color: var(--dj-ink); text-decoration: none; }
+.dj-entry-title a:hover { color: var(--dj-gold); }
+.dj-entry-title em { display: block; font-weight: 400; font-size: 0.78em; color: var(--dj-ink-soft); margin-top: 0.25rem; }
+.dj-meta {
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dj-ink-soft);
+  margin-bottom: 1rem;
+}
+.dj-teaser {
+  max-width: 560px;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--dj-ink-soft);
+  margin-bottom: 1.6rem;
+}
+.dj-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
+.dj-actions a { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; }
+
+/* Visible keyboard focus everywhere in the section */
+.dj a:focus-visible {
+  outline: 2px solid var(--dj-gold);
+  outline-offset: 3px;
+}
+
+/* ── Themes ── */
+.dj-themes { margin-top: 3.2rem; }
+.dj-themes-head { text-align: center; margin-bottom: 1.6rem; }
+.dj-themes-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--dj-ink);
+}
+.dj-themes-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.08rem;
+  color: var(--dj-ink-soft);
+  margin-top: 0.4rem;
+}
+.dj-theme-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1rem;
+}
+.dj-theme {
+  background: rgba(255,253,247,0.75);
+  border: 1px solid rgba(176,138,62,0.3);
+  border-top: 2px solid var(--dj-honey);
+  padding: 1.25rem 1.1rem 1.3rem;
+  text-align: center;
+}
+.dj-theme-glyph { width: 26px; height: 26px; display: block; margin: 0 auto 0.6rem; }
+.dj-theme h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 1.16rem;
+  line-height: 1.25;
+  color: var(--dj-ink);
+  margin-bottom: 0.45rem;
+}
+.dj-theme p { font-size: 0.88rem; line-height: 1.6; color: var(--dj-ink-soft); }
+
+/* ── Small screens ── */
+@media (max-width: 760px) {
+  .dj { padding: 3.5rem 1rem 3.75rem; }
+  .dj-actions a { flex: 1 1 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dj .btn-primary, .dj .btn-outline { transition: none; }
+}

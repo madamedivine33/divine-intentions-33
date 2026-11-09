@@ -385,3 +385,10 @@
   .di-tab-toggle { width: 20px; }
   .di-book { padding: 10px 12px; font-size: 0.72rem; letter-spacing: 0.08em; gap: 6px; }
 }
+
+/* ── The Divine Journal (external Shopify blog link) ──
+   The desktop bar has no room for the full name, so it reads "Journal";
+   screen readers still hear "The Divine Journal". The phone menu shows the full name. */
+.di-tab-journal { white-space: nowrap; }
+.di-tab-long { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.di-drawer-link .di-ext { margin-left: 10px; vertical-align: middle; }
