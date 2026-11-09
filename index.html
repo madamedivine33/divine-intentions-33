@@ -1376,6 +1376,21 @@
     .pc-row h4 { font-size: 1.28rem; }
   }
 </style>
+<!-- Metricool analytics -->
+<script>
+function loadScript(a){
+  var b=document.getElementsByTagName("head")[0],
+      c=document.createElement("script");
+  c.type="text/javascript";
+  c.src="https://tracker.metricool.com/resources/be.js";
+  c.onreadystatechange=a;
+  c.onload=a;
+  b.appendChild(c);
+}
+loadScript(function(){
+  beTracker.t({hash:"85419670e253147762c66cf140d53617"});
+});
+</script>
 </head>
 <body class="st-sanctuary">
 
