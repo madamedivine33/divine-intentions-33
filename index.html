@@ -1408,6 +1408,14 @@ loadScript(function(){
         <button onclick="closePopup();showPage('shop')" style="background:var(--gold);color:var(--dark);border:none;padding:0.75rem 1.5rem;font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.15em;cursor:pointer;transition:all 0.3s;">Shop Now</button>
         <button onclick="closePopup();showPage('services')" style="background:transparent;color:#6B4A16;border:1px solid rgba(176,138,62,0.7);padding:0.75rem 1.5rem;font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.15em;cursor:pointer;transition:all 0.3s;">Book a Session</button>
       </div>
+      <form id="popupSignupForm" onsubmit="return submitPopupSignup(event)" style="margin-top:1.4rem;padding-top:1.1rem;border-top:1px solid rgba(176,138,62,0.35);">
+        <p style="font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.2em;color:#6B4A16;margin-bottom:0.6rem;text-transform:uppercase;">Join the Sacred Community</p>
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;justify-content:center;">
+          <input type="email" id="popupSignupEmail" required placeholder="Your email address" autocomplete="email" aria-label="Email address" style="flex:1 1 200px;min-width:0;background:#fff;border:1px solid rgba(176,138,62,0.6);color:rgba(59,40,18,0.95);font-family:'Jost',sans-serif;font-size:0.9rem;padding:0.7rem 0.9rem;outline:none;">
+          <button type="submit" id="popupSignupBtn" style="background:#6B4A16;color:#fff;border:none;padding:0.7rem 1.2rem;font-family:'Cinzel',serif;font-size:0.72rem;letter-spacing:0.15em;cursor:pointer;">Join</button>
+        </div>
+      </form>
+      <p id="popupSignupMsg" role="status" style="display:none;margin-top:0.9rem;font-size:0.88rem;color:#6B4A16;"></p>
       <p style="font-size:0.68rem;color:rgba(59,40,18,0.78);margin-top:1rem;cursor:pointer;" onclick="closePopup()">Continue to site →</p>
     </div>
   </div>
@@ -3314,6 +3322,24 @@ loadScript(function(){
         relationships: { list: { data: { type: 'list', id: 'UKvpTp' } } } } })
     }).then(function (r) { if (!r.ok) throw new Error('Klaviyo ' + r.status); });
   }
+  function submitPopupSignup(e) {
+    e.preventDefault();
+    var email = document.getElementById('popupSignupEmail').value.trim();
+    var btn = document.getElementById('popupSignupBtn'), msg = document.getElementById('popupSignupMsg');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { msg.textContent = 'Please enter a valid email address.'; msg.style.display = 'block'; return false; }
+    btn.disabled = true; btn.textContent = '…';
+    klaviyoSubscribe(email, '', 'Website welcome popup').then(function () {
+      document.getElementById('popupSignupForm').style.display = 'none';
+      msg.textContent = '✨ Welcome to the Sacred Community! You\'re in.';
+      msg.style.display = 'block';
+      try { sessionStorage.setItem('popupSeen', 'true'); } catch (err) {}
+    }).catch(function () {
+      btn.disabled = false; btn.textContent = 'Join';
+      msg.textContent = 'Something went wrong. Please try again.';
+      msg.style.display = 'block';
+    });
+    return false;
+  }
   function submitEmailSignup(e) {
     e.preventDefault();
     var email = document.getElementById('signupEmail').value.trim();
@@ -3323,7 +3349,7 @@ loadScript(function(){
     btn.disabled = true; btn.textContent = 'Joining…';
     klaviyoSubscribe(email, name, 'Website Connect page').then(function () {
       document.getElementById('emailSignupForm').style.display = 'none';
-      msg.textContent = '🌟 Almost there! Check your inbox and tap the confirmation link to join the Sacred Community.';
+      msg.textContent = '✨ Welcome to the Sacred Community! You\'re in. Watch your inbox for messages from Madame Divine.';
       msg.style.display = 'block';
     }).catch(function () {
       btn.disabled = false; btn.textContent = 'Join the Community';
