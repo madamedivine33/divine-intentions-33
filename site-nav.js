@@ -173,6 +173,8 @@
 
   function route(hash, smooth) {
     var parts = (hash || '').replace(/^#/, '').split('/').filter(Boolean);
+    // Old links to the retired Books page now open Books & Digital Guides in the Shop
+    if (parts[0] === 'book' && parts.length === 1) parts = ['shop', 'sacred-resources'];
     var page = parts[0];
     if (!page || !document.getElementById('page-' + page)) return false;
     window.showPage(page);
