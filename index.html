@@ -1375,6 +1375,10 @@
     .pc-book { grid-template-columns: 104px minmax(0,1fr); gap: 1.1rem; }
     .pc-row h4 { font-size: 1.28rem; }
   }
+  /* Shop: quick links to each shop section */
+  .shop-jump { display:flex; flex-wrap:wrap; justify-content:center; gap:0.6rem; margin:-0.5rem auto 2.4rem; }
+  .shop-jump a { font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:#6B4A16; text-decoration:none; border:1px solid rgba(176,138,62,0.55); background:rgba(255,252,244,0.85); padding:0.6rem 1rem; min-height:40px; display:inline-flex; align-items:center; transition:background 0.25s, color 0.25s; }
+  .shop-jump a:hover, .shop-jump a:focus-visible { background:#6B4A16; color:#fff; outline:none; }
 </style>
 <!-- Metricool analytics -->
 <script>
@@ -1476,7 +1480,7 @@ loadScript(function(){
                   <li><a href="crystals.html">Spiritual Tools &amp; Crystals</a></li>
                   <li><a href="#shop" data-route>The Botánica</a></li>
                   <li><a href="#herbals" data-route>Herbal Blends</a></li>
-                  <li><a href="#book" data-route>Books &amp; Digital Guides</a></li>
+                  <li><a href="#shop/sacred-resources" data-route>Books &amp; Digital Guides</a></li>
                 </ul>
               </div>
             </div>
@@ -1555,7 +1559,7 @@ loadScript(function(){
             <li><a href="crystals.html">Spiritual Tools &amp; Crystals</a></li>
             <li><a href="#shop" data-route>The Botánica</a></li>
             <li><a href="#herbals" data-route>Herbal Blends</a></li>
-            <li><a href="#book" data-route>Books &amp; Digital Guides</a></li>
+            <li><a href="#shop/sacred-resources" data-route>Books &amp; Digital Guides</a></li>
           </ul>
         </div>
       </div>
@@ -1904,123 +1908,7 @@ loadScript(function(){
   </div>
 </section>
 
-<!-- BOOKS, WORKBOOKS & SACRED RESOURCES (titles, prices, covers and links from Shopify) -->
-<section class="pc" id="sacred-resources" aria-labelledby="sacredResourcesTitle">
-  <div class="pc-inner">
-    <svg class="pc-crown" viewBox="0 0 44 28" aria-hidden="true" focusable="false"><path fill="#B08A3E" d="M3 24 L1 6 L12 15 L22 1 L32 15 L43 6 L41 24 Z"/><rect x="3" y="25" width="38" height="3" fill="#D99A3C"/><circle cx="1.5" cy="5" r="1.6" fill="#F2C24F"/><circle cx="22" cy="1.6" r="1.8" fill="#F2C24F"/><circle cx="42.5" cy="5" r="1.6" fill="#F2C24F"/></svg>
-    <h2 class="pc-title" id="sacredResourcesTitle">Books, Workbooks &amp; Sacred Resources</h2>
-    <p class="pc-lede">My work extends beyond private readings and spiritual products. I also create books, workbooks, and guided resources for personal development, self-reflection, spiritual growth, healing, and boundaries — companions you can return to between our sessions.</p>
-    <div class="pc-ornament" aria-hidden="true"><svg viewBox="0 0 12 12"><path fill="currentColor" d="M6 0l1.4 4.6L12 6l-4.6 1.4L6 12 4.6 7.4 0 6l4.6-1.4z"/></svg></div>
-    <div class="pc-signed" id="signed-preorders" aria-labelledby="signedTitle">
-      <div class="pc-signed-head">
-        <span class="pc-eyebrow">✦ A Special Release ✦</span>
-        <h3 id="signedTitle">Signed with Intention</h3>
-        <p>These pages began as moments of reflection, discovery, and transformation. Now, I am honored to place them into your hands. Personally signed copies are available exclusively through Divine Intentions 33, each prepared and shipped directly by Madame Divine.</p>
-        <ul class="pc-signed-terms">
-          <li>Full payment when ordering</li>
-          <li>Preorders close November 15, 2026</li>
-          <li>Expected to ship December 1–7, 2026 (shipment date, not delivery date)</li>
-          <li>Shipping calculated at checkout</li>
-        </ul>
-      </div>
-      <div class="pc-books">
-      <article class="pc-book">
-        <figure><img src="https://cdn.shopify.com/s/files/1/0773/1648/9306/files/DivineIntentions_ReturningtoYourself_1.png?v=1793686323&amp;width=420" alt="Cover of 30 Days of Returning to Yourself" loading="lazy"></figure>
-        <div>
-          <span class="pc-tag">Signed · Preorder</span>
-          <h3>30 Days of Returning to Yourself — Personally Signed Edition</h3>
-          <p class="pc-format">Signed paperback · 8.5 × 11 in guided journal</p>
-          <p class="pc-desc">The physical guided journal, personally signed by Madame Divine. Prefer an unsigned copy? The standard edition is sold on Amazon.</p>
-          <div class="pc-buy">
-            <span class="pc-price">$24.88<small>+ shipping at checkout</small></span>
-            <a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/returning-to-yourself-signed-edition-preorder" target="_blank" rel="noopener">Preorder Signed Copy<span class="di-sr"> (opens the Shopify store)</span></a>
-            <a class="pc-btn pc-btn-alt" href="https://link.amazon/B0gxCzEkM" target="_blank" rel="noopener sponsored">Buy on Amazon<span class="di-sr"> (unsigned copy, sold and shipped by Amazon)</span></a>
-          </div>
-        </div>
-      </article>
-      <article class="pc-book">
-        <figure><img src="https://cdn.shopify.com/s/files/1/0773/1648/9306/files/30DaysofReturningtoYourselfBook_ece49d8e-1f26-4028-91d9-5bf7e781e41b.png?v=1793687278&amp;width=420" alt="Cover of My Sacred Boundaries" loading="lazy"></figure>
-        <div>
-          <span class="pc-tag">Signed · Preorder</span>
-          <h3>My Sacred Boundaries — Personally Signed Edition</h3>
-          <p class="pc-format">Signed paperback · 8.5 × 11 in guided workbook</p>
-          <p class="pc-desc">The physical guided workbook, personally signed by Madame Divine. Prefer an unsigned copy? The standard edition is sold on Amazon.</p>
-          <div class="pc-buy">
-            <span class="pc-price">$24.88<small>+ shipping at checkout</small></span>
-            <a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/my-sacred-boundaries-signed-edition-preorder" target="_blank" rel="noopener">Preorder Signed Copy<span class="di-sr"> (opens the Shopify store)</span></a>
-            <a class="pc-btn pc-btn-alt" href="https://link.amazon/B0dyyEwLl" target="_blank" rel="noopener sponsored">Buy on Amazon<span class="di-sr"> (unsigned copy, sold and shipped by Amazon)</span></a>
-          </div>
-        </div>
-      </article>
-      <article class="pc-book">
-        <figure><img src="https://cdn.shopify.com/s/files/1/0773/1648/9306/files/DivineIntentions_ReturningtoYourself_1.png?v=1793686323&amp;width=420" alt="Covers of the signed workbook bundle" loading="lazy"></figure>
-        <div>
-          <span class="pc-tag">Signed · Preorder</span>
-          <h3>Signed Workbook Bundle — Both Journals</h3>
-          <p class="pc-format">Two signed paperbacks, shipped together</p>
-          <p class="pc-desc">One signed copy each of <em>30 Days of Returning to Yourself</em> and <em>My Sacred Boundaries</em>, prepared and shipped together by Madame Divine.</p>
-          <div class="pc-buy">
-            <span class="pc-price">$44.88<small>+ shipping at checkout</small></span>
-            <a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/signed-workbook-bundle-preorder" target="_blank" rel="noopener">Preorder Signed Copy<span class="di-sr"> (opens the Shopify store)</span></a>
-          </div>
-        </div>
-      </article>
-      </div>
-      <p class="pc-disclose">Amazon copies are unsigned standard editions, sold and shipped by Amazon — not by Divine Intentions 33. As an Amazon Associate, I earn from qualifying purchases.</p>
-    </div>
-    <div class="pc-books">
-      <article class="pc-book">
-        <figure><img src="https://cdn.shopify.com/s/files/1/0773/1648/9306/files/called-by-fire-crowned-by-spirit-cover.webp?v=1792842786&amp;width=420" alt="Cover of Called by Fire, Crowned by Spirit" loading="lazy"></figure>
-        <div>
-          <h3>Called by Fire, Crowned by Spirit — Signed Author Edition</h3>
-          <p class="pc-format">Signed paperback · Poetry</p>
-          <p class="pc-desc">An intimate collection of original poetry by Emile Maria Rivera, known as Madame Divine — journeying through The Ache, Dark Mirror, Rebirth, and Sacred. Each paperback copy is personally signed by the author.</p>
-          <div class="pc-buy">
-            <span class="pc-price">$34.88</span>
-            <a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/called-by-fire-crowned-by-spirit" target="_blank" rel="noopener">Buy on Shopify<span class="di-sr"> (opens the Shopify store)</span></a>
-            <a class="pc-link" href="https://amazon.com/dp/B0GRL26RSV" target="_blank" rel="noopener">Also on Amazon</a>
-          </div>
-        </div>
-      </article>
-      <article class="pc-book">
-        <figure><img src="https://cdn.shopify.com/s/files/1/0773/1648/9306/files/30DaysofReturningtoYourselfBook_ece49d8e-1f26-4028-91d9-5bf7e781e41b.png?v=1793687278&amp;width=420" alt="Cover of My Sacred Boundaries" loading="lazy"></figure>
-        <div>
-          <h3>My Sacred Boundaries | Digital Guided Workbook</h3>
-          <p class="pc-format">26-page digital PDF workbook</p>
-          <p class="pc-desc">A beautifully illustrated reflection workbook to help you recognize your needs, speak your truth, and stand firmly in your personal boundaries — because you can love others deeply without abandoning yourself.</p>
-          <div class="pc-buy">
-            <span class="pc-price">$16.79</span>
-            <a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/my-sacred-boundaries-digital-guided-workbook" target="_blank" rel="noopener">Buy on Shopify<span class="di-sr"> (opens the Shopify store)</span></a>
-          </div>
-        </div>
-      </article>
-      <article class="pc-book">
-        <figure><img src="https://cdn.shopify.com/s/files/1/0773/1648/9306/files/DivineIntentions_ReturningtoYourself_1.png?v=1793686323&amp;width=420" alt="Cover of 30 Days of Returning to Yourself" loading="lazy"></figure>
-        <div>
-          <h3>30 Days of Returning to Yourself | Digital Guided Journal</h3>
-          <p class="pc-format">Digital PDF guided journal</p>
-          <p class="pc-desc">A 30-day self-love, healing, and sacred boundaries journey. Morning practices, prayer, breathwork, and daily reflection invite you to reconnect with yourself, honor your worth, and rebuild self-trust.</p>
-          <div class="pc-buy">
-            <span class="pc-price">$19.88</span>
-            <a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/30-days-of-returning-to-yourself-digital-guided-journal" target="_blank" rel="noopener">Buy on Shopify<span class="di-sr"> (opens the Shopify store)</span></a>
-          </div>
-        </div>
-      </article>
-      <article class="pc-book">
-        <figure><img src="https://cdn.shopify.com/s/files/1/0773/1648/9306/files/SevenPentaclesWealthActivationKit_f074b85c-0096-408d-8ae9-4b812c4e2c21.png?v=1793006348&amp;width=420" alt="Cover of Seven Pentacles of Wealth" loading="lazy"></figure>
-        <div>
-          <h3>Seven Pentacles of Wealth — Digital Activation Kit</h3>
-          <p class="pc-format">Digital ritual guide</p>
-          <p class="pc-desc">A digital ritual guide for prosperity-focused prayer, reflection, and intentional practice with the Seven Pentacles of Wealth.</p>
-          <div class="pc-buy">
-            <span class="pc-price">$11.76</span>
-            <a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/seven-pentacles-of-wealth-digital-activation-kit" target="_blank" rel="noopener">Buy on Shopify<span class="di-sr"> (opens the Shopify store)</span></a>
-          </div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
+<p style="text-align:center;padding:0 1.5rem 3.5rem;margin:0;background:inherit;"><a href="#shop/sacred-resources" data-route class="btn-outline">Shop My Books &amp; Digital Guides</a></p>
 </div><!-- end page-about -->
 
 <!-- PAGE: SHOP -->
@@ -2031,6 +1919,13 @@ loadScript(function(){
     <span class="section-label">Divine Intentions Botánica</span>
     <h2 class="section-title">Spiritual Products</h2>
     <p class="section-sub">Handcrafted with intention for cleansing, attraction, protection & alignment</p>
+    <nav class="shop-jump" aria-label="Shop sections">
+      <a href="#shop/shop" data-route>Spiritual Products</a>
+      <a href="#shop/divination-tools" data-route>Divination Tools</a>
+      <a href="#shop/sacred-resources" data-route>Books &amp; Digital Guides</a>
+      <a href="#waistbeads" data-route>Waistbeads</a>
+      <a href="#herbals" data-route>Herbal Blends</a>
+    </nav>
 
     <!-- Ancestral/Indigenous Banner -->
     <div style="border:1px solid rgba(176,138,62,0.45);background:linear-gradient(135deg,rgba(255,240,205,0.72) 0%,rgba(201,168,76,0.06) 100%);padding:2rem 2.2rem;margin-bottom:2.5rem;position:relative;overflow:hidden;">
@@ -2414,6 +2309,135 @@ loadScript(function(){
       </div>
     </div>
 
+  </div>
+</section>
+<!-- BOOKS & DIGITAL GUIDES — part of the Shop page (titles, prices, covers and links from Shopify) -->
+<section class="pc" id="sacred-resources" style="border-top:1px solid rgba(176,138,62,0.18);" aria-labelledby="sacredResourcesTitle">
+  <div class="pc-inner">
+    <svg class="pc-crown" viewBox="0 0 44 28" aria-hidden="true" focusable="false"><path fill="#B08A3E" d="M3 24 L1 6 L12 15 L22 1 L32 15 L43 6 L41 24 Z"/><rect x="3" y="25" width="38" height="3" fill="#D99A3C"/><circle cx="1.5" cy="5" r="1.6" fill="#F2C24F"/><circle cx="22" cy="1.6" r="1.8" fill="#F2C24F"/><circle cx="42.5" cy="5" r="1.6" fill="#F2C24F"/></svg>
+    <h2 class="pc-title" id="sacredResourcesTitle">Books, Workbooks &amp; Sacred Resources</h2>
+    <p class="pc-lede">My work extends beyond private readings and spiritual products. I also create books, workbooks, and guided resources for personal development, self-reflection, spiritual growth, healing, and boundaries — companions you can return to between our sessions.</p>
+    <div class="pc-ornament" aria-hidden="true"><svg viewBox="0 0 12 12"><path fill="currentColor" d="M6 0l1.4 4.6L12 6l-4.6 1.4L6 12 4.6 7.4 0 6l4.6-1.4z"/></svg></div>
+    <div class="pc-signed" id="signed-preorders" aria-labelledby="signedTitle">
+      <div class="pc-signed-head">
+        <span class="pc-eyebrow">✦ A Special Release ✦</span>
+        <h3 id="signedTitle">Signed with Intention</h3>
+        <p>These pages began as moments of reflection, discovery, and transformation. Now, I am honored to place them into your hands. Personally signed copies are available exclusively through Divine Intentions 33, each prepared and shipped directly by Madame Divine.</p>
+        <ul class="pc-signed-terms">
+          <li>Full payment when ordering</li>
+          <li>Preorders close November 15, 2026</li>
+          <li>Expected to ship December 1–7, 2026 (shipment date, not delivery date)</li>
+          <li>Shipping calculated at checkout</li>
+        </ul>
+      </div>
+      <div class="pc-books">
+      <article class="pc-book">
+        <figure><img src="https://cdn.shopify.com/s/files/1/0773/1648/9306/files/DivineIntentions_ReturningtoYourself_1.png?v=1793686323&amp;width=420" alt="Cover of 30 Days of Returning to Yourself" loading="lazy"></figure>
+        <div>
+          <span class="pc-tag">Signed · Preorder</span>
+          <h3>30 Days of Returning to Yourself — Personally Signed Edition</h3>
+          <p class="pc-format">Signed paperback · 8.5 × 11 in guided journal</p>
+          <p class="pc-desc">The physical guided journal, personally signed by Madame Divine. Prefer an unsigned copy? The standard edition is sold on Amazon.</p>
+          <div class="pc-buy">
+            <span class="pc-price">$24.88<small>+ shipping at checkout</small></span>
+            <a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/returning-to-yourself-signed-edition-preorder" target="_blank" rel="noopener">Preorder Signed Copy<span class="di-sr"> (opens the Shopify store)</span></a>
+            <a class="pc-btn pc-btn-alt" href="https://link.amazon/B0gxCzEkM" target="_blank" rel="noopener sponsored">Buy on Amazon<span class="di-sr"> (unsigned copy, sold and shipped by Amazon)</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="pc-book">
+        <figure><img src="https://cdn.shopify.com/s/files/1/0773/1648/9306/files/30DaysofReturningtoYourselfBook_ece49d8e-1f26-4028-91d9-5bf7e781e41b.png?v=1793687278&amp;width=420" alt="Cover of My Sacred Boundaries" loading="lazy"></figure>
+        <div>
+          <span class="pc-tag">Signed · Preorder</span>
+          <h3>My Sacred Boundaries — Personally Signed Edition</h3>
+          <p class="pc-format">Signed paperback · 8.5 × 11 in guided workbook</p>
+          <p class="pc-desc">The physical guided workbook, personally signed by Madame Divine. Prefer an unsigned copy? The standard edition is sold on Amazon.</p>
+          <div class="pc-buy">
+            <span class="pc-price">$24.88<small>+ shipping at checkout</small></span>
+            <a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/my-sacred-boundaries-signed-edition-preorder" target="_blank" rel="noopener">Preorder Signed Copy<span class="di-sr"> (opens the Shopify store)</span></a>
+            <a class="pc-btn pc-btn-alt" href="https://link.amazon/B0dyyEwLl" target="_blank" rel="noopener sponsored">Buy on Amazon<span class="di-sr"> (unsigned copy, sold and shipped by Amazon)</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="pc-book">
+        <figure><img src="https://cdn.shopify.com/s/files/1/0773/1648/9306/files/DivineIntentions_ReturningtoYourself_1.png?v=1793686323&amp;width=420" alt="Covers of the signed workbook bundle" loading="lazy"></figure>
+        <div>
+          <span class="pc-tag">Signed · Preorder</span>
+          <h3>Signed Workbook Bundle — Both Journals</h3>
+          <p class="pc-format">Two signed paperbacks, shipped together</p>
+          <p class="pc-desc">One signed copy each of <em>30 Days of Returning to Yourself</em> and <em>My Sacred Boundaries</em>, prepared and shipped together by Madame Divine.</p>
+          <div class="pc-buy">
+            <span class="pc-price">$44.88<small>+ shipping at checkout</small></span>
+            <a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/signed-workbook-bundle-preorder" target="_blank" rel="noopener">Preorder Signed Copy<span class="di-sr"> (opens the Shopify store)</span></a>
+          </div>
+        </div>
+      </article>
+      </div>
+      <p class="pc-disclose">Amazon copies are unsigned standard editions, sold and shipped by Amazon — not by Divine Intentions 33. As an Amazon Associate, I earn from qualifying purchases.</p>
+    </div>
+    <div class="pc-books">
+      <article class="pc-book">
+        <figure><img src="https://cdn.shopify.com/s/files/1/0773/1648/9306/files/called-by-fire-crowned-by-spirit-cover.webp?v=1792842786&amp;width=420" alt="Cover of Called by Fire, Crowned by Spirit" loading="lazy"></figure>
+        <div>
+          <h3>Called by Fire, Crowned by Spirit — Signed Author Edition</h3>
+          <p class="pc-format">Signed paperback · Poetry</p>
+          <p class="pc-desc">An intimate collection of original poetry by Emile Maria Rivera, known as Madame Divine — journeying through The Ache, Dark Mirror, Rebirth, and Sacred. Each paperback copy is personally signed by the author.</p>
+          <div class="pc-buy">
+            <span class="pc-price">$34.88</span>
+            <a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/called-by-fire-crowned-by-spirit" target="_blank" rel="noopener">Buy on Shopify<span class="di-sr"> (opens the Shopify store)</span></a>
+            <a class="pc-link" href="https://amazon.com/dp/B0GRL26RSV" target="_blank" rel="noopener">Also on Amazon</a>
+          </div>
+        </div>
+      </article>
+      <article class="pc-book">
+        <figure><img src="https://cdn.shopify.com/s/files/1/0773/1648/9306/files/30DaysofReturningtoYourselfBook_ece49d8e-1f26-4028-91d9-5bf7e781e41b.png?v=1793687278&amp;width=420" alt="Cover of My Sacred Boundaries" loading="lazy"></figure>
+        <div>
+          <h3>My Sacred Boundaries | Digital Guided Workbook</h3>
+          <p class="pc-format">26-page digital PDF workbook</p>
+          <p class="pc-desc">A beautifully illustrated reflection workbook to help you recognize your needs, speak your truth, and stand firmly in your personal boundaries — because you can love others deeply without abandoning yourself.</p>
+          <div class="pc-buy">
+            <span class="pc-price">$16.79</span>
+            <a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/my-sacred-boundaries-digital-guided-workbook" target="_blank" rel="noopener">Buy on Shopify<span class="di-sr"> (opens the Shopify store)</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="pc-book">
+        <figure><img src="https://cdn.shopify.com/s/files/1/0773/1648/9306/files/DivineIntentions_ReturningtoYourself_1.png?v=1793686323&amp;width=420" alt="Cover of 30 Days of Returning to Yourself" loading="lazy"></figure>
+        <div>
+          <h3>30 Days of Returning to Yourself | Digital Guided Journal</h3>
+          <p class="pc-format">Digital PDF guided journal</p>
+          <p class="pc-desc">A 30-day self-love, healing, and sacred boundaries journey. Morning practices, prayer, breathwork, and daily reflection invite you to reconnect with yourself, honor your worth, and rebuild self-trust.</p>
+          <div class="pc-buy">
+            <span class="pc-price">$19.88</span>
+            <a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/30-days-of-returning-to-yourself-digital-guided-journal" target="_blank" rel="noopener">Buy on Shopify<span class="di-sr"> (opens the Shopify store)</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="pc-book">
+        <figure><img src="https://cdn.shopify.com/s/files/1/0773/1648/9306/files/SevenPentaclesWealthActivationKit_f074b85c-0096-408d-8ae9-4b812c4e2c21.png?v=1793006348&amp;width=420" alt="Cover of Seven Pentacles of Wealth" loading="lazy"></figure>
+        <div>
+          <h3>Seven Pentacles of Wealth — Digital Activation Kit</h3>
+          <p class="pc-format">Digital ritual guide</p>
+          <p class="pc-desc">A digital ritual guide for prosperity-focused prayer, reflection, and intentional practice with the Seven Pentacles of Wealth.</p>
+          <div class="pc-buy">
+            <span class="pc-price">$11.76</span>
+            <a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/seven-pentacles-of-wealth-digital-activation-kit" target="_blank" rel="noopener">Buy on Shopify<span class="di-sr"> (opens the Shopify store)</span></a>
+          </div>
+        </div>
+      </article>
+      <article class="pc-book" id="grabovoi-codes">
+        <figure><img src="https://cdn.shopify.com/s/files/1/0773/1648/9306/files/grabovoi-codes-digital-guide-cover.png?v=1794179727&amp;width=420" alt="Cover of Grabovoi Codes: The Sacred Practice of Numbers and Intention" loading="lazy"></figure>
+        <div>
+          <h3>Grabovoi Codes — The Sacred Practice of Numbers &amp; Intention</h3>
+          <p class="pc-format">24-page digital PDF guide</p>
+          <p class="pc-desc">An educational digital guide exploring symbolic number sequences, intention-setting, and reflection exercises, with 15 categorized sequences and a seven-day guided practice. Digital PDF only — the Golden Treasury and the Golden Harvest Prosperity Money Bowl Ritual Kit are sold separately.</p>
+          <div class="pc-buy">
+            <span class="pc-price">$19.88</span>
+            <a class="pc-btn" href="https://shopdivineintentions33.myshopify.com/products/grabovoi-codes-the-sacred-practice-of-numbers-intention-digital-guide" target="_blank" rel="noopener">Buy on Shopify<span class="di-sr"> (opens the Shopify store)</span></a>
+          </div>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 </div><!-- end page-shop -->
@@ -3116,105 +3140,6 @@ loadScript(function(){
 </section>
 </div><!-- end page-services -->
 
-<!-- PAGE: BOOK -->
-<div class="page" id="page-book">
-<!-- BOOK -->
-<section id="book">
-  <div class="section-inner">
-    <div class="book-grid">
-      <div class="book-cover">
-        <img src="https://m.media-amazon.com/images/I/41htGIYzJaL._SL500_.jpg" alt="Called by Fire, Crowned by Spirit" />
-      </div>
-      <div class="book-info">
-        <span class="section-label">📖 Now Available</span>
-        <h2 class="section-title">Called by Fire,<br>Crowned by Spirit</h2>
-        <p>
-          A spiritual poetry collection born from fire, healing, and divine transformation. Written by Madame Divine — Emile Maria Rivera — this book is a journey through pain, power, and spiritual awakening. A love letter to all Divine Beings finding their way back to themselves.
-        </p>
-        <span class="book-price">Author Signed Copy — $34.88</span>
-        <div class="book-links">
-          <a href="https://shopdivineintentions33.myshopify.com/products/called-by-fire-crowned-by-spirit" rel="noopener" target="_blank" class="btn-primary">Order Signed Copy</a>
-          <a href="https://amazon.com/dp/B0GRL26RSV" target="_blank" class="btn-outline">Buy on Amazon</a>
-        </div>
-        <p style="font-size:0.78rem;color:rgba(59,40,18,0.82);margin-top:1.2rem;">Signed copies are ordered and paid securely through Shopify. Ships with love. 🌻</p>
-      </div>
-    </div>
-
-      <!-- DIGITAL WORKBOOKS -->
-      <div style="margin-top:4rem;text-align:center;">
-        <span style="font-family:'Cinzel',serif;font-size:0.68rem;letter-spacing:0.3em;text-transform:uppercase;color:#6B4A16;">✦ Digital Workbooks &amp; Guides</span>
-        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:rgba(59,40,18,0.87);margin-top:0.5rem;">Download, print, and work through each one at your own pace. The two new workbooks can be enjoyed on their own or together.</p>
-      </div>
-      <div style="margin-top:1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:1.5rem;">
-        <div class="product-card" style="border-color:rgba(176,138,62,0.63);background:linear-gradient(135deg,rgba(201,168,76,0.08) 0%,rgba(255,252,244,0.91) 100%);position:relative;">
-          <figure style="max-width:320px;margin:0 auto 1.5rem;overflow:hidden;aspect-ratio:4/5;background:#FBF5E6;border:1px solid rgba(176,138,62,0.36);">
-            <img src="https://cdn.shopify.com/s/files/1/0773/1648/9306/files/DivineIntentions_ReturningtoYourself_1.png?v=1793686323&width=600" alt="30 Days of Returning to Yourself guided journal cover" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;">
-          </figure>
-          <span style="position:absolute;top:1rem;right:1rem;font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.15em;color:var(--gold);border:1px solid rgba(201,168,76,0.4);padding:0.25rem 0.6rem;background:rgba(26,18,7,0.85);">✦ NEW · DIGITAL</span>
-          <h3 class="product-name">30 Days of Returning to Yourself</h3>
-          <p class="product-name" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.88rem;color:rgba(107,74,22,0.96);margin-top:-0.5rem;margin-bottom:0.8rem;">Digital Guided Journal</p>
-          <p class="product-desc">A 30-day self-love, healing, and sacred boundaries journey. Morning breathwork, prayer, and daily reflection prompts to help you honor your worth, rebuild self-trust, and come back to yourself.</p>
-          <p style="font-size:0.75rem;color:rgba(59,40,18,0.83);line-height:1.8;margin-bottom:1rem;border-top:1px solid rgba(176,138,62,0.18);padding-top:0.8rem;"><em style="color:rgba(59,40,18,0.8);">Digital PDF download · Print for personal use · Taíno-inspired illustrations</em></p>
-          <div class="product-footer">
-            <span class="product-price">$19.88</span>
-            <a href="https://shopdivineintentions33.myshopify.com/products/30-days-of-returning-to-yourself-digital-guided-journal" target="_blank" rel="noopener" class="btn-buy">Buy on Shopify</a>
-          </div>
-        </div>
-        <div class="product-card" style="border-color:rgba(176,138,62,0.63);background:linear-gradient(135deg,rgba(201,168,76,0.08) 0%,rgba(255,252,244,0.91) 100%);position:relative;">
-          <figure style="max-width:320px;margin:0 auto 1.5rem;overflow:hidden;aspect-ratio:4/5;background:#FBF5E6;border:1px solid rgba(176,138,62,0.36);">
-            <img src="https://cdn.shopify.com/s/files/1/0773/1648/9306/files/30DaysofReturningtoYourselfBook_ece49d8e-1f26-4028-91d9-5bf7e781e41b.png?v=1793687278&width=600" alt="My Sacred Boundaries guided workbook cover" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;">
-          </figure>
-          <span style="position:absolute;top:1rem;right:1rem;font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.15em;color:var(--gold);border:1px solid rgba(201,168,76,0.4);padding:0.25rem 0.6rem;background:rgba(26,18,7,0.85);">✦ NEW · DIGITAL</span>
-          <h3 class="product-name">My Sacred Boundaries</h3>
-          <p class="product-name" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.88rem;color:rgba(107,74,22,0.96);margin-top:-0.5rem;margin-bottom:0.8rem;">Digital Guided Workbook</p>
-          <p class="product-desc">Protect your peace and honor your standards. Reflections and writing prompts to recognize your needs, speak your truth, define your non-negotiables, and stand firmly in your boundaries.</p>
-          <p style="font-size:0.75rem;color:rgba(59,40,18,0.83);line-height:1.8;margin-bottom:1rem;border-top:1px solid rgba(176,138,62,0.18);padding-top:0.8rem;"><em style="color:rgba(59,40,18,0.8);">26-page digital PDF workbook · Print for personal use · Full-color illustrations</em></p>
-          <div class="product-footer">
-            <span class="product-price">$16.79</span>
-            <a href="https://shopdivineintentions33.myshopify.com/products/my-sacred-boundaries-digital-guided-workbook" target="_blank" rel="noopener" class="btn-buy">Buy on Shopify</a>
-          </div>
-        </div>
-        <div class="product-card" style="border-color:rgba(176,138,62,0.63);background:linear-gradient(135deg,rgba(201,168,76,0.08) 0%,rgba(255,252,244,0.91) 100%);position:relative;">
-          <figure style="max-width:320px;margin:0 auto 1.5rem;overflow:hidden;aspect-ratio:4/5;background:#FBF5E6;border:1px solid rgba(176,138,62,0.36);">
-            <img src="https://cdn.shopify.com/s/files/1/0773/1648/9306/files/SevenPentaclesWealthActivationKit_f074b85c-0096-408d-8ae9-4b812c4e2c21.png?v=1793006348&width=600" alt="Seven Pentacles of Wealth Digital Activation Kit cover" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;">
-          </figure>
-          <span style="position:absolute;top:1rem;right:1rem;font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.15em;color:var(--gold);border:1px solid rgba(201,168,76,0.4);padding:0.25rem 0.6rem;background:rgba(26,18,7,0.8);">✦ DIGITAL</span>
-          <h3 class="product-name">Seven Pentacles of Wealth</h3>
-          <p class="product-name" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.88rem;color:rgba(107,74,22,0.96);margin-top:-0.5rem;margin-bottom:0.8rem;">Digital Activation Kit</p>
-          <p class="product-desc">Sacred seals for financial power and prosperity — all 7 pentacles with their original descriptions, ritual instruction guide, 7-day wealth alignment practice, and closing ceremony.</p>
-          <p style="font-size:0.75rem;color:rgba(59,40,18,0.83);line-height:1.8;margin-bottom:1rem;border-top:1px solid rgba(176,138,62,0.18);padding-top:0.8rem;">
-            ✦ All 7 Sacred Pentacle Seals · Ritual Instructions · 7-Day Practice · Closing Ceremony<br>
-            <em style="color:rgba(59,40,18,0.8);">PDF emailed to you after payment is confirmed · 12 pages · Print-friendly</em>
-          </p>
-          <div class="product-footer">
-            <span class="product-price">$11.76</span>
-  <a href="https://shopdivineintentions33.myshopify.com/products/seven-pentacles-of-wealth-digital-activation-kit" target="_blank" rel="noopener" class="btn-buy">Buy on Shopify</a>
-          </div>
-          <p style="font-size:0.68rem;color:rgba(59,40,18,0.78);margin-top:0.8rem;font-style:italic;text-align:center;">Check out securely on Shopify — your PDF will be emailed after payment.</p>
-        </div>
-        <div class="product-card" id="grabovoi-codes" style="border-color:rgba(176,138,62,0.63);background:linear-gradient(135deg,rgba(201,168,76,0.08) 0%,rgba(255,252,244,0.91) 100%);position:relative;">
-          <figure style="max-width:320px;margin:0 auto 1.5rem;overflow:hidden;aspect-ratio:4/5;background:#FBF5E6;border:1px solid rgba(176,138,62,0.36);">
-            <img src="https://cdn.shopify.com/s/files/1/0773/1648/9306/files/grabovoi-codes-digital-guide-cover.png?v=1794179727&width=600" alt="Grabovoi Codes: The Sacred Practice of Numbers and Intention digital guide cover" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;">
-          </figure>
-          <span style="position:absolute;top:1rem;right:1rem;font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.15em;color:var(--gold);border:1px solid rgba(201,168,76,0.4);padding:0.25rem 0.6rem;background:rgba(26,18,7,0.85);">✦ NEW · DIGITAL</span>
-          <h3 class="product-name">Grabovoi Codes</h3>
-          <p class="product-name" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.88rem;color:rgba(107,74,22,0.96);margin-top:-0.5rem;margin-bottom:0.8rem;">The Sacred Practice of Numbers &amp; Intention</p>
-          <p class="product-desc">A 24-page educational digital guide exploring symbolic number sequences, intention-setting, and reflection exercises, with 15 categorized sequences and a seven-day guided practice.</p>
-          <p style="font-size:0.75rem;color:rgba(59,40,18,0.83);line-height:1.8;margin-bottom:1rem;border-top:1px solid rgba(176,138,62,0.18);padding-top:0.8rem;">
-            ✦ 15 Categorized Sequences · Reflection Exercises · Seven-Day Guided Practice<br>
-            <em style="color:rgba(59,40,18,0.8);">Digital PDF guide · 24 pages · Print for personal use</em>
-          </p>
-          <div class="product-footer">
-            <span class="product-price">$19.88</span>
-            <a href="https://shopdivineintentions33.myshopify.com/products/grabovoi-codes-the-sacred-practice-of-numbers-intention-digital-guide" target="_blank" rel="noopener" class="btn-buy">Buy on Shopify</a>
-          </div>
-          <p style="font-size:0.68rem;color:rgba(59,40,18,0.78);margin-top:0.8rem;font-style:italic;text-align:center;">This is a digital PDF only. The Golden Treasury and the Golden Harvest Prosperity Money Bowl Ritual Kit are sold separately.</p>
-        </div>
-      </div>
-  </div>
-</section>
-
-</div><!-- end page-book -->
 
 <!-- PAGE: REVIEWS — Soul Tribe Reviews (approved, genuine reviews only; see reviews.js) -->
 <div class="page" id="page-reviews">
@@ -3475,6 +3400,7 @@ loadScript(function(){
     function fallbackRoute() {
       if (window.__diNavReady) return;
       var page = (location.hash || '').replace(/^#/, '').split('/')[0];
+      if (page === 'book') page = 'shop';
       if (page && document.getElementById('page-' + page) && typeof showPage === 'function') showPage(page);
     }
     window.addEventListener('hashchange', fallbackRoute);
