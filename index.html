@@ -389,6 +389,19 @@
     box-shadow: 0 20px 60px rgba(59,40,18,0.18), 0 0 40px rgba(201,168,76,0.08);
   }
 
+
+  /* Custom Fixed Intention Candle (featured card in Ritual Candle Collection) */
+  .product-card.fixed-candle { grid-column: 1 / -1; border-color: rgba(176,138,62,0.54); }
+  .fixed-candle .fc-media { overflow: hidden; background: #FBF5E6; border: 1px solid rgba(176,138,62,0.18); }
+  .fixed-candle .fc-media img { width: 100%; height: auto; display: block; }
+  .fixed-candle .fc-kicker { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.18em; color: #6B4A16; text-transform: uppercase; margin-bottom: 0.6rem; }
+  .fixed-candle .fc-label { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.08em; color: rgba(107,74,22,0.95); text-transform: uppercase; margin: 0 0 0.5rem; }
+  .fixed-candle .fc-list { margin: 0 0 1.3rem 1.1rem; padding: 0; font-size: 0.8rem; color: rgba(59,40,18,0.87); }
+  .fixed-candle .fc-list li { margin-bottom: 0.25rem; }
+  .fixed-candle .fc-tight { margin-bottom: 1rem; }
+  .fixed-candle .fc-note { font-size: 0.72rem; color: rgba(59,40,18,0.8); font-style: italic; margin-bottom: 0.7rem; }
+  .fixed-candle .fc-ship { font-family: 'Jost', sans-serif; font-size: 0.68rem; font-weight: 400; font-style: italic; color: rgba(59,40,18,0.8); }
+  .fixed-candle .product-footer { flex-wrap: wrap; gap: 0.8rem; margin-top: 1rem; }
   .product-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
 
   .product-name {
@@ -1269,7 +1282,7 @@
     .products-grid .product-card > div[style*="grid-template-columns"] { display: flex !important; flex-direction: column !important; gap: 1rem !important; }
 
     /* Fix image containers */
-    .product-card div[style*="height:"] { height: 200px !important; margin: -2rem -2rem 1.2rem !important; }
+    .product-card div[style*="overflow:hidden;height:"] { height: 200px !important; margin: -2rem -2rem 1.2rem !important; }
 
     /* Prevent text overflow */
     * { word-wrap: break-word; overflow-wrap: break-word; max-width: 100%; }
@@ -1687,7 +1700,7 @@ loadScript(function(){
     
 
     <div class="hero-cta" style="margin-top:1.5rem;">
-      <a href="#" onclick="showPage('shop');return false;" class="btn-outline">Visit the Botánica</a>
+      <a href="#shop" onclick="showPage('shop');return false;" class="btn-outline">Visit the Botánica</a>
     </div>
   </div>
 </section>
@@ -2103,6 +2116,36 @@ loadScript(function(){
 
       <div class="products-grid">
 
+        <!-- CUSTOM FIXED INTENTION CANDLE (featured, sold on Shopify) -->
+        <div class="product-card fixed-candle" id="custom-fixed-candle">
+          <div class="fc-layout" style="display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:2rem;align-items:start;">
+            <div class="fc-media">
+              <img src="https://cdn.shopify.com/s/files/1/0773/1648/9306/files/f70243aa8c55_a_clean_high_resolution_promotional_product_ad_on.png?v=1795153046&amp;width=900" srcset="https://cdn.shopify.com/s/files/1/0773/1648/9306/files/f70243aa8c55_a_clean_high_resolution_promotional_product_ad_on.png?v=1795153046&amp;width=600 600w, https://cdn.shopify.com/s/files/1/0773/1648/9306/files/f70243aa8c55_a_clean_high_resolution_promotional_product_ad_on.png?v=1795153046&amp;width=900 900w, https://cdn.shopify.com/s/files/1/0773/1648/9306/files/f70243aa8c55_a_clean_high_resolution_promotional_product_ad_on.png?v=1795153046 1218w" sizes="(max-width: 700px) 92vw, 460px" width="1218" height="1292" loading="lazy" decoding="async" alt="Protection Against Known and Unknown Enemies — featured custom fixed intention candle by Divine Intentions 33">
+            </div>
+            <div class="fc-body">
+              <p class="fc-kicker">✦ Made to Order · Free Standard U.S. Shipping</p>
+              <h3 class="product-name">Custom Fixed Intention Candle — Dressed, Blessed &amp; Personalized</h3>
+              <p class="product-desc">Each candle is individually prepared by Madame Divine, dressed with selected ritual herbs and oils, blessed through prayer, and customized according to your spiritual intentions.</p>
+              <p class="fc-label">Every candle includes</p>
+              <ul class="fc-list">
+                <li>Personalized spiritual preparation</li>
+                <li>Custom intention and petition guidance</li>
+                <li>Ritual herbs and oils</li>
+                <li>Personalized prayers and blessings</li>
+                <li>Step-by-step instructions for working the candle at home</li>
+              </ul>
+              <p class="fc-label">Featured Example: Protection Against Known &amp; Unknown Enemies</p>
+              <p class="product-desc fc-tight">This featured candle is prepared for spiritual protection, peaceful boundaries, and prayer against harmful intentions and negative influences. It is only one example of the customized intention candles available — other intentions include protection, prosperity, road opening, love and harmony, spiritual renewal, court matters, spiritual strength, and personalized requests.</p>
+              <p class="fc-note">Every candle is made to order and may differ in appearance based on its intended purpose. Spiritual work supports your prayer and intention; outcomes are never guaranteed.</p>
+              <p class="fc-note"><strong>Candle safety:</strong> never leave a burning candle unattended. Burn on a heat-safe surface away from children, pets, curtains, and anything flammable, and remove any pins or dressing materials from the burning area before lighting.</p>
+              <div class="product-footer">
+                <span class="product-price">$175 <span class="fc-ship">· free standard U.S. shipping</span></span>
+                <a href="https://shopdivineintentions33.myshopify.com/products/custom-fixed-intention-candle-dressed-blessed-personalized" rel="noopener" target="_blank" class="btn-buy">Shop on Shopify</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="product-card">
           <span class="product-icon">💰</span>
           <h3 class="product-name">Money Candle</h3>
@@ -2114,19 +2157,6 @@ loadScript(function(){
           <div class="product-footer">
             <span class="product-price">$45.63</span>
             <a href="https://shopdivineintentions33.myshopify.com/products/prosperity-intention-candle" rel="noopener" target="_blank" class="btn-buy">Order Now</a>
-          </div>
-        </div>
-
-        <!-- CUSTOM CANDLE -->
-        <div class="product-card" style="border-color:rgba(176,138,62,0.54);background:linear-gradient(135deg,rgba(201,168,76,0.07) 0%,rgba(255,252,244,0.87) 100%);">
-          <span style="position:absolute;top:1rem;right:1rem;font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.2em;color:var(--gold);border:1px solid rgba(201,168,76,0.4);padding:0.25rem 0.6rem;">✦ CUSTOM</span>
-          <span class="product-icon">🕯️</span>
-          <h3 class="product-name">Custom Intention Candle</h3>
-          <p class="product-desc">For the soul who needs something deeper and more specific — a candle built entirely around your unique situation, intention, or spiritual need. Madame Divine selects every element guided by your energy and what spirit calls in for you.</p>
-          <p style="font-size:0.78rem;color:rgba(59,40,18,0.83);line-height:1.7;margin-bottom:1rem;font-style:italic;">Custom crystal selection · custom herb blend · personal petition written and sealed inside · made to order</p>
-          <div class="product-footer">
-            <span class="product-price">$66</span>
-            <a href="https://instagram.com/unforgettable_emz" target="_blank" class="btn-buy">DM to Create</a>
           </div>
         </div>
 
